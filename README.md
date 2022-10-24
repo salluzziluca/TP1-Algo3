@@ -5,7 +5,7 @@
 Agustín Conti y Luca Salluzzi 
 
 ## Descripción del Juego
->Un juego de cartas por turnos en las que las cartas no interactuan entre ellas sino que dan mejoras o atacan directamente al jugador contrario. Tambien tenemos pensado desarollar "cartas trampa" que ante un evento en particular, se activen.
+>Un juego de cartas por turnos en las que las cartas no interactuan entre ellas sino que te dan mejoras o atacan directamente al jugador contrario. Tambien tenemos pensado desarollar "cartas trampa" que ante un evento en particular, se activen.
 
 ## Patrones a utilizar
 ### Builder
