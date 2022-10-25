@@ -11,7 +11,7 @@ public class Mano {
         this.cantCartasEnMano = 0;
     }
 
-    public int getCantCartasEnMano() {
+    public int getCantidadCartasEnMano() {
         return cantCartasEnMano;
     }
 

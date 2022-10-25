@@ -9,6 +9,10 @@ public class Mazo {
         cartas = new ArrayList<Carta>();
     }
 
+    public void agregarCarta(Carta carta) {
+        cartas.add(carta);
+    }
+
     public Carta darCarta() {
         int randomIndex = (int) (Math.random() * cartas.size());
         Carta carta = cartas.remove(randomIndex);
