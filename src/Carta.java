@@ -1,13 +1,13 @@
 package src;
 
 public class Carta {
-    public String nombre = "";
-    public String descripcion = "";
-    public int costo = 0;
-    public Daño daño = null;
-    public Curación curación = null;
-    public Efecto efecto = null;
-    public Secreto secreto = null;
+    public String nombre;
+    public String descripcion;
+    public int costo;
+    public Daño daño;
+    public Curación curación;
+    public Efecto efecto;
+    public Secreto secreto;
 
     public Carta(String nombre, String descripcion, int costo, Daño daño, Curación curación, Efecto efecto,
             Secreto secreto) {
