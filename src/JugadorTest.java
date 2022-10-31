@@ -7,7 +7,8 @@ import org.junit.Test;
 public class JugadorTest {
     @Test
     public void testRobarCarta() {
-        Carta carta = new CartaDeAtaque("Carta de prueba", "Esta es una carta de prueba", 1, 1);
+        DañoNormal CartaDeDañoNormal = new DañoNormal(0);
+        Carta carta = new Carta("Carta de prueba", "Carta de prueba", 0, CartaDeDañoNormal, null, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(carta);
         Jugador jugador = new Jugador("Jugador de prueba", 7, new Mano(), mazo);
