@@ -19,4 +19,13 @@ public class Jugador {
     public int getCantidadCartasEnMano() {
         return this.mano.getCantidadCartasEnMano();
     }
+
+    public boolean estaVivo() {
+        return this.vida > 0;
+    }
+
+    public void jugarTurno(Jugador jugadorEnemigo) {
+        this.robarCarta();
+        this.mano.jugarCarta(jugadorEnemigo);
+    }
 }

@@ -20,4 +20,11 @@ public class Mano {
         this.manoActual.add(cartaRobada);
         this.cantCartasEnMano++;
     }
+
+    public void jugarCarta(int posicionCarta, Jugador jugadorEnemigo) {
+        Carta cartaJugada = this.manoActual.get(posicionCarta);
+        cartaJugada.alJugarse();
+        this.manoActual.remove(posicionCarta);
+        this.cantCartasEnMano--;
+    }
 }
