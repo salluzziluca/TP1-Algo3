@@ -28,9 +28,9 @@ public class Mano {
      * Juega la carta en la posicion indicada por el jugador.
      * Luego, la quita de la mano.
      */
-    public void jugarCarta(int posicionCarta, Jugador jugadorEnemigo) {
+    public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
-        cartaJugada.alJugarse(jugadorEnemigo);
+        cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
         this.manoActual.remove(posicionCarta);
         this.cantCartasEnMano--;
     }

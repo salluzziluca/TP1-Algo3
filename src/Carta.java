@@ -20,9 +20,12 @@ public class Carta {
         this.secreto = secreto;
     }
 
-    public void alJugarse(Jugador jugadorEnemigo) {
+    public void alJugarse(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         if (daño != null) {
             daño.aplicarDaño(jugadorEnemigo);
+        }
+        if (efecto != null) {
+            efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
         }
         System.out.println("Jugando carta" + nombre);
     }
