@@ -17,4 +17,18 @@ public class JugadorTest {
         assertEquals(jugador.getCantidadCartasEnMano(), 1);
     }
 
+    @Test
+    public void testearDaño() {
+        DañoNormal CartaDeDañoNormal = new DañoNormal(3);
+        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 0, CartaDeDañoNormal, null, null, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeDaño);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador de prueba", 10, new Mano(), mazo);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador2);
+        assertEquals(jugador2.vida, 7);
+
+    }
+
 }

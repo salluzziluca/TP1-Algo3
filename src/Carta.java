@@ -20,7 +20,10 @@ public class Carta {
         this.secreto = secreto;
     }
 
-    public void alJugarse() {
-        System.out.println("Jugando carta");
+    public void alJugarse(Jugador jugadorEnemigo) {
+        if (daño != null) {
+            daño.aplicarDaño(jugadorEnemigo);
+        }
+        System.out.println("Jugando carta" + nombre);
     }
 }

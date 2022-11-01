@@ -1,5 +1,5 @@
 package src;
 
 public interface Daño {
-    public void aplicarDaño();
+    public void aplicarDaño(Jugador jugadorEnemigo);
 }

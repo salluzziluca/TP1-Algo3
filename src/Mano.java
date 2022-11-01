@@ -15,15 +15,22 @@ public class Mano {
         return cantCartasEnMano;
     }
 
+    /*
+     * Roba una carta del mazo y la agrega a la mano
+     */
     public void agregarCarta(Mazo mazo) {
         Carta cartaRobada = mazo.darCarta();
         this.manoActual.add(cartaRobada);
         this.cantCartasEnMano++;
     }
 
+    /*
+     * Juega la carta en la posicion indicada por el jugador.
+     * Luego, la quita de la mano.
+     */
     public void jugarCarta(int posicionCarta, Jugador jugadorEnemigo) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
-        cartaJugada.alJugarse();
+        cartaJugada.alJugarse(jugadorEnemigo);
         this.manoActual.remove(posicionCarta);
         this.cantCartasEnMano--;
     }
