@@ -20,6 +20,10 @@ public class Carta {
         this.secreto = secreto;
     }
 
+    /*
+     * Ejecuta el metodo principal de la carta, el cual depende del tipo que esta
+     * sea.
+     */
     public void alJugarse(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         if (daño != null) {
             daño.aplicarDaño(jugadorEnemigo);

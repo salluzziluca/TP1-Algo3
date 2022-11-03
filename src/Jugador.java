@@ -35,6 +35,13 @@ public class Jugador {
         return posicionCarta;
     }
 
+    /*
+     * Juega un turno completo del jugador, recorriendo los efectos para aplicarlos,
+     * robando
+     * y jugando cartas y finalmente reduciendo la duracion de todos sus efectos
+     * mediante
+     * terminarTurno
+     */
     public void jugarTurno(Jugador jugadorEnemigo) {
 
         this.recorrerEfectos();
@@ -44,8 +51,12 @@ public class Jugador {
         this.terminarTurno();
     }
 
+    /*
+     * Aplica el daño recibido, modifica ese valor dependiendo de los efectos que el
+     * jugador
+     * tenga en ese momento aplicados
+     */
     public void recibirDaño(int cantidad) {
-        // see if the arraylist has any veneno
 
         if (buscarEfecto("Vulnerable")) {
             cantidad *= 2;
@@ -65,12 +76,19 @@ public class Jugador {
         this.efectos.remove(efecto);
     }
 
+    /*
+     * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
+     * que su efecto se aplique
+     */
     public void recorrerEfectos() {
         for (Efecto efecto : this.efectos) {
             efecto.aplicarEfecto(this);
         }
     }
 
+    /*
+     * Reduce la duracion de todos los efectos del jugador
+     */
     public void terminarTurno() {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
@@ -80,6 +98,10 @@ public class Jugador {
 
     }
 
+    /*
+     * Comprueba si el efecto pasado por parametro esta en la lista de efectos del
+     * jugador
+     */
     private boolean buscarEfecto(String nombreEfecto) {
         for (Efecto efecto : efectos) {
             if (efecto.getNombre().equals(nombreEfecto)) {
@@ -89,6 +111,9 @@ public class Jugador {
         return false;
     }
 
+    /*
+     * aumenta el ataque de todas las cartas en la mano
+     */
     public void aumentarAtaque(int cantidad) {
         mano.aumentarAtaque(cantidad);
     }
