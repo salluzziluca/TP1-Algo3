@@ -14,9 +14,20 @@ public class Mazo {
     }
 
     public Carta darCarta() {
-        int randomIndex = (int) (Math.random() * cartas.size());
-        Carta carta = cartas.remove(randomIndex);
+        int ultimaPosicion = cartas.size() - 1;
+        Carta carta = cartas.remove(ultimaPosicion);
         return carta;
 
+    }
+
+    public void barajar() {
+        ArrayList<Carta> cartasBarajadas = new ArrayList<Carta>();
+        int cantidadCartas = cartas.size();
+        for (int i = 0; i < cantidadCartas; i++) {
+            int posicionAleatoria = (int) (Math.random() * cartas.size());
+            Carta carta = cartas.remove(posicionAleatoria);
+            cartasBarajadas.add(carta);
+        }
+        cartas = cartasBarajadas;
     }
 }

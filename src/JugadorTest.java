@@ -62,4 +62,24 @@ public class JugadorTest {
         assertEquals(jugador2.vida, 4);
 
     }
+
+    @Test
+    public void testarAfilado() {
+        Afilado CartaDeAfilado = new Afilado(3);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, CartaDeAfilado, null);
+        DañoNormal CartaDeDañoNormal = new DañoNormal(3);
+        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 0, CartaDeDañoNormal, null, null, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeAfilado);
+        mazo.agregarCarta(cartaDeDaño);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, new Mano(), mazo);
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(1, jugador1, jugador2);
+        jugador1.recorrerEfectos();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2); // Asumiendo que no se gastan las cartas!!!!
+        assertEquals(6, jugador2.vida);
+
+    }
 }

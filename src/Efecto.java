@@ -8,4 +8,6 @@ public interface Efecto {
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo);
 
     public void aplicarEfecto(Jugador jugador);
+
+    public String getNombre();
 }

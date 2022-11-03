@@ -22,4 +22,9 @@ public class Veneno implements Efecto {
         jugador.recibirDaño(duracion);
     }
 
+    @Override
+    public String getNombre() {
+        return "Veneno";
+    }
+
 }

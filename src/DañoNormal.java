@@ -11,4 +11,8 @@ public class DañoNormal implements Daño {
         System.out.println(" Aplicando " + cantidad + " puntos de daño");
         jugadorEnemigo.recibirDaño(cantidad);
     }
+
+    public void aumentarDaño(int cantidad) {
+        this.cantidad += cantidad;
+    }
 }

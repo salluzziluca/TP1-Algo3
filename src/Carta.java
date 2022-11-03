@@ -29,4 +29,10 @@ public class Carta {
         }
         System.out.println("Jugando carta" + nombre);
     }
+
+    public void aumentarAtaque(int cantidad) {
+        if (daño != null) {
+            daño.aumentarDaño(cantidad);
+        }
+    }
 }

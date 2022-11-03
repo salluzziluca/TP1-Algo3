@@ -34,4 +34,10 @@ public class Mano {
         this.manoActual.remove(posicionCarta);
         this.cantCartasEnMano--;
     }
+
+    public void aumentarAtaque(int cantidad) {
+        for (Carta carta : this.manoActual) {
+            carta.aumentarAtaque(cantidad);
+        }
+    }
 }

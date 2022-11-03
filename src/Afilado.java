@@ -1,10 +1,9 @@
 package src;
 
-public class Vulnerable implements Efecto {
-
+public class Afilado implements Efecto {
     private int duracion;
 
-    public Vulnerable(int duracion) {
+    public Afilado(int duracion) {
         this.duracion = duracion;
     }
 
@@ -15,16 +14,17 @@ public class Vulnerable implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        jugadorEnemigo.agregarEfecto(this);
+        jugadorAliado.agregarEfecto(this);
     }
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        // no hace nada :)
+        jugador.aumentarAtaque(1);
     }
 
     @Override
     public String getNombre() {
-        return "Vulnerable";
-}
+        return "Afilado";
+    }
+
 }

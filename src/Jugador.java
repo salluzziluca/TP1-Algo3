@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.lang.*;
 
 public class Jugador {
     private String nombre;
@@ -45,11 +46,14 @@ public class Jugador {
     public void recibirDaño(int cantidad) {
         // see if the arraylist has any veneno
 
-        if (buscarVulnerable()) {
-            this.vida -= cantidad * 2;
-        } else {
-            this.vida -= cantidad;
+        if (buscarEfecto("Vulnerable")) {
+            cantidad *= 2;
         }
+        if (buscarEfecto("Afilado")) {
+            cantidad += 1;
+        }
+        this.vida -= cantidad;
+
     }
 
     public void agregarEfecto(Efecto efecto) {
@@ -62,13 +66,16 @@ public class Jugador {
         }
     }
 
-    private boolean buscarVulnerable() {
+    private boolean buscarEfecto(String nombreEfecto) {
         for (Efecto efecto : efectos) {
-            if (efecto instanceof Vulnerable) {
+            if (efecto.getNombre().equals(nombreEfecto)) {
                 return true;
             }
         }
         return false;
     }
 
+    public void aumentarAtaque(int cantidad) {
+        mano.aumentarAtaque(cantidad);
+    }
 }
