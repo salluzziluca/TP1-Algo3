@@ -45,4 +45,21 @@ public class JugadorTest {
         assertEquals(jugador2.vida, 7);
 
     }
+
+    @Test
+    public void testarVulnerable() {
+        Vulnerable CartaDeVulnerable = new Vulnerable(3);
+        Carta cartaDeVulnerable = new Carta("Carta de Vulnerable", "Aplica vulnerable", 0, null, null,
+                CartaDeVulnerable, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeVulnerable);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, new Mano(), mazo);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2);
+        jugador2.recorrerEfectos();
+        jugador2.recibirDaño(3);
+        assertEquals(jugador2.vida, 4);
+
+    }
 }

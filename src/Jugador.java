@@ -43,7 +43,13 @@ public class Jugador {
     }
 
     public void recibirDaño(int cantidad) {
-        this.vida -= cantidad;
+        // see if the arraylist has any veneno
+
+        if (buscarVulnerable()) {
+            this.vida -= cantidad * 2;
+        } else {
+            this.vida -= cantidad;
+        }
     }
 
     public void agregarEfecto(Efecto efecto) {
@@ -54,6 +60,15 @@ public class Jugador {
         for (Efecto efecto : this.efectos) {
             efecto.aplicarEfecto(this);
         }
+    }
+
+    private boolean buscarVulnerable() {
+        for (Efecto efecto : efectos) {
+            if (efecto instanceof Vulnerable) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
