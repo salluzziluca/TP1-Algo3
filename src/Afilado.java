@@ -9,6 +9,11 @@ public class Afilado implements Efecto {
         this.duracionActual = duracion;
     }
 
+    /*
+     * Disminuye al duracion del efecto, si es cero, lo quita del jugador y
+     * adicionalmente resetea el ataque de las cartas del jugador para que no se
+     * acumulen
+     */
     @Override
     public void reducirDuracion(Jugador jugadorAliado) {
         this.duracionActual--;
