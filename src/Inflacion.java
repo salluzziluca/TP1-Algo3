@@ -1,41 +1,39 @@
 package src;
 
-public class Afilado implements Efecto {
-    private int duracionActual;
-    private int duracion;
+public class Inflacion implements Efecto {
 
-    public Afilado(int duracion) {
-        this.duracion = duracion;
-        this.duracionActual = duracion;
-    }
+    private int duracion;
 
     @Override
     public void reducirDuracion(Jugador jugadorAliado) {
-        this.duracionActual--;
-        if (this.duracionActual == 0) {
+        this.duracion--;
+        if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
         }
-        jugadorAliado.aumentarAtaque(-1);
+
     }
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        jugadorAliado.agregarEfecto(this);
+        jugadorEnemigo.agregarEfecto(this);
+
     }
 
     @Override
     public void quitarEfecto(Jugador jugadorAliado) {
         jugadorAliado.quitarEfecto(this);
+
     }
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarAtaque(1);
+        // jugador.aumentarValorCartas();
     }
 
     @Override
     public String getNombre() {
-        return "Afilado";
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }
