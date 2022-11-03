@@ -1,14 +1,13 @@
 package src;
 
 import java.util.ArrayList;
-import java.lang.*;
 
 public class Jugador {
     private String nombre;
     int vida;
     Mano mano;
     private Mazo mazo;
-    private ArrayList<Efecto> efectos;
+    ArrayList<Efecto> efectos;
 
     public Jugador(String nombre, int vida, Mano mano, Mazo mazo) {
         this.nombre = nombre;
@@ -37,10 +36,12 @@ public class Jugador {
     }
 
     public void jugarTurno(Jugador jugadorEnemigo) {
+
         this.recorrerEfectos();
         this.robarCarta();
         int posicionCarta = this.pedirPosicionCarta();
         this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo);
+        this.terminarTurno();
     }
 
     public void recibirDaño(int cantidad) {
@@ -60,10 +61,23 @@ public class Jugador {
         this.efectos.add(efecto);
     }
 
+    public void quitarEfecto(Efecto efecto) {
+        this.efectos.remove(efecto);
+    }
+
     public void recorrerEfectos() {
         for (Efecto efecto : this.efectos) {
             efecto.aplicarEfecto(this);
         }
+    }
+
+    public void terminarTurno() {
+        for (int i = 0; i < this.efectos.size(); i++) {
+            Efecto efecto = this.efectos.get(i);
+            efecto.reducirDuracion(this);
+
+        }
+
     }
 
     private boolean buscarEfecto(String nombreEfecto) {

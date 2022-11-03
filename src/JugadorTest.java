@@ -82,4 +82,32 @@ public class JugadorTest {
         assertEquals(6, jugador2.vida);
 
     }
+
+    @Test
+    public void testearDuracionDeEfectos() {
+        Veneno veneno = new Veneno(3);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null);
+        Afilado afilado = new Afilado(2);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null);
+        Vulnerable vulnerable = new Vulnerable(6);
+        Carta cartaDeVulnerable = new Carta("Carta de Vulnerable", "Aplica vulnerable", 0, null, null, vulnerable,
+                null);
+
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeVeneno);
+        mazo.agregarCarta(cartaDeAfilado);
+        mazo.agregarCarta(cartaDeVulnerable);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, new Mano(), mazo);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1);
+        for (int i = 0; i < 7; i++) {
+            jugador1.terminarTurno();
+        }
+        assertEquals(true, jugador1.efectos.isEmpty());
+
+    }
 }
