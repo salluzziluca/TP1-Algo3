@@ -13,6 +13,9 @@ public class Mazo {
         cartas.add(carta);
     }
 
+    /*
+     * Devuelve la primera carta del mazo y la elimina del mismo
+     */
     public Carta darCarta() {
         int ultimaPosicion = cartas.size() - 1;
         Carta carta = cartas.remove(ultimaPosicion);
@@ -20,7 +23,10 @@ public class Mazo {
 
     }
 
-    public void barajar() {
+    /*
+     * Mezcla las cartas del mazo aleatoreamente
+     */
+    public void mezclar() {
         ArrayList<Carta> cartasBarajadas = new ArrayList<Carta>();
         int cantidadCartas = cartas.size();
         for (int i = 0; i < cantidadCartas; i++) {
