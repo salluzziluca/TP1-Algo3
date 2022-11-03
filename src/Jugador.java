@@ -99,7 +99,6 @@ public class Jugador {
             efecto.reducirDuracion(this);
 
         }
-        manaMaximo++;
 
     }
 
