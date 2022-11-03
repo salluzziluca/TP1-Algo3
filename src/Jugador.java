@@ -6,7 +6,7 @@ public class Jugador {
     private String nombre;
     int vida;
     int manaMaximo;
-    int manaActual = 0;
+    int manaActual;
     Mano mano;
     private Mazo mazo;
     ArrayList<Efecto> efectos;
@@ -15,6 +15,7 @@ public class Jugador {
         this.nombre = nombre;
         this.vida = vida;
         this.manaMaximo = mana;
+        this.manaActual = 0;
         this.mano = mano;
         this.mazo = mazo;
         this.efectos = new ArrayList<Efecto>();
@@ -46,7 +47,7 @@ public class Jugador {
      * terminarTurno
      */
     public void jugarTurno(Jugador jugadorEnemigo) {
-
+        manaActual = manaMaximo;
         this.recorrerEfectos();
         this.robarCarta();
         int posicionCarta = this.pedirPosicionCarta();
@@ -120,5 +121,10 @@ public class Jugador {
      */
     public void aumentarAtaque(int cantidad) {
         mano.aumentarAtaque(cantidad);
+    }
+
+    public void aumentarManaMaximo(int i) {
+        this.manaMaximo += i;
+        this.manaActual += i;
     }
 }

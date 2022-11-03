@@ -84,4 +84,18 @@ public class EfectosTest {
         assertEquals(true, jugador1.efectos.isEmpty());
 
     }
+
+    @Test
+    public void testearBerserk() {
+        Berserk berserk = new Berserk(3);
+        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 1, null, null, berserk, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeBerserk);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, 10, jugador1, jugador1);
+        jugador1.recorrerEfectos();
+        assertEquals(11, jugador1.manaMaximo);
+        assertEquals(1, jugador1.manaActual);
+    }
 }
