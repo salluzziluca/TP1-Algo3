@@ -15,7 +15,7 @@ public class Afilado implements Efecto {
         if (this.duracionActual == 0) {
             this.quitarEfecto(jugadorAliado);
         }
-        jugadorAliado.aumentarAtaque(-1);
+        jugadorAliado.modificarAtaque(-1);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Afilado implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarAtaque(1);
+        jugador.modificarAtaque(1);
     }
 
     @Override

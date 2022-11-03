@@ -118,8 +118,8 @@ public class Jugador {
     /*
      * aumenta el ataque de todas las cartas en la mano
      */
-    public void aumentarAtaque(int cantidad) {
-        mano.aumentarAtaque(cantidad);
+    public void modificarAtaque(int cantidad) {
+        mano.modificarAtaque(cantidad);
     }
 
     public void aumentarManaMaximo(int i) {

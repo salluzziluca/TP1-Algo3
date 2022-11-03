@@ -41,7 +41,7 @@ public class Carta {
         System.out.println("Jugando carta" + nombre);
     }
 
-    public void aumentarAtaque(int cantidad) {
+    public void modificarAtaque(int cantidad) {
         if (daño != null) {
             daño.aumentarDaño(cantidad);
         }

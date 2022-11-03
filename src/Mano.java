@@ -38,9 +38,9 @@ public class Mano {
         }
     }
 
-    public void aumentarAtaque(int cantidad) {
+    public void modificarAtaque(int cantidad) {
         for (Carta carta : this.manoActual) {
-            carta.aumentarAtaque(cantidad);
+            carta.modificarAtaque(cantidad);
         }
     }
 }
