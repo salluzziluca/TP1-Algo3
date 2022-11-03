@@ -28,11 +28,14 @@ public class Mano {
      * Juega la carta en la posicion indicada por el jugador.
      * Luego, la quita de la mano.
      */
-    public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    public void jugarCarta(int posicionCarta, int manaActual, Jugador jugadorAliado, Jugador jugadorEnemigo) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
-        cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
-        this.manoActual.remove(posicionCarta);
-        this.cantCartasEnMano--;
+        if (cartaJugada.puedeJugarse(manaActual)) {
+
+            cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
+            this.manoActual.remove(posicionCarta);
+            this.cantCartasEnMano--;
+        }
     }
 
     public void aumentarAtaque(int cantidad) {

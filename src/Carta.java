@@ -20,6 +20,13 @@ public class Carta {
         this.secreto = secreto;
     }
 
+    public boolean puedeJugarse(int manaActual) {
+        if (manaActual < this.costo) {
+            return false;
+        }
+        return true;
+    }
+
     /*
      * Ejecuta el metodo principal de la carta, el cual depende del tipo que esta
      * sea.

@@ -5,15 +5,18 @@ import java.util.ArrayList;
 public class Jugador {
     private String nombre;
     int vida;
+    int manaMaximo;
+    int manaActual = 0;
     Mano mano;
     private Mazo mazo;
     ArrayList<Efecto> efectos;
 
-    public Jugador(String nombre, int vida, Mano mano, Mazo mazo) {
+    public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
         this.nombre = nombre;
+        this.vida = vida;
+        this.manaMaximo = mana;
         this.mano = mano;
         this.mazo = mazo;
-        this.vida = vida;
         this.efectos = new ArrayList<Efecto>();
     }
 
@@ -47,7 +50,7 @@ public class Jugador {
         this.recorrerEfectos();
         this.robarCarta();
         int posicionCarta = this.pedirPosicionCarta();
-        this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo);
+        this.mano.jugarCarta(posicionCarta, manaActual, this, jugadorEnemigo);
         this.terminarTurno();
     }
 
@@ -95,6 +98,7 @@ public class Jugador {
             efecto.reducirDuracion(this);
 
         }
+        manaMaximo++;
 
     }
 
