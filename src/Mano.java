@@ -43,4 +43,10 @@ public class Mano {
             carta.modificarAtaque(cantidad);
         }
     }
+
+    public void aumentarValorCartas() {
+        for (Carta carta : this.manoActual) {
+            carta.aumentarValor();
+        }
+    }
 }

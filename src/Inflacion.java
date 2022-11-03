@@ -4,6 +4,10 @@ public class Inflacion implements Efecto {
 
     private int duracion;
 
+    public Inflacion(int duracion) {
+        this.duracion = duracion;
+    }
+
     @Override
     public void reducirDuracion(Jugador jugadorAliado) {
         this.duracion--;
@@ -27,7 +31,7 @@ public class Inflacion implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        // jugador.aumentarValorCartas();
+        jugador.aumentarValorCartas();
     }
 
     @Override

@@ -90,7 +90,7 @@ public class EfectosTest {
     @Test
     public void testearBerserk() {
         Berserk berserk = new Berserk(3);
-        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 1, null, null, berserk, null);
+        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeBerserk);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
@@ -99,5 +99,24 @@ public class EfectosTest {
         jugador1.recorrerEfectos();
         assertEquals(11, jugador1.manaMaximo);
         assertEquals(1, jugador1.manaActual);
+    }
+
+    @Test
+    public void testearInflacion() {
+        Inflacion inflacion = new Inflacion(3);
+        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null);
+        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaQueNoHaceNada);
+        mazo.agregarCarta(cartaDeInflacion);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
+        jugador1.manaActual = 10;
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, 10, jugador1, jugador1);
+        jugador1.recorrerEfectos();
+        jugador1.mano.jugarCarta(0, 10, jugador1, jugador1);
+        assertEquals(1, jugador1.manaActual);
+
     }
 }

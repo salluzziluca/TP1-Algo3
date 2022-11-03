@@ -126,4 +126,12 @@ public class Jugador {
         this.manaMaximo += i;
         this.manaActual += i;
     }
+
+    public void aumentarValorCartas() {
+        this.mano.aumentarValorCartas();
+    }
+
+    public void modificarMana(int i) {
+        this.manaActual += i;
+    }
 }

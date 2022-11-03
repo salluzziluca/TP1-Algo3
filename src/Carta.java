@@ -38,6 +38,7 @@ public class Carta {
         if (efecto != null) {
             efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
         }
+        jugadorAliado.modificarMana(-this.costo);
         System.out.println("Jugando carta" + nombre);
     }
 
@@ -45,5 +46,9 @@ public class Carta {
         if (daño != null) {
             daño.aumentarDaño(cantidad);
         }
+    }
+
+    public void aumentarValor() {
+        this.costo++;
     }
 }
