@@ -39,8 +39,7 @@ public class Inflacion implements Efecto {
 
     @Override
     public String getNombre() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Inflación";
     }
 
 }
