@@ -1,9 +1,13 @@
-package src;
+package src.efectos;
 
-public class Berserk implements Efecto {
-    public int duracion;
+import src.Efecto;
+import src.Jugador;
 
-    public Berserk(int duracion) {
+public class Inflacion implements Efecto {
+
+    private int duracion;
+
+    public Inflacion(int duracion) {
         this.duracion = duracion;
     }
 
@@ -13,12 +17,13 @@ public class Berserk implements Efecto {
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
         }
+
     }
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+        jugadorEnemigo.agregarEfecto(this);
 
-        jugadorAliado.agregarEfecto(this);
     }
 
     @Override
@@ -29,13 +34,13 @@ public class Berserk implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarManaMaximo(1);
-
+        jugador.aumentarValorCartas();
     }
 
     @Override
     public String getNombre() {
-        return "Berserk";
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

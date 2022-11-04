@@ -1,10 +1,12 @@
-package src;
+package src.efectos;
 
-public class Inflacion implements Efecto {
+import src.Efecto;
+import src.Jugador;
 
+public class Veneno implements Efecto {
     private int duracion;
 
-    public Inflacion(int duracion) {
+    public Veneno(int duracion) {
         this.duracion = duracion;
     }
 
@@ -14,30 +16,26 @@ public class Inflacion implements Efecto {
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
         }
-
     }
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         jugadorEnemigo.agregarEfecto(this);
-
     }
 
     @Override
     public void quitarEfecto(Jugador jugadorAliado) {
         jugadorAliado.quitarEfecto(this);
-
     }
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarValorCartas();
+        jugador.recibirDaño(duracion);
     }
 
     @Override
     public String getNombre() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Veneno";
     }
 
 }

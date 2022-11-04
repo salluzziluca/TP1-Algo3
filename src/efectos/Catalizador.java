@@ -1,4 +1,7 @@
-package src;
+package src.efectos;
+
+import src.Efecto;
+import src.Jugador;
 
 public class Catalizador implements Efecto {
     private int duracion;

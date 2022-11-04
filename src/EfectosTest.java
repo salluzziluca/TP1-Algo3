@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import src.efectos.*;
+
 public class EfectosTest {
     @Test
     public void testearVeneno() {
