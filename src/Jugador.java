@@ -3,7 +3,6 @@ package src;
 import java.util.ArrayList;
 
 public class Jugador {
-    private String nombre;
     int vida;
     int manaMaximo;
     int manaActual;
@@ -12,7 +11,6 @@ public class Jugador {
     ArrayList<Efecto> efectos;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
-        this.nombre = nombre;
         this.vida = vida;
         this.manaMaximo = mana;
         this.manaActual = 0;
@@ -46,7 +44,7 @@ public class Jugador {
      * mediante
      * terminarTurno
      */
-    public void jugarTurno(Jugador jugadorEnemigo) {
+    void jugarTurno(Jugador jugadorEnemigo) {
         manaActual = manaMaximo;
         this.recorrerEfectos();
         this.robarCarta();
@@ -84,7 +82,7 @@ public class Jugador {
      * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
      * que su efecto se aplique
      */
-    public void recorrerEfectos() {
+    void recorrerEfectos() {
         for (Efecto efecto : this.efectos) {
             efecto.aplicarEfecto(this);
         }
@@ -93,7 +91,7 @@ public class Jugador {
     /*
      * Reduce la duracion de todos los efectos del jugador
      */
-    public void terminarTurno() {
+    void terminarTurno() {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
             efecto.reducirDuracion(this);
