@@ -95,9 +95,7 @@ public class Jugador {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
             efecto.reducirDuracion(this);
-
         }
-
     }
 
     /*

@@ -31,7 +31,6 @@ public class Mano {
     public void jugarCarta(int posicionCarta, int manaActual, Jugador jugadorAliado, Jugador jugadorEnemigo) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
         if (cartaJugada.puedeJugarse(manaActual)) {
-
             cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
             this.manoActual.remove(posicionCarta);
             this.cantCartasEnMano--;

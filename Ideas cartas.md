@@ -29,7 +29,7 @@ Los efectos reducen su duracion al final del turno
 
 	>#### Bufos:
 	>- *Afilar* (2): Mejora 2 **Afilado**
-	>- *Oportunista* (1): Roba 1 carta por cada carta jugada este turno +1
+	>- *Oportunista* (1): Roba cartas igual al daño que hagas este turno
 	>- *Ira* (3): Mejora permanente **Berserk**; **Gastar**
 
 	>#### Secretos:
