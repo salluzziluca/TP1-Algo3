@@ -58,7 +58,6 @@ public class EfectosTest {
         jugador1.recorrerEfectos();
         jugador1.mano.jugarCarta(0, 10, jugador1, jugador2); // Asumiendo que no se gastan las cartas!!!!
         assertEquals(6, jugador2.vida);
-
     }
 
     @Test
