@@ -20,7 +20,7 @@ public class Carta {
         this.secreto = secreto;
     }
 
-    public boolean puedeJugarse(int manaActual) {
+    private boolean puedeJugarse(int manaActual) {
         if (manaActual < this.costo) {
             return false;
         }
@@ -31,15 +31,20 @@ public class Carta {
      * Ejecuta el metodo principal de la carta, el cual depende del tipo que esta
      * sea.
      */
-    public void alJugarse(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (daño != null) {
-            daño.aplicarDaño(jugadorEnemigo);
+    public void alJugarse(int manaActual, Jugador jugadorAliado, Jugador jugadorEnemigo) {
+        if (puedeJugarse(manaActual)) {
+            if (daño != null) {
+                daño.aplicarDaño(jugadorEnemigo);
+            }
+            if (efecto != null) {
+                efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
+            }
+            if (secreto != null) {
+                secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
+            }
+            jugadorAliado.modificarMana(-this.costo);
+            System.out.println("Jugando carta" + nombre);
         }
-        if (efecto != null) {
-            efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
-        }
-        jugadorAliado.modificarMana(-this.costo);
-        System.out.println("Jugando carta" + nombre);
     }
 
     public void modificarAtaque(int cantidad) {
@@ -50,5 +55,9 @@ public class Carta {
 
     public void aumentarValor() {
         this.costo++;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

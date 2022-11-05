@@ -1,7 +1,7 @@
 package src;
 
 public interface Secreto {
-    public void aplicarSecreto();
+    public void setearSecreto();
 
     public void alSerRevelado();
 }
