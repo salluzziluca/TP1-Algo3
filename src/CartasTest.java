@@ -26,7 +26,7 @@ public class CartasTest {
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2);
+        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2, null);
         assertEquals(jugador2.vida, 7);
 
     }
@@ -40,7 +40,7 @@ public class CartasTest {
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2);
+        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2, null);
         assertEquals(10, jugador2.vida);
 
     }

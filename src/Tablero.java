@@ -23,10 +23,12 @@ public class Tablero {
 
     public void setCartaEnJuego(Carta carta) {
         this.cartaEnJuego = carta;
+        notificar();
     }
 
     public void notificar() {
-        jugador1.update(cartaEnJuego);
-     
-    } 
+        jugador1.update(cartaEnJuego, jugador2);
+        jugador2.update(cartaEnJuego, jugador1);
+
+    }
 }

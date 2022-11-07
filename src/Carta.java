@@ -33,23 +33,23 @@ public class Carta {
      */
     public void alJugarse(int manaActual, Jugador jugadorAliado, Jugador jugadorEnemigo) {
         if (puedeJugarse(manaActual)) {
-            if (daño != null) {
-                daño.aplicarDaño(jugadorEnemigo);
+            if (this.daño != null) {
+                this.daño.aplicarDaño(jugadorEnemigo);
             }
-            if (efecto != null) {
-                efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
+            if (this.efecto != null) {
+                this.efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
             }
-            if (secreto != null) {
-                secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
+            if (this.secreto != null) {
+                this.secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
             }
             jugadorAliado.modificarMana(-this.costo);
-            System.out.println("Jugando carta" + nombre);
+            System.out.println("Jugando carta" + this.nombre);
         }
     }
 
     public void modificarAtaque(int cantidad) {
-        if (daño != null) {
-            daño.aumentarDaño(cantidad);
+        if (this.daño != null) {
+            this.daño.aumentarDaño(cantidad);
         }
     }
 
@@ -59,5 +59,9 @@ public class Carta {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public int getCosto() {
+        return this.costo;
     }
 }

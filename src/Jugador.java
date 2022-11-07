@@ -133,7 +133,10 @@ public class Jugador {
         this.manaActual += i;
     }
 
-    public void update(Carta carta) {
+    public void update(Carta carta, Jugador jugadorEnemigo) {
+        for (Secreto secreto : secretos) {
+            secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo);
+        }
     }
 
     public void agregarSecreto(Secreto secreto) {
