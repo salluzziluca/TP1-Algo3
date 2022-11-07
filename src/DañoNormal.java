@@ -2,9 +2,11 @@ package src;
 
 public class DañoNormal implements Daño {
     private int cantidad;
+    private int cantidadOriginal;
 
     public DañoNormal(int cantidad) {
         this.cantidad = cantidad;
+        this.cantidadOriginal = cantidad;
     }
 
     public void aplicarDaño(Jugador jugadorEnemigo) {

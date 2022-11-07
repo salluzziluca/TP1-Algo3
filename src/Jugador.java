@@ -7,7 +7,7 @@ public class Jugador {
     int manaMaximo;
     int manaActual;
     Mano mano;
-    private Mazo mazo;
+    Mazo mazo;
     ArrayList<Efecto> efectos;
     ArrayList<Secreto> secretos;
     private boolean pasarTurno;

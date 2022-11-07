@@ -33,6 +33,8 @@ public class Mano {
         cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
         tableroActual.setCartaEnJuego(cartaJugada);
         this.manoActual.remove(posicionCarta);
+        jugadorAliado.mazo.agregarCarta(cartaJugada);
+        jugadorAliado.mazo.mezclar();
         this.cantCartasEnMano--;
     }
 
