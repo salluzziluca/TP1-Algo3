@@ -64,4 +64,8 @@ public class Carta {
     public int getCosto() {
         return this.costo;
     }
+
+    public Efecto getEfecto() {
+        return efecto;
+    }
 }

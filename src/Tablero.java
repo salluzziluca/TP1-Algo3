@@ -29,6 +29,5 @@ public class Tablero {
     public void notificar() {
         jugador1.update(cartaEnJuego, jugador2);
         jugador2.update(cartaEnJuego, jugador1);
-
     }
 }

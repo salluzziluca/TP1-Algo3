@@ -59,7 +59,6 @@ public class EfectosTest {
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(1, jugador1, jugador2, tablero);
-        jugador1.recorrerEfectos();
         jugador1.terminarTurno();
         jugador1.recorrerEfectos();
         jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero); // Asumiendo que no se gastan las cartas!!!!
@@ -113,7 +112,7 @@ public class EfectosTest {
     }
 
     @Test
-    public void testearInflacion() {
+    public void testearInflacionDespuesDeUnTurno() {
         Inflacion inflacion = new Inflacion(3);
         Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null);
         Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null);
@@ -126,9 +125,29 @@ public class EfectosTest {
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.recorrerEfectos();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         assertEquals(1, jugador1.manaActual);
 
+    }
+
+    @Test
+    public void testearInflacionDespuesDeJugarLaCarta() {
+        Inflacion inflacion = new Inflacion(3);
+        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null);
+        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null);
+        Mazo mazo1 = new Mazo();
+        Mazo mazo2 = new Mazo();
+        mazo1.agregarCarta(cartaQueNoHaceNada);
+        mazo2.agregarCarta(cartaDeInflacion);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo2);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo1);
+        Tablero tablero = new Tablero(jugador1, jugador2);
+        jugador1.manaActual = 10;
+        jugador2.manaActual = 10;
+        jugador1.robarCarta();
+        jugador2.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
+        assertEquals(1, jugador2.manaActual);
     }
 }

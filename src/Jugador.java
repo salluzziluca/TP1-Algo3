@@ -138,9 +138,19 @@ public class Jugador {
     }
 
     public void update(Carta carta, Jugador jugadorEnemigo) {
+        String nombreEfecto = new String();
         for (Secreto secreto : secretos) {
             secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo);
         }
+        // Si la carta es de efecto Afilado o Inflacion, entonces ejecutá ese efecto
+        if (carta.getEfecto() != null) {
+            nombreEfecto = carta.getEfecto().getNombre();
+        }
+        if ((nombreEfecto == "Afilado" && buscarEfecto("Afilado"))
+                || nombreEfecto == "Inflacion" && buscarEfecto("Inflacion")) {
+            carta.efecto.aplicarEfecto(this);
+        }
+
     }
 
     public void agregarSecreto(Secreto secreto) {

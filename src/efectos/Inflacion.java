@@ -39,7 +39,7 @@ public class Inflacion implements Efecto {
 
     @Override
     public String getNombre() {
-        return "Inflación";
+        return "Inflacion";
     }
 
 }
