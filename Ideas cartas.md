@@ -48,5 +48,5 @@ Los efectos reducen su duracion al final del turno
 	>- *Catalizador* (2): Mejora **Catalizador**
 
 	>#### Secretos:
-	>- *Enormizar* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** igual al coste de esa carta
+	>- *Enormizar* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
 	>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta
