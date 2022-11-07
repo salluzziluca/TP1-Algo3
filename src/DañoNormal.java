@@ -17,4 +17,8 @@ public class DañoNormal implements Daño {
     public void aumentarDaño(int cantidad) {
         this.cantidad += cantidad;
     }
+
+    public void resetearValores() {
+        this.cantidad = this.cantidadOriginal;
+    }
 }

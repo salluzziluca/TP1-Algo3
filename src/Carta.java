@@ -4,6 +4,7 @@ public class Carta {
     public String nombre;
     public String descripcion;
     public int costo;
+    private int costoOriginal;
     public Daño daño;
     public Curación curación;
     public Efecto efecto;
@@ -14,6 +15,7 @@ public class Carta {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
+        this.costoOriginal = costo;
         this.daño = daño;
         this.curación = curación;
         this.efecto = efecto;
@@ -53,6 +55,13 @@ public class Carta {
         }
     }
 
+    public void resetearValores() {
+        this.costo = this.costoOriginal;
+        if (this.daño != null) {
+            this.daño.resetearValores();
+        }
+    }
+
     public void aumentarValor() {
         this.costo++;
     }
@@ -68,4 +77,5 @@ public class Carta {
     public Efecto getEfecto() {
         return efecto;
     }
+
 }
