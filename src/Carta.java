@@ -31,7 +31,8 @@ public class Carta {
      * Ejecuta el metodo principal de la carta, el cual depende del tipo que esta
      * sea.
      */
-    public void alJugarse(int manaActual, Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    public void alJugarse(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+        int manaActual = jugadorAliado.getManaActual();
         if (puedeJugarse(manaActual)) {
             if (this.daño != null) {
                 this.daño.aplicarDaño(jugadorEnemigo);
@@ -43,7 +44,6 @@ public class Carta {
                 this.secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
             }
             jugadorAliado.modificarMana(-this.costo);
-            System.out.println("Jugando carta" + this.nombre);
         }
     }
 

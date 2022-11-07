@@ -25,8 +25,9 @@ public class CartasTest {
         mazo.agregarCarta(cartaDeDaño);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
+        Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2, null);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
         assertEquals(jugador2.vida, 7);
 
     }
@@ -39,8 +40,9 @@ public class CartasTest {
         mazo.agregarCarta(cartaDeDaño);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
+        Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2, null);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
         assertEquals(10, jugador2.vida);
 
     }

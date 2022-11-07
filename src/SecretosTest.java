@@ -20,15 +20,16 @@ public class SecretosTest {
         mazo2.agregarCarta(cartaQueNoHaceNada);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 30, new Mano(), mazo2);
+        jugador1.manaActual = 10;
         jugador2.manaActual = 30;
         Tablero tablero1 = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, 10, jugador1, jugador2, tablero1);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero1);
         jugador2.robarCarta();
         jugador2.recorrerEfectos();
         jugador2.robarCarta();
-        jugador2.mano.jugarCarta(0, 10, jugador2, jugador1, tablero1);
-        jugador2.mano.jugarCarta(0, 10, jugador2, jugador1, tablero1);
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
         assertEquals(19, jugador2.manaActual);
     }
 }

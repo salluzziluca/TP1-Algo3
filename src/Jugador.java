@@ -10,6 +10,7 @@ public class Jugador {
     private Mazo mazo;
     ArrayList<Efecto> efectos;
     ArrayList<Secreto> secretos;
+    private boolean pasarTurno;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
         this.vida = vida;
@@ -19,6 +20,7 @@ public class Jugador {
         this.mazo = mazo;
         this.efectos = new ArrayList<Efecto>();
         this.secretos = new ArrayList<Secreto>();
+        this.pasarTurno = false;
     }
 
     public void robarCarta() {
@@ -34,7 +36,6 @@ public class Jugador {
     }
 
     private int pedirPosicionCarta() {
-        System.out.println("Ingrese la posicion de la carta que desea jugar");
         int posicionCarta = Integer.parseInt(System.console().readLine());
         return posicionCarta;
     }
@@ -47,11 +48,14 @@ public class Jugador {
      * terminarTurno
      */
     void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
+        pasarTurno = false;
         manaActual = manaMaximo;
         this.recorrerEfectos();
         this.robarCarta();
-        int posicionCarta = this.pedirPosicionCarta();
-        this.mano.jugarCarta(posicionCarta, manaActual, this, jugadorEnemigo, tableroActual);
+        while (!pasarTurno) {
+            int posicionCarta = this.pedirPosicionCarta();
+            this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
+        }
         this.terminarTurno();
     }
 
@@ -145,6 +149,10 @@ public class Jugador {
 
     public void quitarSecreto(Secreto secreto) {
         this.secretos.remove(secreto);
+    }
+
+    public int getManaActual() {
+        return this.manaActual;
     }
 
 }
