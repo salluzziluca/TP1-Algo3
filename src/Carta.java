@@ -6,20 +6,22 @@ public class Carta {
     public int costo;
     private int costoOriginal;
     public Daño daño;
-    public Curación curación;
+    public Cura cura;
     public Efecto efecto;
     public Secreto secreto;
+    public Robar robar;
 
-    public Carta(String nombre, String descripcion, int costo, Daño daño, Curación curación, Efecto efecto,
-            Secreto secreto) {
+    public Carta(String nombre, String descripcion, int costo, Daño daño, Cura cura, Efecto efecto,
+            Secreto secreto, Robar robar) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
         this.costoOriginal = costo;
         this.daño = daño;
-        this.curación = curación;
+        this.cura = cura;
         this.efecto = efecto;
         this.secreto = secreto;
+        this.robar = robar;
     }
 
     private boolean puedeJugarse(int manaActual) {
@@ -45,13 +47,19 @@ public class Carta {
             if (this.secreto != null) {
                 this.secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
             }
+            if (this.cura != null) {
+                this.cura.aplicarCura(jugadorAliado);
+            }
+            if (this.robar != null) {
+                this.robar.robarCarta(jugadorAliado);
+            }
             jugadorAliado.modificarMana(-this.costo);
         }
     }
 
     public void modificarAtaque(int cantidad) {
         if (this.daño != null) {
-            this.daño.aumentarDaño(cantidad);
+            this.daño.modificarDaño(cantidad);
         }
     }
 
@@ -76,6 +84,10 @@ public class Carta {
 
     public Efecto getEfecto() {
         return efecto;
+    }
+
+    public Daño getDaño() {
+        return daño;
     }
 
 }

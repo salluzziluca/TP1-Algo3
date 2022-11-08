@@ -3,7 +3,9 @@ package src;
 public interface Daño {
     public void aplicarDaño(Jugador jugadorEnemigo);
 
-    public void aumentarDaño(int cantidad);
+    public void modificarDaño(int cantidad);
 
     public void resetearValores();
+
+    public int getCantidad();
 }

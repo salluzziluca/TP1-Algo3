@@ -14,11 +14,15 @@ public class DañoNormal implements Daño {
         jugadorEnemigo.recibirDaño(cantidad);
     }
 
-    public void aumentarDaño(int cantidad) {
+    public void modificarDaño(int cantidad) {
         this.cantidad += cantidad;
     }
 
     public void resetearValores() {
         this.cantidad = this.cantidadOriginal;
+    }
+
+    public int getCantidad() {
+        return this.cantidad;
     }
 }

@@ -42,7 +42,7 @@ public class Berserk implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-
+        return;
     }
 
     @Override

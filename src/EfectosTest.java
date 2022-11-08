@@ -10,7 +10,7 @@ public class EfectosTest {
     @Test
     public void testearVeneno() {
         Veneno CartaDeVeneno = new Veneno(3);
-        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 8, null, null, CartaDeVeneno, null);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 8, null, null, CartaDeVeneno, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVeneno);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
@@ -28,7 +28,7 @@ public class EfectosTest {
     public void testarVulnerable() {
         Vulnerable CartaDeVulnerable = new Vulnerable(3);
         Carta cartaDeVulnerable = new Carta("Carta de Vulnerable", "Aplica vulnerable", 5, null, null,
-                CartaDeVulnerable, null);
+                CartaDeVulnerable, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVulnerable);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
@@ -45,9 +45,10 @@ public class EfectosTest {
     @Test
     public void testarAfilado() {
         Afilado CartaDeAfilado = new Afilado(3);
-        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 5, null, null, CartaDeAfilado, null);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 5, null, null, CartaDeAfilado, null,
+                null);
         DañoNormal CartaDeDañoNormal = new DañoNormal(3);
-        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 6, CartaDeDañoNormal, null, null, null);
+        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 6, CartaDeDañoNormal, null, null, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeAfilado);
         mazo.agregarCarta(cartaDeDaño);
@@ -67,12 +68,12 @@ public class EfectosTest {
     @Test
     public void testearDuracionDeEfectos() {
         Veneno veneno = new Veneno(3);
-        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null, null);
         Afilado afilado = new Afilado(2);
-        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null, null);
         Vulnerable vulnerable = new Vulnerable(6);
         Carta cartaDeVulnerable = new Carta("Carta de Vulnerable", "Aplica vulnerable", 0, null, null, vulnerable,
-                null);
+                null, null);
 
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVeneno);
@@ -100,7 +101,7 @@ public class EfectosTest {
     @Test
     public void testearBerserk() {
         Berserk berserk = new Berserk(3);
-        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null);
+        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeBerserk);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
@@ -116,9 +117,9 @@ public class EfectosTest {
     public void testearCatalizador() {
         Catalizador catalizador = new Catalizador();
         Carta cartaDeCatalizador = new Carta("Carta de Catalizador", "Aplica catalizador", 0, null, null, catalizador,
-                null);
+                null, null);
         Berserk berserk = new Berserk(3);
-        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null);
+        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeBerserk);
         mazo.agregarCarta(cartaDeCatalizador);
@@ -148,8 +149,9 @@ public class EfectosTest {
     @Test
     public void testearInflacionDespuesDeUnTurno() {
         Inflacion inflacion = new Inflacion(3);
-        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null);
-        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null);
+        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null,
+                null);
+        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaQueNoHaceNada);
         mazo.agregarCarta(cartaDeInflacion);
@@ -167,8 +169,9 @@ public class EfectosTest {
     @Test
     public void testearInflacionDespuesDeJugarLaCarta() {
         Inflacion inflacion = new Inflacion(3);
-        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null);
-        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null);
+        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null,
+                null);
+        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null, null);
         Mazo mazo1 = new Mazo();
         Mazo mazo2 = new Mazo();
         mazo1.agregarCarta(cartaQueNoHaceNada);
@@ -189,9 +192,9 @@ public class EfectosTest {
     public void testSetearEfecto() {
 
         Veneno veneno = new Veneno(3);
-        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null, null);
         Afilado afilado = new Afilado(3);
-        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null, null);
 
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVeneno);

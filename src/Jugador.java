@@ -169,8 +169,7 @@ public class Jugador {
         }
         if ((nombreEfecto == "Afilado" && buscarEfecto("Afilado"))
                 || nombreEfecto == "Inflacion"
-                        && buscarEfecto("Inflacion")
-                || nombreEfecto == "Berserk" && buscarEfecto("Berserk")) {
+                        && buscarEfecto("Inflacion")) {
             carta.efecto.aplicarEfecto(this);
         }
 
@@ -186,6 +185,16 @@ public class Jugador {
 
     public int getManaActual() {
         return this.manaActual;
+    }
+
+    public void aumentarVida(int cantidad) {
+        this.vida += cantidad;
+    }
+
+    public void robarCarta(int cantidad) {
+        for (int i = 0; i < cantidad; i++) {
+            this.robarCarta();
+        }
     }
 
 }
