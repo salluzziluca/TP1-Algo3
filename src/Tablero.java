@@ -21,13 +21,13 @@ public class Tablero {
         }
     }
 
-    public void setCartaEnJuego(Carta carta) {
+    public void setCartaEnJuego(Carta carta, Jugador jugador) {
         this.cartaEnJuego = carta;
-        notificar();
+        notificar(jugador);
     }
 
-    public void notificar() {
-        jugador1.update(cartaEnJuego, jugador2);
-        jugador2.update(cartaEnJuego, jugador1);
+    public void notificar(Jugador jugador) {
+        jugador1.update(cartaEnJuego, jugador2, jugador);
+        jugador2.update(cartaEnJuego, jugador1, jugador);
     }
 }

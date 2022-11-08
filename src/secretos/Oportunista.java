@@ -1,9 +1,10 @@
 package src.secretos;
 
-import src.*;
-import src.efectos.Inflacion;
+import src.Carta;
+import src.Jugador;
+import src.Secreto;
 
-public class Enormigus implements Secreto {
+public class Oportunista implements Secreto {
 
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
@@ -12,7 +13,7 @@ public class Enormigus implements Secreto {
 
     @Override
     public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
-        if (carta != null && jugador == jugadorEnemigo) {
+        if (carta != null && jugador == jugadorAliado) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
 
         }
@@ -20,13 +21,13 @@ public class Enormigus implements Secreto {
 
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
-        Inflacion inflacion = new Inflacion(carta.getCosto());
-        inflacion.setearEfecto(jugadorAliado, jugadorEnemigo);
+        jugadorAliado.robarCarta();
 
     }
 
     @Override
     public String getNombre() {
-        return "Enormigus";
+        return "Oportunista";
     }
+
 }

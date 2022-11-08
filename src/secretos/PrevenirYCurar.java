@@ -9,8 +9,8 @@ public class PrevenirYCurar implements Secreto {
     }
 
     @Override
-    public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (carta.getDaño() != null) {
+    public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
+        if (carta.getDaño() != null && jugador == jugadorEnemigo) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
 
         }
@@ -23,5 +23,10 @@ public class PrevenirYCurar implements Secreto {
         jugadorAliado.aumentarVida(cantidadDedaño * 2);
         jugadorAliado.robarCarta();
 
+    }
+
+    @Override
+    public String getNombre() {
+        return "Prevenir y Curar";
     }
 }

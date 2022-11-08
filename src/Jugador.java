@@ -158,17 +158,22 @@ public class Jugador {
         this.manaActual += i;
     }
 
-    public void update(Carta carta, Jugador jugadorEnemigo) {
+    public void update(Carta carta, Jugador jugadorEnemigo, Jugador jugador) {
         String nombreEfecto = new String();
+        String nombreSecreto = new String();
         for (Secreto secreto : secretos) {
-            secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo);
+            secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo, jugador);
         }
         // Si la carta es de efecto Afilado o Inflacion, entonces ejecutá ese efecto
         if (carta.getEfecto() != null) {
             nombreEfecto = carta.getEfecto().getNombre();
         }
+
+        if (carta.getSecreto() != null) {
+            nombreSecreto = carta.getSecreto().getNombre();
+        }
         if ((nombreEfecto == "Afilado" && buscarEfecto("Afilado"))
-                || nombreEfecto == "Inflacion"
+                || (nombreEfecto == "Inflacion" || nombreSecreto == "Enormigus")
                         && buscarEfecto("Inflacion")) {
             carta.efecto.aplicarEfecto(this);
         }

@@ -90,4 +90,8 @@ public class Carta {
         return daño;
     }
 
+    public Secreto getSecreto() {
+        return secreto;
+    }
+
 }

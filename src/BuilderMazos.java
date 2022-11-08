@@ -1,7 +1,7 @@
 package src;
 
 import src.efectos.*;
-
+import src.secretos.*;
 /*TODO: 
 Descripciones de las cartas dinamicas.
 Ver como hacer réplica
@@ -32,15 +32,30 @@ public class BuilderMazos {
                                 new Carta("Afilar", " Mejora 2 Afilado", 2, null, null, new Afilado(2), null, null));
 
                 mazoGuerrero.agregarCarta(
-                                new Carta("Oportunista", " Roba cartas igual al daño que hagas este turno", 1, null,
-                                                null, null, null, null)); // TODO
-
-                mazoGuerrero.agregarCarta(
                                 new Carta("Ira", "Mejora permanente Berserk; Gastar", 3, null, null, new Berserk(-1),
                                                 null, null));
 
                 // Secretos
-                // TODO
+
+                mazoGuerrero.agregarCarta(
+                                new Carta("Desviar",
+                                                "Secreto: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado",
+                                                2,
+                                                null,
+                                                null, null, new Desviar(), null));
+
+                mazoGuerrero.agregarCarta(
+                                new Carta("Imparable",
+                                                "Secreto: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpia el tipo de efecto que esta jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se pone",
+                                                1,
+                                                null,
+                                                null, null, new Imparable(), null));
+
+                mazoGuerrero.agregarCarta(
+                                new Carta("Oportunista",
+                                                "Secreto: La proxima vez que juegues una carta de daño, robas 3", 1,
+                                                null,
+                                                null, null, new Oportunista(), null));
 
                 return mazoGuerrero;
         }
@@ -49,36 +64,42 @@ public class BuilderMazos {
                 Mazo MazoAlquimista = new Mazo();
 
                 // Ataques
-                MazoAlquimista
-                                .agregarCarta(new Carta("Dardo Tóxico", "Daño 1; Inflige 1 Veneno", 1,
-                                                new DañoNormal(1), null,
-                                                new Veneno(1), null, null));
+                MazoAlquimista.agregarCarta(new Carta("Dardo Tóxico", "Daño 1; Inflige 1 Veneno", 1,
+                                new DañoNormal(1), null,
+                                new Veneno(1), null, null));
 
-                MazoAlquimista
-                                .agregarCarta(new Carta("Frasco de Toxinas", "Inflige 3 Veneno", 2, null, null,
-                                                new Veneno(3), null, null));
+                MazoAlquimista.agregarCarta(new Carta("Frasco de Toxinas", "Inflige 3 Veneno", 2, null, null,
+                                new Veneno(3), null, null));
 
                 MazoAlquimista.agregarCarta(new Carta("Combo", "Daño 1", 0, new DañoNormal(1), null, null, null, null));
 
                 // Bufos
-                MazoAlquimista
-                                .agregarCarta(new Carta("Veneno destilado",
-                                                "Cura igual a los efectos negativos que tenga el oponente; Roba 1 carta",
-                                                1, null, null,
-                                                null, null, null)); // TODO
+                MazoAlquimista.agregarCarta(new Carta("Veneno destilado",
+                                "Cura igual a los efectos negativos que tenga el oponente; Roba 1 carta",
+                                1, null, null,
+                                null, null, null)); // TODO
 
-                MazoAlquimista
-                                .agregarCarta(new Carta("Pocion de agilidad",
-                                                "Roba 2 cartas", 1, null, null,
-                                                null, null, null)); // TODO
+                MazoAlquimista.agregarCarta(new Carta("Pocion de agilidad",
+                                "Roba 2 cartas", 1, null, null,
+                                null, null, null)); // TODO
 
-                MazoAlquimista
-                                .agregarCarta(new Carta("Catalizador",
-                                                "Mejora Catalizador", 2, null, null,
-                                                new Catalizador(), null, null));
+                MazoAlquimista.agregarCarta(new Carta("Catalizador",
+                                "Mejora Catalizador", 2, null, null,
+                                new Catalizador(), null, null));
 
                 // Secretos
-                // TODO
+                MazoAlquimista.agregarCarta(
+                                new Carta("Enormigus",
+                                                "Secreto: La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada",
+                                                1,
+                                                null,
+                                                null, null, new Enormigus(), null));
+                MazoAlquimista.agregarCarta(
+                                new Carta("Prevenir y curar",
+                                                "Secreto: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta",
+                                                2,
+                                                null,
+                                                null, null, new PrevenirYCurar(), null));
 
                 return MazoAlquimista;
         }

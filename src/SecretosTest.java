@@ -27,9 +27,9 @@ public class SecretosTest {
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero1);
         jugador2.robarCarta();
-        jugador2.recorrerEfectos();
         jugador2.robarCarta();
         jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
+        jugador2.recorrerEfectos();
         jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
         assertEquals(19, jugador2.manaActual);
     }
