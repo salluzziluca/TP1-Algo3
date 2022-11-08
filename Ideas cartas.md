@@ -25,16 +25,16 @@ Los efectos reducen su duracion al final del turno
 	>#### Ataques:
 	>-  *Golpe* (1): Daño 2
 	>-  *Triturar* (3): Daño 3; Inflige 2 **Vulnerable**
-	>-  *Réplica* (2): 3 veces Daño 1
+	>-  *Réplica* (2): 3 veces Daño 1           // Lo podemos cambiar por que te cree tres cartas *Combo* (0): Daño 1 en la mano
 
 	>#### Bufos:
 	>- *Afilar* (2): Mejora 2 **Afilado**
-	>- *Oportunista* (1): Roba cartas igual al daño que hagas este turno
 	>- *Ira* (3): Mejora permanente **Berserk**; **Gastar**
 
 	>#### Secretos:
 	>- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado
 	>- *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpian todos los efectos de ese tipo que te afecten. 
+	>- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
 
 2) ## Alquimista
 	>#### Ataques:
@@ -48,5 +48,5 @@ Los efectos reducen su duracion al final del turno
 	>- *Catalizador* (2): Mejora **Catalizador**
 
 	>#### Secretos:
-	>- *Enormizar* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
+	>- *Enormigus* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
 	>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta
