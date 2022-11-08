@@ -33,7 +33,7 @@ Los efectos reducen su duracion al final del turno
 
 	>#### Secretos:
 	>- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado
-	>- *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpian todos los efectos de ese tipo que te afecten. 
+	>- *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpia el tipo de efecto que esta jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se pone 
 	>- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
 
 2) ## Alquimista

@@ -69,9 +69,6 @@ public class Jugador {
         if (buscarEfecto("Vulnerable")) {
             cantidad *= 2;
         }
-        if (buscarEfecto("Afilado")) { // TODO Estoy bastante seguro que esto está mal!!!
-            cantidad += 1;
-        }
         this.vida -= cantidad;
 
     }
@@ -82,6 +79,10 @@ public class Jugador {
 
     public void quitarEfecto(Efecto efecto) {
         this.efectos.remove(efecto);
+    }
+
+    public void quitarEfecto(String nombreEfecto) {
+        this.efectos.remove(buscarIndexEfecto(nombreEfecto));
     }
 
     /*
@@ -121,6 +122,16 @@ public class Jugador {
             }
         }
         return false;
+    }
+
+    public int buscarIndexEfecto(String nombreEfecto) {
+        for (int i = 0; i < this.efectos.size(); i++) {
+            Efecto efecto = this.efectos.get(i);
+            if (efecto.getNombre().equals(nombreEfecto)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /*

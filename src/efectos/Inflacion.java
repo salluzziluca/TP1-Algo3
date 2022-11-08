@@ -22,6 +22,10 @@ public class Inflacion implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+        if (jugadorAliado.buscarEfecto("Catalizador")) {
+            this.duracion *= 2;
+            jugadorAliado.quitarEfecto("Catalizador");
+        }
         jugadorEnemigo.agregarEfecto(this);
 
     }

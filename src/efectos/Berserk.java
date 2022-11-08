@@ -23,6 +23,7 @@ public class Berserk implements Efecto {
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         if (jugadorAliado.buscarEfecto("Catalizador")) {
             this.duracion *= 2;
+            jugadorAliado.quitarEfecto("Catalizador");
         }
         jugadorAliado.agregarEfecto(this);
         jugadorAliado.aumentarManaMaximo(1);
