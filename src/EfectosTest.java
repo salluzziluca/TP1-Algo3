@@ -61,12 +61,12 @@ public class EfectosTest {
         jugador1.mano.jugarCarta(1, jugador1, jugador2, tablero);
         jugador1.terminarTurno();
         jugador1.recorrerEfectos();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero); // Asumiendo que no se gastan las cartas!!!!
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
         assertEquals(6, jugador2.vida);
     }
 
     @Test
-    public void testearDuracionDeEfectos() { // ta mal el test
+    public void testearDuracionDeEfectos() {
         Veneno veneno = new Veneno(3);
         Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 1, null, null, veneno, null);
         Afilado afilado = new Afilado(2);
@@ -83,10 +83,10 @@ public class EfectosTest {
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
+        jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         for (int i = 0; i < 7; i++) {
             jugador1.terminarTurno();
