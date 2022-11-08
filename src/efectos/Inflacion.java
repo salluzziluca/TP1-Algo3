@@ -26,7 +26,12 @@ public class Inflacion implements Efecto {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
-        jugadorEnemigo.agregarEfecto(this);
+        if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
+            jugadorEnemigo.agregarDuracionAEfecto(getNombre(), duracion);
+
+        } else {
+            jugadorEnemigo.agregarEfecto(this);
+        }
 
     }
 
@@ -44,6 +49,11 @@ public class Inflacion implements Efecto {
     @Override
     public String getNombre() {
         return "Inflacion";
+    }
+
+    @Override
+    public void agregarDuracion(int duracion) {
+        this.duracion += duracion;
     }
 
 }

@@ -33,4 +33,8 @@ public class Catalizador implements Efecto {
         return "Catalizador";
     }
 
+    @Override
+    public void agregarDuracion(int duracion) {
+    }
+
 }

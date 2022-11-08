@@ -30,7 +30,13 @@ public class Afilado implements Efecto {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
-        jugadorAliado.agregarEfecto(this);
+        if (jugadorAliado.buscarEfecto(this.getNombre())) {
+            jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
+
+        } else {
+            jugadorAliado.agregarEfecto(this);
+        }
+
     }
 
     @Override
@@ -46,6 +52,11 @@ public class Afilado implements Efecto {
     @Override
     public String getNombre() {
         return "Afilado";
+    }
+
+    @Override
+    public void agregarDuracion(int duracion) {
+        this.duracion += duracion;
     }
 
 }

@@ -20,11 +20,17 @@ public class Veneno implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+
         if (jugadorAliado.buscarEfecto("Catalizador")) {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
-        jugadorEnemigo.agregarEfecto(this);
+        if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
+            jugadorEnemigo.agregarDuracionAEfecto(getNombre(), duracion);
+
+        } else {
+            jugadorEnemigo.agregarEfecto(this);
+        }
     }
 
     @Override
@@ -40,6 +46,11 @@ public class Veneno implements Efecto {
     @Override
     public String getNombre() {
         return "Veneno";
+    }
+
+    @Override
+    public void agregarDuracion(int duracion) {
+        this.duracion += duracion;
     }
 
 }

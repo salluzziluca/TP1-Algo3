@@ -30,7 +30,12 @@ public class Vulnerable implements Efecto {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
-        jugadorEnemigo.agregarEfecto(this);
+        if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
+            jugadorEnemigo.agregarDuracionAEfecto(getNombre(), duracion);
+
+        } else {
+            jugadorEnemigo.agregarEfecto(this);
+        }
     }
 
     @Override
@@ -42,4 +47,10 @@ public class Vulnerable implements Efecto {
     public String getNombre() {
         return "Vulnerable";
     }
+
+    @Override
+    public void agregarDuracion(int duracion) {
+        this.duracion += duracion;
+    }
+
 }

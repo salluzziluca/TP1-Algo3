@@ -13,4 +13,6 @@ public interface Efecto {
     public void aplicarEfecto(Jugador jugador);
 
     public String getNombre();
+
+    public void agregarDuracion(int duracion2);
 }

@@ -85,6 +85,10 @@ public class Jugador {
         this.efectos.remove(buscarIndexEfecto(nombreEfecto));
     }
 
+    public void agregarDuracionAEfecto(String nombreEfecto, int duracion) {
+        this.efectos.get(buscarIndexEfecto(nombreEfecto)).agregarDuracion(duracion);
+    }
+
     /*
      * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
      * que su efecto se aplique

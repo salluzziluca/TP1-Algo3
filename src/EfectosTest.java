@@ -184,4 +184,45 @@ public class EfectosTest {
         jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
         assertEquals(1, jugador2.manaActual);
     }
+
+    @Test
+    public void testSetearEfecto() {
+
+        Veneno veneno = new Veneno(3);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 0, null, null, veneno, null);
+        Afilado afilado = new Afilado(3);
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, afilado, null);
+
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeVeneno);
+        mazo.agregarCarta(cartaDeVeneno);
+        mazo.agregarCarta(cartaDeAfilado);
+        mazo.agregarCarta(cartaDeAfilado);
+
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
+        Tablero tablero = new Tablero(jugador1, jugador2);
+        jugador1.manaActual = 10;
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        for (int i = 0; i < 4; i++) {
+            jugador1.terminarTurno();
+            jugador2.terminarTurno();
+        }
+        assertEquals(false, jugador1.efectos.isEmpty());
+        assertEquals(false, jugador2.efectos.isEmpty());
+        for (int i = 0; i < 4; i++) {
+            jugador1.terminarTurno();
+            jugador2.terminarTurno();
+        }
+        assertEquals(true, jugador1.efectos.isEmpty());
+        assertEquals(true, jugador2.efectos.isEmpty());
+    }
+
 }

@@ -25,8 +25,13 @@ public class Berserk implements Efecto {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
-        jugadorAliado.agregarEfecto(this);
-        jugadorAliado.aumentarManaMaximo(1);
+        if (jugadorAliado.buscarEfecto(this.getNombre())) {
+            jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
+        } else {
+
+            jugadorAliado.agregarEfecto(this);
+            jugadorAliado.aumentarManaMaximo(1);
+        }
     }
 
     @Override
@@ -43,6 +48,11 @@ public class Berserk implements Efecto {
     @Override
     public String getNombre() {
         return "Berserk";
+    }
+
+    @Override
+    public void agregarDuracion(int duracion) {
+        this.duracion += duracion;
     }
 
 }
