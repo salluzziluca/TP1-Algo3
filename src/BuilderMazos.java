@@ -2,10 +2,6 @@ package src;
 
 import src.efectos.*;
 import src.secretos.*;
-/*TODO: 
-Descripciones de las cartas dinamicas.
-Testear el buider
-*/
 
 public class BuilderMazos {
         public Mazo crearMazoGuerrero() {
