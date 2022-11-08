@@ -3,6 +3,8 @@ package src;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import src.efectos.Veneno;
 import src.secretos.*;
 
 public class SecretosTest {
@@ -82,6 +84,47 @@ public class SecretosTest {
         assertEquals(10, jugador2.vida);
         assertEquals(12, jugador1.vida);
         assertEquals(1, jugador1.getCantidadCartasEnMano());
+
+    }
+
+    @Test
+    public void testearImparable() {
+        Imparable imparable = new Imparable();
+        Carta cartaDeImparable = new Carta("Carta de Imparable", "Imparable pa", 3, null, null, null,
+                imparable, null);
+        Veneno veneno = new Veneno(2);
+        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Veneno pa", 3, null, null, veneno,
+                null, null);
+        Mazo mazo1 = new Mazo();
+        mazo1.agregarCarta(cartaDeImparable);
+        Mazo mazo2 = new Mazo();
+        mazo2.agregarCarta(cartaDeVeneno);
+        mazo2.agregarCarta(cartaDeVeneno);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 30, new Mano(), mazo2);
+        jugador1.manaActual = 10;
+        jugador2.manaActual = 30;
+        Tablero tablero1 = new Tablero(jugador1, jugador2);
+        jugador2.robarCarta();
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero1);
+        jugador2.robarCarta();
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
+        assertEquals(0, jugador1.efectos.size());
+
+        jugador1 = null;
+        jugador2 = null;
+        jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
+        jugador2 = new Jugador("Jugador 2", 10, 30, new Mano(), mazo2);
+        jugador1.manaActual = 10;
+        jugador2.manaActual = 30;
+        tablero1 = new Tablero(jugador1, jugador2);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero1);
+        jugador2.robarCarta();
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero1);
+        assertEquals(0, jugador1.efectos.size());
 
     }
 }
