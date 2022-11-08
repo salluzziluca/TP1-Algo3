@@ -102,7 +102,7 @@ public class Jugador {
             Efecto efectoActual = this.efectos.get(i);
             efectoActual.aplicarEfecto(this);
 
-            if (efectoActual.getNombre() == "Catalizador" && this.efectos.size() > 1) {
+            if (efectoActual.getNombre() == "Catalizador" && i != this.efectos.size() - 1) {
                 posicionEfectoACatalizar = i;
                 posicionEfectoACatalizar++;
                 catalizadorFueUsado = true;
