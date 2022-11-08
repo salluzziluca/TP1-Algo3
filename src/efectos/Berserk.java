@@ -15,13 +15,17 @@ public class Berserk implements Efecto {
         this.duracion--;
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
+            jugadorAliado.aumentarManaMaximo(-1);
         }
     }
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-
+        if (jugadorAliado.buscarEfecto("Catalizador")) {
+            this.duracion *= 2;
+        }
         jugadorAliado.agregarEfecto(this);
+        jugadorAliado.aumentarManaMaximo(1);
     }
 
     @Override
@@ -32,7 +36,6 @@ public class Berserk implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarManaMaximo(1);
 
     }
 

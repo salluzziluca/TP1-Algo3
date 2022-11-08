@@ -94,26 +94,8 @@ public class Jugador {
      * Luego, si el catalizador fue usado, lo elimina de la lista de efectos
      */
     void recorrerEfectos() {
-        boolean catalizadorFueUsado = false;
-        int posicionEfectoACatalizar = -1;
-
-        for (int i = 0; i < this.efectos.size(); i++) {
-
-            Efecto efectoActual = this.efectos.get(i);
-            efectoActual.aplicarEfecto(this);
-
-            if (efectoActual.getNombre() == "Catalizador" && i != this.efectos.size() - 1) {
-                posicionEfectoACatalizar = i;
-                posicionEfectoACatalizar++;
-                catalizadorFueUsado = true;
-            }
-            if (i == posicionEfectoACatalizar) {
-                this.efectos.get(i).aplicarEfecto(this);
-            }
-        }
-
-        if (catalizadorFueUsado) {
-            this.efectos.remove(posicionEfectoACatalizar - 1);
+        for (Efecto Efecto : this.efectos) {
+            Efecto.aplicarEfecto(this);
         }
 
     }
@@ -132,7 +114,7 @@ public class Jugador {
      * Comprueba si el efecto pasado por parametro esta en la lista de efectos del
      * jugador
      */
-    private boolean buscarEfecto(String nombreEfecto) {
+    public boolean buscarEfecto(String nombreEfecto) {
         for (Efecto efecto : efectos) {
             if (efecto.getNombre().equals(nombreEfecto)) {
                 return true;
@@ -171,7 +153,9 @@ public class Jugador {
             nombreEfecto = carta.getEfecto().getNombre();
         }
         if ((nombreEfecto == "Afilado" && buscarEfecto("Afilado"))
-                || nombreEfecto == "Inflacion" && buscarEfecto("Inflacion")) {
+                || nombreEfecto == "Inflacion"
+                        && buscarEfecto("Inflacion")
+                || nombreEfecto == "Berserk" && buscarEfecto("Berserk")) {
             carta.efecto.aplicarEfecto(this);
         }
 

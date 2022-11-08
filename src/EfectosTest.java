@@ -37,7 +37,6 @@ public class EfectosTest {
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador2.recorrerEfectos();
         jugador2.recibirDaño(3);
         assertEquals(jugador2.vida, 4);
 
@@ -109,7 +108,6 @@ public class EfectosTest {
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.recorrerEfectos();
         assertEquals(11, jugador1.manaMaximo);
         assertEquals(1, jugador1.manaActual);
     }
@@ -132,9 +130,19 @@ public class EfectosTest {
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         jugador1.recorrerEfectos();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.recorrerEfectos();
-        assertEquals(12, jugador1.manaMaximo);
-        assertEquals(2, jugador1.manaActual);
+        assertEquals(11, jugador1.manaMaximo);
+        for (int i = 0; i < 4; i++) {
+            jugador1.terminarTurno();
+            jugador2.terminarTurno();
+        }
+        assertEquals(11, jugador1.manaMaximo);
+
+        for (int i = 0; i < 2; i++) {
+            jugador1.terminarTurno();
+            jugador2.terminarTurno();
+        }
+        assertEquals(10, jugador1.manaMaximo);
+
     }
 
     @Test

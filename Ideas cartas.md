@@ -43,7 +43,7 @@ Los efectos reducen su duracion al final del turno
 	>-  *Combo* (0): Daño 1
 
 	>#### Bufos:
-	>- *Veneno destilado* (1): Cura igual a los efectos negativos que tenga el oponente; Roba 1 carta
+	>- *Veneno destilado* (1): Cura igual a los efectos que tenga el oponente; Roba 1 carta
 	>- *Poción de Agilidad* (1): Roba 2 cartas
 	>- *Catalizador* (2): Mejora **Catalizador**
 
