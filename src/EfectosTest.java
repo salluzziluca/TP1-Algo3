@@ -91,6 +91,7 @@ public class EfectosTest {
         for (int i = 0; i < 7; i++) {
             jugador1.terminarTurno();
         }
+        boolean estaVacia = jugador1.efectos.isEmpty();
         assertEquals(true, jugador1.efectos.isEmpty());
 
     }
@@ -109,6 +110,29 @@ public class EfectosTest {
         jugador1.recorrerEfectos();
         assertEquals(11, jugador1.manaMaximo);
         assertEquals(1, jugador1.manaActual);
+    }
+
+    @Test
+    public void testearCatalizador() {
+        Catalizador catalizador = new Catalizador();
+        Carta cartaDeCatalizador = new Carta("Carta de Catalizador", "Aplica catalizador", 0, null, null, catalizador,
+                null);
+        Berserk berserk = new Berserk(3);
+        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null);
+        Mazo mazo = new Mazo();
+        mazo.agregarCarta(cartaDeBerserk);
+        mazo.agregarCarta(cartaDeCatalizador);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
+        Tablero tablero = new Tablero(jugador1, jugador2);
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
+        jugador1.recorrerEfectos();
+        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
+        jugador1.recorrerEfectos();
+        assertEquals(12, jugador1.manaMaximo);
+        assertEquals(2, jugador1.manaActual);
     }
 
     @Test

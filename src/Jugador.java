@@ -87,11 +87,35 @@ public class Jugador {
     /*
      * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
      * que su efecto se aplique
+     * Si el efecto es "catalizador", almacena un la posicion del efecto a catalizar
+     * (el siguiente en aparecer)
+     * Cuando la posicion almacenada y la actual coinciden, aplica el efecto dos
+     * veces.
+     * Luego, si el catalizador fue usado, lo elimina de la lista de efectos
      */
     void recorrerEfectos() {
-        for (Efecto efecto : this.efectos) {
-            efecto.aplicarEfecto(this);
+        boolean catalizadorFueUsado = false;
+        int posicionEfectoACatalizar = -1;
+
+        for (int i = 0; i < this.efectos.size(); i++) {
+
+            Efecto efectoActual = this.efectos.get(i);
+            efectoActual.aplicarEfecto(this);
+
+            if (efectoActual.getNombre() == "Catalizador" && this.efectos.size() > 1) {
+                posicionEfectoACatalizar = i;
+                posicionEfectoACatalizar++;
+                catalizadorFueUsado = true;
+            }
+            if (i == posicionEfectoACatalizar) {
+                this.efectos.get(i).aplicarEfecto(this);
+            }
         }
+
+        if (catalizadorFueUsado) {
+            this.efectos.remove(posicionEfectoACatalizar - 1);
+        }
+
     }
 
     /*
