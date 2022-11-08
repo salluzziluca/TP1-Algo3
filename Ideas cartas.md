@@ -23,30 +23,31 @@ Los efectos reducen su duracion al final del turno
 # Mazos
 1) ## Guerrero
 	>#### Ataques:
-	>-  *Golpe* (1): Daño 2
+	>-  *Réplica* (1): Daño 1; Robar 1
+	>-  *Golpe* (2): Daño 4
 	>-  *Triturar* (3): Daño 3; Inflige 2 **Vulnerable**
-	>-  *Réplica* (2): 3 veces Daño 1
+
 
 	>#### Bufos:
 	>- *Afilar* (2): Mejora 2 **Afilado**
-	>- *Oportunista* (1): Roba 1 carta por cada carta jugada este turno +1
 	>- *Ira* (3): Mejora permanente **Berserk**; **Gastar**
 
 	>#### Secretos:
+
+	>- *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpia el tipo de efecto que esta jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se pone 
+	>- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
 	>- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado
-	>- *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpian todos los efectos de ese tipo que te afecten. 
 
 2) ## Alquimista
 	>#### Ataques:
+	>-  *Combo* (0): Daño 1
 	>-  *Dardo Tóxico* (1): Daño 1; Inflige 1 **Veneno**
 	>-  *Frasco de Toxinas* (2): Inflige 3 **Veneno**
-	>-  *Combo* (0): Daño 1
 
 	>#### Bufos:
-	>- *Veneno destilado* (1): Cura igual a los efectos negativos que tenga el oponente; Roba 1 carta
 	>- *Poción de Agilidad* (1): Roba 2 cartas
 	>- *Catalizador* (2): Mejora **Catalizador**
 
 	>#### Secretos:
-	>- *Enormizar* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** igual al coste de esa carta
+	>- *Enormigus* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
 	>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta

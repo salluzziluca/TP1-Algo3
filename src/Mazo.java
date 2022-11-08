@@ -13,10 +13,27 @@ public class Mazo {
         cartas.add(carta);
     }
 
+    /*
+     * Devuelve la primera carta del mazo y la elimina del mismo
+     */
     public Carta darCarta() {
-        int randomIndex = (int) (Math.random() * cartas.size());
-        Carta carta = cartas.remove(randomIndex);
+        int ultimaPosicion = cartas.size() - 1;
+        Carta carta = cartas.remove(ultimaPosicion);
         return carta;
 
+    }
+
+    /*
+     * Mezcla las cartas del mazo aleatoreamente
+     */
+    public void mezclar() {
+        ArrayList<Carta> cartasBarajadas = new ArrayList<Carta>();
+        int cantidadCartas = cartas.size();
+        for (int i = 0; i < cantidadCartas; i++) {
+            int posicionAleatoria = (int) (Math.random() * cartas.size());
+            Carta carta = cartas.remove(posicionAleatoria);
+            cartasBarajadas.add(carta);
+        }
+        cartas = cartasBarajadas;
     }
 }
