@@ -66,7 +66,7 @@ public class EfectosTest {
     }
 
     @Test
-    public void testearDuracionDeEfectos() {
+    public void testearDuracionDeEfectos() { // ta mal el test
         Veneno veneno = new Veneno(3);
         Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 1, null, null, veneno, null);
         Afilado afilado = new Afilado(2);
@@ -91,7 +91,6 @@ public class EfectosTest {
         for (int i = 0; i < 7; i++) {
             jugador1.terminarTurno();
         }
-        boolean estaVacia = jugador1.efectos.isEmpty();
         assertEquals(true, jugador1.efectos.isEmpty());
 
     }

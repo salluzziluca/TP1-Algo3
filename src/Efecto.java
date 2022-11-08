@@ -5,7 +5,8 @@ public interface Efecto {
 
     public void reducirDuracion(Jugador jugadorAliado);
 
-    public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo);
+    public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo);// TODO si ya esta el efecto tiene que
+                                                                            // aumentar la duracion del que ya esta!!
 
     public void quitarEfecto(Jugador jugadorAliado);
 

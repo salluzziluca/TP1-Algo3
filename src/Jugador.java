@@ -47,7 +47,7 @@ public class Jugador {
      * mediante
      * terminarTurno
      */
-    void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
+    public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
         pasarTurno = false;
         manaActual = manaMaximo;
         this.recorrerEfectos();
@@ -69,7 +69,7 @@ public class Jugador {
         if (buscarEfecto("Vulnerable")) {
             cantidad *= 2;
         }
-        if (buscarEfecto("Afilado")) {
+        if (buscarEfecto("Afilado")) { // TODO Estoy bastante seguro que esto está mal!!!
             cantidad += 1;
         }
         this.vida -= cantidad;
@@ -87,7 +87,7 @@ public class Jugador {
     /*
      * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
      * que su efecto se aplique
-     * Si el efecto es "catalizador", almacena un la posicion del efecto a catalizar
+     * Si el efecto es "catalizador", almacena la posicion del efecto a catalizar
      * (el siguiente en aparecer)
      * Cuando la posicion almacenada y la actual coinciden, aplica el efecto dos
      * veces.
