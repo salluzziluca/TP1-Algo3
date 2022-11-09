@@ -4,7 +4,7 @@ public class Tablero {
     private Jugador jugador1;
     private Jugador jugador2;
     private Carta cartaEnJuego;
-    private int turno;
+    private int turno; // TODO Por ahora no lo usamos
 
     public Tablero(Jugador jugador1, Jugador jugador2) {
         this.jugador1 = jugador1;

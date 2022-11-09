@@ -51,3 +51,4 @@ Los efectos reducen su duracion al final del turno
 	>#### Secretos:
 	>- *Enormigus* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
 	>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta
+	>- Trampa Venenosa (2): **Secreto**: La proxima vez que tu oponente juegue una carta de Daño, le aplicas Veneno igual al daño de la carta

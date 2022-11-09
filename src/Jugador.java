@@ -27,36 +27,18 @@ public class Jugador {
         this.mano.agregarCarta(mazo);
     }
 
+    public void robarCarta(int cantidad) {
+        for (int i = 0; i < cantidad; i++) {
+            this.robarCarta();
+        }
+    }
+
     public int getCantidadCartasEnMano() {
         return this.mano.getCantidadCartasEnMano();
     }
 
     public boolean estaVivo() {
         return this.vida > 0;
-    }
-
-    private int pedirPosicionCarta() {
-        int posicionCarta = Integer.parseInt(System.console().readLine());
-        return posicionCarta;
-    }
-
-    /*
-     * Juega un turno completo del jugador, recorriendo los efectos para aplicarlos,
-     * robando
-     * y jugando cartas y finalmente reduciendo la duracion de todos sus efectos
-     * mediante
-     * terminarTurno
-     */
-    public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
-        pasarTurno = false;
-        manaActual = manaMaximo;
-        this.recorrerEfectos();
-        this.robarCarta();
-        while (!pasarTurno) {
-            int posicionCarta = this.pedirPosicionCarta();
-            this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
-        }
-        this.terminarTurno();
     }
 
     /*
@@ -71,6 +53,11 @@ public class Jugador {
         }
         this.vida -= cantidad;
 
+    }
+
+    private int pedirPosicionCarta() {
+        int posicionCarta = Integer.parseInt(System.console().readLine()); // TODO interfaz
+        return posicionCarta;
     }
 
     public void agregarEfecto(Efecto efecto) {
@@ -103,16 +90,6 @@ public class Jugador {
             Efecto.aplicarEfecto(this);
         }
 
-    }
-
-    /*
-     * Reduce la duracion de todos los efectos del jugador
-     */
-    void terminarTurno() {
-        for (int i = 0; i < this.efectos.size(); i++) {
-            Efecto efecto = this.efectos.get(i);
-            efecto.reducirDuracion(this);
-        }
     }
 
     /*
@@ -158,6 +135,22 @@ public class Jugador {
         this.manaActual += i;
     }
 
+    public void agregarSecreto(Secreto secreto) {
+        this.secretos.add(secreto);
+    }
+
+    public void quitarSecreto(Secreto secreto) {
+        this.secretos.remove(secreto);
+    }
+
+    public void aumentarVida(int cantidad) {
+        this.vida += cantidad;
+    }
+
+    public int getManaActual() {
+        return this.manaActual;
+    }
+
     public void update(Carta carta, Jugador jugadorEnemigo, Jugador jugador) {
         String nombreEfecto = new String();
         String nombreSecreto = new String();
@@ -174,31 +167,38 @@ public class Jugador {
         }
         if ((nombreEfecto == "Afilado" && buscarEfecto("Afilado"))
                 || (nombreEfecto == "Inflacion" || nombreSecreto == "Enormigus")
-                        && buscarEfecto("Inflacion")) {
+                        && buscarEfecto("Inflacion")) { // TODO ???????????????????????????????
             carta.efecto.aplicarEfecto(this);
         }
 
     }
 
-    public void agregarSecreto(Secreto secreto) {
-        this.secretos.add(secreto);
+    /*
+     * Juega un turno completo del jugador, recorriendo los efectos para aplicarlos,
+     * robando
+     * y jugando cartas y finalmente reduciendo la duracion de todos sus efectos
+     * mediante
+     * terminarTurno
+     */
+    public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
+        pasarTurno = false;
+        manaActual = manaMaximo;
+        this.recorrerEfectos();
+        this.robarCarta();
+        while (!pasarTurno) {
+            int posicionCarta = this.pedirPosicionCarta();
+            this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
+        }
+        this.terminarTurno();
     }
 
-    public void quitarSecreto(Secreto secreto) {
-        this.secretos.remove(secreto);
-    }
-
-    public int getManaActual() {
-        return this.manaActual;
-    }
-
-    public void aumentarVida(int cantidad) {
-        this.vida += cantidad;
-    }
-
-    public void robarCarta(int cantidad) {
-        for (int i = 0; i < cantidad; i++) {
-            this.robarCarta();
+    /*
+     * Reduce la duracion de todos los efectos del jugador
+     */
+    void terminarTurno() {
+        for (int i = 0; i < this.efectos.size(); i++) {
+            Efecto efecto = this.efectos.get(i);
+            efecto.reducirDuracion(this);
         }
     }
 

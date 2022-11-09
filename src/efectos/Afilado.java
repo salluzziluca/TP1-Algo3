@@ -30,9 +30,9 @@ public class Afilado implements Efecto {
             this.duracion *= 2;
             jugadorAliado.quitarEfecto("Catalizador");
         }
+
         if (jugadorAliado.buscarEfecto(this.getNombre())) {
             jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
-
         } else {
             jugadorAliado.agregarEfecto(this);
         }
