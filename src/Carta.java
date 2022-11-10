@@ -93,5 +93,4 @@ public class Carta {
     public Secreto getSecreto() {
         return secreto;
     }
-
 }
