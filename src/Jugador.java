@@ -15,7 +15,7 @@ public class Jugador {
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
         this.vida = vida;
         this.manaMaximo = mana;
-        this.manaActual = 0;
+        this.manaActual = manaMaximo;
         this.mano = mano;
         this.mazo = mazo;
         this.efectos = new ArrayList<Efecto>();
@@ -24,7 +24,7 @@ public class Jugador {
     }
 
     public void robarCarta() {
-        this.mano.agregarCarta(mazo);
+        this.mano.agregarCarta(mazo, this);
     }
 
     public void robarCarta(int cantidad) {
@@ -184,6 +184,12 @@ public class Jugador {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
             efecto.reducirDuracion(this);
+        }
+    }
+
+    public void aplicarEfectosACarta(Carta cartaRobada) {
+        for (Efecto efecto : this.efectos) {
+            efecto.aplicarEfectoACarta(cartaRobada);
         }
     }
 

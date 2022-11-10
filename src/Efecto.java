@@ -11,6 +11,8 @@ public interface Efecto {
 
     public void aplicarEfecto(Jugador jugador);
 
+    public void aplicarEfectoACarta(Carta carta);
+
     public String getNombre();
 
     public void agregarDuracion(int duracion2);

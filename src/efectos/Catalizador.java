@@ -1,5 +1,6 @@
 package src.efectos;
 
+import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
@@ -21,6 +22,11 @@ public class Catalizador implements Efecto {
     @Override
     public void quitarEfecto(Jugador jugadorAliado) {
         jugadorAliado.quitarEfecto(this);
+    }
+
+    @Override
+    public void aplicarEfectoACarta(Carta carta) {
+        return;
     }
 
     @Override

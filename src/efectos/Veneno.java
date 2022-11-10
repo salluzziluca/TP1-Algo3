@@ -1,5 +1,6 @@
 package src.efectos;
 
+import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
@@ -31,6 +32,11 @@ public class Veneno implements Efecto {
         } else {
             jugadorEnemigo.agregarEfecto(this);
         }
+    }
+
+    @Override
+    public void aplicarEfectoACarta(Carta carta) {
+        return;
     }
 
     @Override

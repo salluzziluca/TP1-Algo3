@@ -18,8 +18,9 @@ public class Mano {
     /*
      * Roba una carta del mazo y la agrega a la mano
      */
-    public void agregarCarta(Mazo mazo) {
+    public void agregarCarta(Mazo mazo, Jugador jugador) {
         Carta cartaRobada = mazo.darCarta();
+        jugador.aplicarEfectosACarta(cartaRobada);
         this.manoActual.add(cartaRobada);
         this.cantCartasEnMano++;
     }

@@ -1,5 +1,6 @@
 package src.efectos;
 
+import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
@@ -32,6 +33,11 @@ public class Berserk implements Efecto {
             jugadorAliado.agregarEfecto(this);
             jugadorAliado.aumentarManaMaximo(1);
         }
+    }
+
+    @Override
+    public void aplicarEfectoACarta(Carta carta) {
+        return;
     }
 
     @Override

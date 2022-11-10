@@ -1,5 +1,6 @@
 package src.efectos;
 
+import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
@@ -31,20 +32,23 @@ public class Inflacion implements Efecto {
 
         } else {
             jugadorEnemigo.agregarEfecto(this);
-            this.aplicarEfecto(jugadorEnemigo);
+            jugadorEnemigo.aumentarValorCartas();
         }
-
     }
 
     @Override
     public void quitarEfecto(Jugador jugadorAliado) {
         jugadorAliado.quitarEfecto(this);
-
     }
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.aumentarValorCartas();
+        return;
+    }
+
+    @Override
+    public void aplicarEfectoACarta(Carta carta) {
+        carta.aumentarValor();
     }
 
     @Override

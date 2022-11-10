@@ -45,22 +45,20 @@ public class EfectosTest {
     @Test
     public void testarAfilado() {
         Afilado CartaDeAfilado = new Afilado(3);
-        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 5, null, null, CartaDeAfilado, null,
+        Carta cartaDeAfilado = new Carta("Carta de Afilado", "Aplica afilado", 0, null, null, CartaDeAfilado, null,
                 null);
         DañoNormal CartaDeDañoNormal = new DañoNormal(3);
-        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 6, CartaDeDañoNormal, null, null, null, null);
+        Carta cartaDeDaño = new Carta("Carta de Daño", "Hace daño", 0, CartaDeDañoNormal, null, null, null, null);
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeAfilado);
         mazo.agregarCarta(cartaDeDaño);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
-        jugador1.manaActual = 20;
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(1, jugador1, jugador2, tablero);
         jugador1.terminarTurno();
-        jugador1.recorrerEfectos();
         jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
         assertEquals(6, jugador2.vida);
     }
@@ -110,7 +108,7 @@ public class EfectosTest {
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         assertEquals(11, jugador1.manaMaximo);
-        assertEquals(1, jugador1.manaActual);
+        assertEquals(11, jugador1.manaActual);
     }
 
     @Test
@@ -174,16 +172,36 @@ public class EfectosTest {
         Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null, null);
         Mazo mazo1 = new Mazo();
         Mazo mazo2 = new Mazo();
-        mazo1.agregarCarta(cartaQueNoHaceNada);
-        mazo2.agregarCarta(cartaDeInflacion);
-        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo2);
-        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo1);
+        mazo1.agregarCarta(cartaDeInflacion);
+        mazo2.agregarCarta(cartaQueNoHaceNada);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo2);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.manaActual = 10;
         jugador2.manaActual = 10;
         jugador1.robarCarta();
         jugador2.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
+        assertEquals(1, jugador2.manaActual);
+    }
+
+    @Test
+    public void testearInflacionDespuesDeRobarCarta() {
+        Inflacion inflacion = new Inflacion(3);
+        Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null,
+                null);
+        Carta cartaQueNoHaceNada = new Carta("Carta que no hace nada", "No hace nada", 8, null, null, null, null, null);
+        Mazo mazo1 = new Mazo();
+        Mazo mazo2 = new Mazo();
+        mazo1.agregarCarta(cartaDeInflacion);
+        mazo2.agregarCarta(cartaQueNoHaceNada);
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo2);
+        Tablero tablero = new Tablero(jugador1, jugador2);
+        jugador1.robarCarta();
+        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador2.robarCarta();
         jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
         assertEquals(1, jugador2.manaActual);
     }

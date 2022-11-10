@@ -1,5 +1,6 @@
 package src.efectos;
 
+import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
@@ -36,6 +37,11 @@ public class Vulnerable implements Efecto {
         } else {
             jugadorEnemigo.agregarEfecto(this);
         }
+    }
+
+    @Override
+    public void aplicarEfectoACarta(Carta carta) {
+        return;
     }
 
     @Override
