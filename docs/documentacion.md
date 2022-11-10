@@ -1,1 +1,2 @@
-No creo que sea necesario pero henos aqui
+# Ejecución del Programa
+A la hora de correrlo desde VSC necesitaremos tener instalado el [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Al instalar las 6 extensiones contenidas en ese paquete se deberia inicializar el java project y deberia aparecer el siguiente icono en la barra de herramientas lateral. De ahi se puede correr y debuggear todos los tests. :)

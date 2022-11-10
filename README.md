@@ -1,7 +1,7 @@
 # TP1-Algo3
 1er TP de la materia Algoritmos y Programacion III de la Facultad de Ingeniería de la Universidad de Buenos Aires
 
-## Integrante
+## Integrantes
 Agustín Conti y Luca Salluzzi 
 
 ## Descripción del Juego
