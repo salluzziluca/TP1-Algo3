@@ -5,7 +5,7 @@ import src.Jugador;
 import src.Carta;
 
 /*
-* Al jugarse esta carta, las cartas de Daño del jugador que la juega tienen +1 de daño
+* Al jugarse esta carta, las cartas de Daño del jugador que la juega tienen +1 de daño.
 */
 public class Afilado implements Efecto {
     private int duracion;
@@ -36,7 +36,7 @@ public class Afilado implements Efecto {
         }
 
         if (jugadorAliado.buscarEfecto(this.getNombre())) {
-            jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
+            jugadorAliado.modificarDuracionAEfecto(getNombre(), duracion);
         } else {
             jugadorAliado.agregarEfecto(this);
             jugadorAliado.modificarAtaque(1);
@@ -66,7 +66,7 @@ public class Afilado implements Efecto {
     }
 
     @Override
-    public void agregarDuracion(int duracion) {
+    public void modificarDuracion(int duracion) {
         this.duracion += duracion;
     }
 

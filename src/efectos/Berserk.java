@@ -4,6 +4,9 @@ import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
+/*
+ * Al instanciarse este efecto en el array de efectos de un jugador, este recibe +1 de maná maximo.
+ */
 public class Berserk implements Efecto {
     public int duracion;
 
@@ -27,7 +30,7 @@ public class Berserk implements Efecto {
             jugadorAliado.quitarEfecto("Catalizador");
         }
         if (jugadorAliado.buscarEfecto(this.getNombre())) {
-            jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
+            jugadorAliado.modificarDuracionAEfecto(getNombre(), duracion);
         } else {
 
             jugadorAliado.agregarEfecto(this);
@@ -57,7 +60,7 @@ public class Berserk implements Efecto {
     }
 
     @Override
-    public void agregarDuracion(int duracion) {
+    public void modificarDuracion(int duracion) {
         this.duracion += duracion;
     }
 

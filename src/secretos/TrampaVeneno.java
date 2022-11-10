@@ -3,6 +3,9 @@ package src.secretos;
 import src.*;
 import src.efectos.Veneno;
 
+/*
+ * Al instanciarse este secreto en el array de secretos de un jugador, La proxima vez que su oponente juegue una carta de Daño, le aplica Veneno igual al daño de la carta.
+ */
 public class TrampaVeneno implements Secreto {
 
     @Override

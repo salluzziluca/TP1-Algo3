@@ -108,7 +108,7 @@ public class EfectosTest {
         jugador1.robarCarta();
         jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
         assertEquals(11, jugador1.manaMaximo);
-        assertEquals(11, jugador1.manaActual);
+        assertEquals(10, jugador1.manaActual);
     }
 
     @Test

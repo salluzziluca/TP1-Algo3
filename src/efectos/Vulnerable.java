@@ -4,6 +4,9 @@ import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
+/*
+ * Al instanciarse este efecto en el array de efectos de un jugador, este recibe el doble de daño de cartas de daño
+ */
 public class Vulnerable implements Efecto {
 
     private int duracion;
@@ -32,7 +35,7 @@ public class Vulnerable implements Efecto {
             jugadorAliado.quitarEfecto("Catalizador");
         }
         if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
-            jugadorEnemigo.agregarDuracionAEfecto(getNombre(), duracion);
+            jugadorEnemigo.modificarDuracionAEfecto(getNombre(), duracion);
 
         } else {
             jugadorEnemigo.agregarEfecto(this);
@@ -55,7 +58,7 @@ public class Vulnerable implements Efecto {
     }
 
     @Override
-    public void agregarDuracion(int duracion) {
+    public void modificarDuracion(int duracion) {
         this.duracion += duracion;
     }
 

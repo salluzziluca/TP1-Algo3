@@ -4,6 +4,9 @@ import src.Carta;
 import src.Efecto;
 import src.Jugador;
 
+/*
+ * Al instanciarse este efecto en el array de efectos de un jugador, Aumenta 1 el costo de todas las cartas en mano
+ */
 public class Inflacion implements Efecto {
 
     private int duracion;
@@ -28,7 +31,7 @@ public class Inflacion implements Efecto {
             jugadorAliado.quitarEfecto("Catalizador");
         }
         if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
-            jugadorEnemigo.agregarDuracionAEfecto(getNombre(), duracion);
+            jugadorEnemigo.modificarDuracionAEfecto(getNombre(), duracion);
 
         } else {
             jugadorEnemigo.agregarEfecto(this);
@@ -57,7 +60,7 @@ public class Inflacion implements Efecto {
     }
 
     @Override
-    public void agregarDuracion(int duracion) {
+    public void modificarDuracion(int duracion) {
         this.duracion += duracion;
     }
 

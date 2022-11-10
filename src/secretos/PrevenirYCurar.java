@@ -2,6 +2,9 @@ package src.secretos;
 
 import src.*;
 
+/*
+ * Al instanciarse este secreto en el array de secretos de un jugador, La proxima vez que su oponente juegue una carta de daño, en vez de dañarlo lo cura y roba 1 carta
+ */
 public class PrevenirYCurar implements Secreto {
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {

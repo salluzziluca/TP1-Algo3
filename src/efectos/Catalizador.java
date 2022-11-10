@@ -5,7 +5,7 @@ import src.Efecto;
 import src.Jugador;
 
 /*
- * El proximo efecto que inflijas a tu oponente o a vos mismo se duplica
+ * Al instanciarse este efecto en el array de efectos de un jugador, el proximo efecto que inflija a su oponente o a el mismo se duplica.
  */
 public class Catalizador implements Efecto {
 
@@ -40,7 +40,7 @@ public class Catalizador implements Efecto {
     }
 
     @Override
-    public void agregarDuracion(int duracion) {
+    public void modificarDuracion(int duracion) {
     }
 
 }

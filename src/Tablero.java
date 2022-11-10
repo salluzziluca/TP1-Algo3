@@ -21,6 +21,9 @@ public class Tablero {
         }
     }
 
+    /*
+     * Setea la carta en juego y avisa a los jugadores que se ha jugado una carta.
+     */
     public void setCartaEnJuego(Carta carta, Jugador jugador) {
         this.cartaEnJuego = carta;
         notificar(jugador);

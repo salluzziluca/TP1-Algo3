@@ -2,6 +2,9 @@ package src.secretos;
 
 import src.*;
 
+/*
+ * Al instanciarse este secreto en el array de secreto de un jugador, la proxima vez que el jugador contrario juege una carta de daño, este recibirá el daño duplicado y se mitigará el daño hacia el jugador aliado.
+ */
 public class Desviar implements Secreto {
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {

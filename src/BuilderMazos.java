@@ -21,15 +21,15 @@ public class BuilderMazos {
 
                 // Ataques
                 mazoGuerrero.agregarCarta(new Carta("Réplica", "Daño 1; Robar 1", 1, new DañoNormal(1), null, null,
-                                null, new RobarNormal(2)));
+                                null, new RobarNormal(1)));
                 mazoGuerrero.agregarCarta(new Carta("Réplica", "Daño 1; Robar 1", 1, new DañoNormal(1), null, null,
-                                null, new RobarNormal(2)));
+                                null, new RobarNormal(1)));
 
                 mazoGuerrero.agregarCarta(new Carta("Golpe", "Daño 4", 2, new DañoNormal(4), null, null, null, null));
 
                 mazoGuerrero.agregarCarta(
                                 new Carta("Triturar", "Daño 3, Inflige 2 Vulnerable", 3, new DañoNormal(3), null,
-                                                new Vulnerable(3),
+                                                new Vulnerable(2),
                                                 null, null));
 
                 // Bufos
@@ -50,7 +50,7 @@ public class BuilderMazos {
 
                 mazoGuerrero.agregarCarta(
                                 new Carta("Imparable",
-                                                "Secreto: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se limpia el tipo de efecto que esta jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se pone",
+                                                "Secreto: La proxima vez que tu oponente juegue una carta que te infligiera un efecto se limpia el tipo de efecto que te intentan aplicar.",
                                                 1,
                                                 null,
                                                 null, null, new Imparable(), null));
@@ -96,7 +96,6 @@ public class BuilderMazos {
                 mazoAlquimista.agregarCarta(new Carta("Combo", "Daño 1", 0, new DañoNormal(1), null, null, null, null));
 
                 // Bufos
-
                 mazoAlquimista.agregarCarta(new Carta("Pocion de agilidad",
                                 "Roba 2 cartas", 1, null, null,
                                 null, null, new RobarNormal(2)));
@@ -109,7 +108,7 @@ public class BuilderMazos {
                 mazoAlquimista.agregarCarta(
                                 new Carta("Enormigus",
                                                 "Secreto: La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada",
-                                                1,
+                                                2,
                                                 null,
                                                 null, null, new Enormigus(), null));
 

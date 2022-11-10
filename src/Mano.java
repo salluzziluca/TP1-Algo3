@@ -26,8 +26,9 @@ public class Mano {
     }
 
     /*
-     * Juega la carta en la posicion indicada por el jugador.
-     * Luego, la quita de la mano.
+     * Juega la carta en la posicion indicada por el jugador. La setea en el
+     * tablero, resetea sus valores, la quita de la mano y la devuelve al mazo.
+     * Luego, mezcla el mazo.
      */
     public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo, Tablero tableroActual) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);

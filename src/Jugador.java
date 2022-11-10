@@ -72,24 +72,23 @@ public class Jugador {
         this.efectos.remove(buscarIndexEfecto(nombreEfecto));
     }
 
-    public void agregarDuracionAEfecto(String nombreEfecto, int duracion) {
-        this.efectos.get(buscarIndexEfecto(nombreEfecto)).agregarDuracion(duracion);
+    public void modificarDuracionAEfecto(String nombreEfecto, int duracion) {
+        this.efectos.get(buscarIndexEfecto(nombreEfecto)).modificarDuracion(duracion);
     }
 
-    /*
-     * Recorre todos los efectos del jugador y utiliza su metodo AplicarEfecto para
-     * que su efecto se aplique
-     * Si el efecto es "catalizador", almacena la posicion del efecto a catalizar
-     * (el siguiente en aparecer)
-     * Cuando la posicion almacenada y la actual coinciden, aplica el efecto dos
-     * veces.
-     * Luego, si el catalizador fue usado, lo elimina de la lista de efectos
-     */
     void recorrerEfectos() {
         for (Efecto Efecto : this.efectos) {
             Efecto.aplicarEfecto(this);
         }
+    }
 
+    /*
+     * Aplica los efectos a la carta pasada por parametro
+     */
+    public void aplicarEfectosACarta(Carta cartaRobada) {
+        for (Efecto efecto : this.efectos) {
+            efecto.aplicarEfectoACarta(cartaRobada);
+        }
     }
 
     /*
@@ -105,6 +104,10 @@ public class Jugador {
         return false;
     }
 
+    /*
+     * Busca el index del efecto pasado por parametro en la lista de efectos del
+     * jugador
+     */
     public int buscarIndexEfecto(String nombreEfecto) {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
@@ -124,7 +127,6 @@ public class Jugador {
 
     public void aumentarManaMaximo(int i) {
         this.manaMaximo += i;
-        this.manaActual += i;
     }
 
     public void aumentarValorCartas() {
@@ -151,11 +153,25 @@ public class Jugador {
         return this.manaActual;
     }
 
+    /*
+     * Le pasa la carta en juego a todos los secretos y estos se encargan de ver si
+     * cumple las condiciones para que sean activados
+     */
     public void update(Carta carta, Jugador jugadorEnemigo, Jugador jugador) {
         for (Secreto secreto : secretos) {
             secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo, jugador);
         }
 
+    }
+
+    /*
+     * Reduce la duracion de todos los efectos del jugador
+     */
+    void terminarTurno() {
+        for (int i = 0; i < this.efectos.size(); i++) {
+            Efecto efecto = this.efectos.get(i);
+            efecto.reducirDuracion(this);
+        }
     }
 
     /*
@@ -176,21 +192,4 @@ public class Jugador {
         }
         this.terminarTurno();
     }
-
-    /*
-     * Reduce la duracion de todos los efectos del jugador
-     */
-    void terminarTurno() {
-        for (int i = 0; i < this.efectos.size(); i++) {
-            Efecto efecto = this.efectos.get(i);
-            efecto.reducirDuracion(this);
-        }
-    }
-
-    public void aplicarEfectosACarta(Carta cartaRobada) {
-        for (Efecto efecto : this.efectos) {
-            efecto.aplicarEfectoACarta(cartaRobada);
-        }
-    }
-
 }

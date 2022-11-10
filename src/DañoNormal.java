@@ -1,5 +1,8 @@
 package src;
 
+/*
+ * Aplica daño al jugador enemigo igual a la cantidad que se le asigna en el constructor
+ */
 public class DañoNormal implements Daño {
     private int cantidad;
     private int cantidadOriginal;
@@ -10,7 +13,6 @@ public class DañoNormal implements Daño {
     }
 
     public void aplicarDaño(Jugador jugadorEnemigo) {
-        System.out.println(" Aplicando " + cantidad + " puntos de daño");
         jugadorEnemigo.recibirDaño(cantidad);
     }
 

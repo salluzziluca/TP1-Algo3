@@ -4,6 +4,9 @@ import src.Carta;
 import src.Jugador;
 import src.Secreto;
 
+/*
+ * La proxima vez que juegues una carta de daño, robas 3 cartas.
+ */
 public class Oportunista implements Secreto {
 
     @Override

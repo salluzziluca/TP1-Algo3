@@ -89,7 +89,6 @@ public class SecretosTest {
                 assertEquals(10, jugador2.vida);
                 assertEquals(12, jugador1.vida);
                 assertEquals(1, jugador1.getCantidadCartasEnMano());
-
         }
 
         @Test

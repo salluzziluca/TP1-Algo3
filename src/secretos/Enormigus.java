@@ -3,6 +3,9 @@ package src.secretos;
 import src.*;
 import src.efectos.Inflacion;
 
+/*
+ * Al instanciarse este secreto en el array de secretos de un jugador, la proxima vez que su oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada.
+ */
 public class Enormigus implements Secreto {
 
     @Override
@@ -20,9 +23,12 @@ public class Enormigus implements Secreto {
 
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
-        Inflacion inflacion = new Inflacion(carta.getCosto());
+        int costoCarta = carta.getCosto();
+        if (costoCarta <= 0) {
+            return;
+        }
+        Inflacion inflacion = new Inflacion(costoCarta);
         inflacion.setearEfecto(jugadorAliado, jugadorEnemigo);
-
     }
 
     @Override

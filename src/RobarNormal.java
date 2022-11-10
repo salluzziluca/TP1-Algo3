@@ -1,5 +1,8 @@
 package src;
 
+/*
+ * Roba cantidad de cartas igual a el int que se le pasa en el constructor
+ */
 public class RobarNormal implements Robar {
     private int cantidadRobar;
 
