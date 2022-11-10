@@ -30,9 +30,9 @@ public class Mano {
      */
     public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo, Tablero tableroActual) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
+        this.manoActual.remove(posicionCarta);
         cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
         tableroActual.setCartaEnJuego(cartaJugada, jugadorAliado);
-        this.manoActual.remove(posicionCarta);
         cartaJugada.resetearValores();
         jugadorAliado.mazo.agregarCarta(cartaJugada);
         jugadorAliado.mazo.mezclar();

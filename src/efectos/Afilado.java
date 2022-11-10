@@ -3,6 +3,9 @@ package src.efectos;
 import src.Efecto;
 import src.Jugador;
 
+/*
+* Al jugarse esta cartaLas cartas de Daño tienen +1 de daño
+*/
 public class Afilado implements Efecto {
     private int duracion;
 
@@ -35,6 +38,7 @@ public class Afilado implements Efecto {
             jugadorAliado.agregarDuracionAEfecto(getNombre(), duracion);
         } else {
             jugadorAliado.agregarEfecto(this);
+            this.aplicarEfecto(jugadorAliado);
         }
 
     }

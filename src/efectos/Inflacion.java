@@ -31,6 +31,7 @@ public class Inflacion implements Efecto {
 
         } else {
             jugadorEnemigo.agregarEfecto(this);
+            this.aplicarEfecto(jugadorEnemigo);
         }
 
     }
