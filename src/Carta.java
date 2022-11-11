@@ -25,10 +25,7 @@ public class Carta {
     }
 
     private boolean puedeJugarse(int manaActual) {
-        if (manaActual < this.costo) {
-            return false;
-        }
-        return true;
+        return manaActual >= this.costo;
     }
 
     /*
