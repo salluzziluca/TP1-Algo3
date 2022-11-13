@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Mazo {
     private ArrayList<Carta> cartas;
 
+    public ArrayList<Carta> getCartas() {
+        return cartas;
+    }
+
     public Mazo() {
         cartas = new ArrayList<Carta>();
     }

@@ -27,8 +27,8 @@ public class CartasTest {
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        assertEquals(jugador2.vida, 7);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(jugador2.getVida(), 7);
 
     }
 
@@ -42,8 +42,8 @@ public class CartasTest {
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        assertEquals(10, jugador2.vida);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(10, jugador2.getVida());
 
     }
 
@@ -57,8 +57,8 @@ public class CartasTest {
         Jugador jugador2 = new Jugador("Jugador", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        assertEquals(13, jugador1.vida);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(13, jugador1.getVida());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CartasTest {
         Jugador jugador2 = new Jugador("Jugador", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         assertEquals(3, jugador1.getCantidadCartasEnMano());
     }
 

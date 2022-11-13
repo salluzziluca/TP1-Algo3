@@ -1,7 +1,6 @@
 package src;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import src.efectos.*;
@@ -9,18 +8,18 @@ import src.efectos.*;
 public class EfectosTest {
     @Test
     public void testearVeneno() {
-        Veneno CartaDeVeneno = new Veneno(3);
-        Carta cartaDeVeneno = new Carta("Carta de Veneno", "Aplica veneno", 8, null, null, CartaDeVeneno, null, null);
+        BuilderCartas bCartas = new BuilderCartas("Carta de Veneno", "Aplica veneno", 2);
+        bCartas.setEfecto(new Veneno(3));
+        Carta cartaDeVeneno = bCartas.crearCarta();
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVeneno);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
-        jugador1.manaActual = 10;
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         jugador2.recorrerEfectos();
-        assertEquals(jugador2.vida, 7);
+        assertEquals(jugador2.getVida(), 7);
 
     }
 
@@ -32,13 +31,12 @@ public class EfectosTest {
         Mazo mazo = new Mazo();
         mazo.agregarCarta(cartaDeVulnerable);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
-        jugador1.manaActual = 10;
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         jugador2.recibirDaño(3);
-        assertEquals(jugador2.vida, 4);
+        assertEquals(jugador2.getVida(), 4);
 
     }
 
@@ -57,10 +55,10 @@ public class EfectosTest {
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(1, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(1, jugador1, jugador2, tablero);
         jugador1.terminarTurno();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        assertEquals(6, jugador2.vida);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(6, jugador2.getVida());
     }
 
     @Test
@@ -80,19 +78,18 @@ public class EfectosTest {
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
-        jugador1.manaActual = 10;
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         for (int i = 0; i < 7; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(true, jugador1.efectos.isEmpty());
-        assertEquals(true, jugador2.efectos.isEmpty());
+        assertEquals(true, jugador1.getEfectos().isEmpty());
+        assertEquals(true, jugador2.getEfectos().isEmpty());
 
     }
 
@@ -106,9 +103,9 @@ public class EfectosTest {
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        assertEquals(11, jugador1.manaMaximo);
-        assertEquals(10, jugador1.manaActual);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
+        assertEquals(11, jugador1.getManaMaximo());
+        assertEquals(10, jugador1.getManaActual());
     }
 
     @Test
@@ -126,21 +123,21 @@ public class EfectosTest {
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
         jugador1.recorrerEfectos();
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        assertEquals(11, jugador1.manaMaximo);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
+        assertEquals(11, jugador1.getManaMaximo());
         for (int i = 0; i < 4; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(11, jugador1.manaMaximo);
+        assertEquals(11, jugador1.getManaMaximo());
 
         for (int i = 0; i < 2; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(10, jugador1.manaMaximo);
+        assertEquals(10, jugador1.getManaMaximo());
 
     }
 
@@ -155,12 +152,11 @@ public class EfectosTest {
         mazo.agregarCarta(cartaDeInflacion);
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, new Jugador("Jugador 2", 10, 10, new Mano(), mazo));
-        jugador1.manaActual = 10;
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador1, tablero);
-        assertEquals(1, jugador1.manaActual);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
+        assertEquals(1, jugador1.getManaActual());
 
     }
 
@@ -177,13 +173,11 @@ public class EfectosTest {
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo2);
         Tablero tablero = new Tablero(jugador1, jugador2);
-        jugador1.manaActual = 10;
-        jugador2.manaActual = 10;
         jugador1.robarCarta();
         jugador2.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
-        assertEquals(1, jugador2.manaActual);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero);
+        assertEquals(1, jugador2.getManaActual());
     }
 
     @Test
@@ -200,10 +194,10 @@ public class EfectosTest {
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo2);
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         jugador2.robarCarta();
-        jugador2.mano.jugarCarta(0, jugador2, jugador1, tablero);
-        assertEquals(1, jugador2.manaActual);
+        jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero);
+        assertEquals(1, jugador2.getManaActual());
     }
 
     @Test
@@ -223,27 +217,27 @@ public class EfectosTest {
         Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
         Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
         Tablero tablero = new Tablero(jugador1, jugador2);
-        jugador1.manaActual = 10;
+
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
-        jugador1.mano.jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
         for (int i = 0; i < 4; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(false, jugador1.efectos.isEmpty());
-        assertEquals(false, jugador2.efectos.isEmpty());
+        assertEquals(false, jugador1.getEfectos().isEmpty());
+        assertEquals(false, jugador2.getEfectos().isEmpty());
         for (int i = 0; i < 4; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(true, jugador1.efectos.isEmpty());
-        assertEquals(true, jugador2.efectos.isEmpty());
+        assertEquals(true, jugador1.getEfectos().isEmpty());
+        assertEquals(true, jugador2.getEfectos().isEmpty());
     }
 
 }

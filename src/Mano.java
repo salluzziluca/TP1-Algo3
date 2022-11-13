@@ -4,15 +4,13 @@ import java.util.ArrayList;
 
 public class Mano {
     private ArrayList<Carta> manoActual;
-    private int cantCartasEnMano;
+
+    public int getCantMano() {
+        return manoActual.size();
+    }
 
     public Mano() {
         this.manoActual = new ArrayList<Carta>();
-        this.cantCartasEnMano = 0;
-    }
-
-    public int getCantidadCartasEnMano() {
-        return cantCartasEnMano;
     }
 
     /*
@@ -22,7 +20,6 @@ public class Mano {
         Carta cartaRobada = mazo.darCarta();
         jugador.aplicarEfectosACarta(cartaRobada);
         this.manoActual.add(cartaRobada);
-        this.cantCartasEnMano++;
     }
 
     /*
@@ -36,9 +33,8 @@ public class Mano {
         cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
         tableroActual.setCartaEnJuego(cartaJugada, jugadorAliado);
         cartaJugada.resetearValores();
-        jugadorAliado.mazo.agregarCarta(cartaJugada);
-        jugadorAliado.mazo.mezclar();
-        this.cantCartasEnMano--;
+        jugadorAliado.getMazo().agregarCarta(cartaJugada);
+        jugadorAliado.getMazo().mezclar();
     }
 
     public void modificarAtaque(int cantidad) {

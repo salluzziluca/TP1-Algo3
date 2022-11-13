@@ -4,7 +4,7 @@ public class Carta {
     public String nombre;
     public String descripcion;
     public int costo;
-    private int costoOriginal;
+    public int costoOriginal;
     public Daño daño;
     public Cura cura;
     public Efecto efecto;

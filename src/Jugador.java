@@ -3,13 +3,15 @@ package src;
 import java.util.ArrayList;
 
 public class Jugador {
-    int vida;
-    int manaMaximo;
-    int manaActual;
-    Mano mano;
-    Mazo mazo;
-    ArrayList<Efecto> efectos;
-    ArrayList<Secreto> secretos;
+    private int vida;
+
+    private int manaMaximo;
+    private int manaActual;
+    private Mano mano;
+    private Mazo mazo;
+
+    private ArrayList<Efecto> efectos;
+    private ArrayList<Secreto> secretos;
     private boolean pasarTurno;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
@@ -23,6 +25,30 @@ public class Jugador {
         this.pasarTurno = false;
     }
 
+    public int getVida() {
+        return vida;
+    }
+
+    public Mano getMano() {
+        return mano;
+    }
+
+    public ArrayList<Efecto> getEfectos() {
+        return efectos;
+    }
+
+    public int getManaMaximo() {
+        return manaMaximo;
+    }
+
+    public Mazo getMazo() {
+        return mazo;
+    }
+
+    public int getCantidadCartasEnMano() {
+        return this.mano.getCantMano();
+    }
+
     public void robarCarta() {
         this.mano.agregarCarta(mazo, this);
     }
@@ -31,10 +57,6 @@ public class Jugador {
         for (int i = 0; i < cantidad; i++) {
             this.robarCarta();
         }
-    }
-
-    public int getCantidadCartasEnMano() {
-        return this.mano.getCantidadCartasEnMano();
     }
 
     public boolean estaVivo() {
