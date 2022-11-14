@@ -16,23 +16,23 @@ public class BuilderCartas {
     }
 
     public void setDaño(DañoNormal daño) {
-        carta.daño = daño;
+        carta.setDaño(daño);
     }
 
     public void setCura(CuraNormal cura) {
-        carta.cura = cura;
+        carta.setCura(cura);
     }
 
     public void setEfecto(Efecto efecto) {
-        carta.efecto = efecto;
+        carta.setEfecto(efecto);
     }
 
     public void setSecreto(Secreto secreto) {
-        carta.secreto = secreto;
+        carta.setSecreto(secreto);
     }
 
     public void setRobar(RobarNormal robar) {
-        carta.robar = robar;
+        carta.setRobar(robar);
     }
 
     public Carta crearCarta() {

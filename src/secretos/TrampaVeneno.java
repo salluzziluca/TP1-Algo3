@@ -15,7 +15,7 @@ public class TrampaVeneno implements Secreto {
 
     @Override
     public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
-        if (carta.daño != null && jugador == jugadorEnemigo) {
+        if (carta.getDaño() != null && jugador == jugadorEnemigo) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
         }
     }

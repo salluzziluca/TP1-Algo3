@@ -1,15 +1,15 @@
 package src;
 
 public class Carta {
-    public String nombre;
-    public String descripcion;
-    public int costo;
-    public int costoOriginal;
-    public Daño daño;
-    public Cura cura;
-    public Efecto efecto;
-    public Secreto secreto;
-    public Robar robar;
+    private String nombre;
+    private String descripcion;
+    private int costo;
+    private int costoOriginal;
+    private Daño daño;
+    private Cura cura;
+    private Efecto efecto;
+    private Secreto secreto;
+    private Robar robar;
 
     public Carta(String nombre, String descripcion, int costo, Daño daño, Cura cura, Efecto efecto,
             Secreto secreto, Robar robar) {
@@ -79,15 +79,53 @@ public class Carta {
         return this.costo;
     }
 
-    public Efecto getEfecto() {
-        return efecto;
-    }
-
     public Daño getDaño() {
         return daño;
     }
 
+    public void setDaño(Daño daño) {
+        if (daño != null) {
+            this.daño = daño;
+        }
+    }
+
+    public Cura getCura() {
+        return cura;
+    }
+
+    public void setCura(Cura cura) {
+        if (cura != null) {
+            this.cura = cura;
+        }
+    }
+
+    public Efecto getEfecto() {
+        return efecto;
+    }
+
+    public void setEfecto(Efecto efecto) {
+        if (efecto != null) {
+            this.efecto = efecto;
+        }
+    }
+
     public Secreto getSecreto() {
         return secreto;
+    }
+
+    public void setSecreto(Secreto secreto) {
+        if (secreto != null) {
+            this.secreto = secreto;
+        }
+    }
+
+    public Robar getRobar() {
+        return robar;
+    }
+
+    public void setRobar(Robar robar) {
+        if (robar != null) {
+            this.robar = robar;
+        }
     }
 }
