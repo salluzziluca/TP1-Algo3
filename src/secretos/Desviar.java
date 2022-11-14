@@ -27,6 +27,7 @@ public class Desviar implements Secreto {
         jugadorEnemigo.recibirDaño(cantidadDedaño * 2);
         jugadorAliado.aumentarVida(cantidadDedaño); // para mitigar el daño que te hace la carta que te activa
 
+        this.quitarSecreto(jugadorAliado);
     }
 
     @Override

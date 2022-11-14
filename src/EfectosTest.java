@@ -109,39 +109,6 @@ public class EfectosTest {
     }
 
     @Test
-    public void testearCatalizador() {
-        Catalizador catalizador = new Catalizador();
-        Carta cartaDeCatalizador = new Carta("Carta de Catalizador", "Aplica catalizador", 0, null, null, catalizador,
-                null, null);
-        Berserk berserk = new Berserk(3);
-        Carta cartaDeBerserk = new Carta("Carta de Berserk", "Aplica berserk", 0, null, null, berserk, null, null);
-        Mazo mazo = new Mazo();
-        mazo.agregarCarta(cartaDeBerserk);
-        mazo.agregarCarta(cartaDeCatalizador);
-        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
-        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
-        Tablero tablero = new Tablero(jugador1, jugador2);
-        jugador1.robarCarta();
-        jugador1.robarCarta();
-        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
-        jugador1.recorrerEfectos();
-        jugador1.getMano().jugarCarta(0, jugador1, jugador1, tablero);
-        assertEquals(11, jugador1.getManaMaximo());
-        for (int i = 0; i < 4; i++) {
-            jugador1.terminarTurno();
-            jugador2.terminarTurno();
-        }
-        assertEquals(11, jugador1.getManaMaximo());
-
-        for (int i = 0; i < 2; i++) {
-            jugador1.terminarTurno();
-            jugador2.terminarTurno();
-        }
-        assertEquals(10, jugador1.getManaMaximo());
-
-    }
-
-    @Test
     public void testearInflacionDespuesDeUnTurno() {
         Inflacion inflacion = new Inflacion(3);
         Carta cartaDeInflacion = new Carta("Carta de Inflacion", "Aplica inflacion", 0, null, null, inflacion, null,

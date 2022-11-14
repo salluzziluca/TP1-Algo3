@@ -24,6 +24,7 @@ public class Imparable implements Secreto {
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
         jugadorAliado.quitarEfecto(carta.getEfecto());
+        this.quitarSecreto(jugadorAliado);
     }
 
     @Override

@@ -104,11 +104,11 @@ public class BuilderMazos {
         bCartas.setRobar(new RobarNormal(2));
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
 
-        bCartas.resetearCarta("Catalizador", "Mejora Catalizador", 0);
-        bCartas.setEfecto(new Catalizador());
+        // Secretos
+        bCartas.resetearCarta("Catalizador", "Secreto: Tu proximo efecto se duplica en duracion", 0);
+        bCartas.setSecreto(new Catalizador());
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
 
-        // Secretos
         bCartas.resetearCarta("Enormigus",
                 "Secreto: La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada",
                 2);

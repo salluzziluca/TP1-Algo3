@@ -10,12 +10,14 @@ public interface Efecto {
      */
     public void reducirDuracion(Jugador jugadorAliado);
 
+    public void setDuracion(int duracion);
+
     /*
      * Agrega el efecto al array del jugador correspondinte, si se tiene
      * catalizador, se duplica la duracion del efecto y si ya se tiene el efecto en
      * el array correspondiente, se suman las duraciones
      */
-    default void setearEfectoDefault(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    default public void setearEfectoDefault(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         Jugador jugadorQueRecibiraElEfecto = jugadorEnemigo;
 
         if (this.getSeLeAplicaAlAliado()) {
@@ -38,7 +40,9 @@ public interface Efecto {
     /*
      * Quita el efecto del array de efectos del jugador
      */
-    public void quitarEfecto(Jugador jugadorAliado);
+    default public void quitarEfecto(Jugador jugadorAliado) {
+        jugadorAliado.quitarEfecto(this);
+    }
 
     /*
      * Aplica el efecto en el jugador que se le pasa por parametro

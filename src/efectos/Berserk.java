@@ -17,6 +17,10 @@ public class Berserk implements Efecto {
         seLeAplicaAlAliado = true;
     }
 
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
     @Override
     public void reducirDuracion(Jugador jugadorAliado) {
         this.duracion--;
@@ -38,12 +42,6 @@ public class Berserk implements Efecto {
     @Override
     public void aplicarEfectoACarta(Carta carta) {
         return;
-    }
-
-    @Override
-    public void quitarEfecto(Jugador jugadorAliado) {
-        jugadorAliado.quitarEfecto(this);
-
     }
 
     @Override

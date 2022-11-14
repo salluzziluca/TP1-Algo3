@@ -6,6 +6,10 @@ public interface Secreto {
      */
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo);
 
+    default public void quitarSecreto(Jugador jugador) {
+        jugador.quitarSecreto(this);
+    }
+
     /*
      * Comprueba si se cumple la condicion para revelar el secreto
      */

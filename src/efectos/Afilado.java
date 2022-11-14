@@ -18,6 +18,10 @@ public class Afilado implements Efecto {
 
     }
 
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
     /*
      * Disminuye al duracion del efecto, si es cero, lo quita del jugador y
      * adicionalmente resetea el ataque de las cartas del jugador para que no se
@@ -40,11 +44,6 @@ public class Afilado implements Efecto {
             jugadorAliado.modificarAtaque(1);
         }
 
-    }
-
-    @Override
-    public void quitarEfecto(Jugador jugadorAliado) {
-        jugadorAliado.quitarEfecto(this);
     }
 
     @Override

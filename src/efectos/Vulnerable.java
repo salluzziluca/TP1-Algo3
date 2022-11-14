@@ -8,10 +8,13 @@ import src.Jugador;
  * Al instanciarse este efecto en el array de efectos de un jugador, este recibe el doble de daño de cartas de daño
  */
 public class Vulnerable implements Efecto {
-
     private int duracion;
 
     public Vulnerable(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
@@ -21,11 +24,6 @@ public class Vulnerable implements Efecto {
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
         }
-    }
-
-    @Override
-    public void quitarEfecto(Jugador jugadorAliado) {
-        jugadorAliado.quitarEfecto(this);
     }
 
     @Override

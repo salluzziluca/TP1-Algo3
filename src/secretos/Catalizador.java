@@ -1,12 +1,11 @@
 package src.secretos;
 
-import src.*;
-import src.efectos.Inflacion;
+import src.Carta;
+import src.Efecto;
+import src.Jugador;
+import src.Secreto;
 
-/*
- * Al instanciarse este secreto en el array de secretos de un jugador, la proxima vez que su oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada.
- */
-public class Enormigus implements Secreto {
+public class Catalizador implements Secreto {
 
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
@@ -15,26 +14,24 @@ public class Enormigus implements Secreto {
 
     @Override
     public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
-        if (carta != null && jugador == jugadorEnemigo) {
+        if (carta.getEfecto() != null && jugador == jugadorAliado) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
-
         }
     }
 
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
-        int costoCarta = carta.getCosto();
-        if (costoCarta <= 0) {
-            return;
+        Efecto efectoActual = carta.getEfecto();
+        if (efectoActual.getDuracion() > 0) {
+            efectoActual.setDuracion(efectoActual.getDuracion() * 2);
         }
-        Inflacion inflacion = new Inflacion(costoCarta);
-        inflacion.setearEfecto(jugadorAliado, jugadorEnemigo);
 
         this.quitarSecreto(jugadorAliado);
     }
 
     @Override
     public String getNombre() {
-        return "Enormigus";
+        return "Catalizador";
     }
+
 }

@@ -37,6 +37,31 @@ public class SecretosTest {
     }
 
     @Test
+    public void testearCatalizador() {
+        BuilderCartas bCartas = new BuilderCartas();
+        Mazo mazo = new Mazo();
+
+        bCartas.resetearCarta("Catalizador", "Secreto: Tu proximo efecto se duplica en duracion", 0);
+        bCartas.setSecreto(new Catalizador());
+        mazo.agregarCarta(bCartas.crearCarta());
+
+        bCartas.resetearCarta("Frasco de Toxinas", "Inflige 3 Veneno", 0);
+        bCartas.setEfecto(new Veneno(3));
+        mazo.agregarCarta(bCartas.crearCarta());
+
+        Jugador jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo);
+        Jugador jugador2 = new Jugador("Jugador 2", 10, 10, new Mano(), mazo);
+        Tablero tablero = new Tablero(jugador1, jugador2);
+        jugador1.robarCarta();
+        jugador1.robarCarta();
+        jugador1.getMano().jugarCarta(1, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(6, jugador2.getEfectos().get(0).getDuracion());
+        assertEquals(true, jugador2.getEfectos().isEmpty());
+
+    }
+
+    @Test
     public void testearDesviar() {
         Desviar DESVIAR = new Desviar();
         Carta cartaDeDesviar = new Carta("Carta de Desviar", "Desvía pa", 3, null, null, null, DESVIAR, null);

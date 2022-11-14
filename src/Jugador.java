@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class Jugador {
     private int vida;
-
     private int manaMaximo;
     private int manaActual;
     private Mano mano;
     private Mazo mazo;
-
     private ArrayList<Efecto> efectos;
     private ArrayList<Secreto> secretos;
     private boolean pasarTurno;
@@ -127,6 +125,19 @@ public class Jugador {
     }
 
     /*
+     * Si el efecto pasado por parametro esta en la lista de efectos del
+     * jugador lo retorna
+     */
+    public Efecto getEfecto(String nombreEfecto) {
+        for (Efecto efecto : efectos) {
+            if (efecto.getNombre().equals(nombreEfecto)) {
+                return efecto;
+            }
+        }
+        return null;
+    }
+
+    /*
      * Busca el index del efecto pasado por parametro en la lista de efectos del
      * jugador
      */
@@ -180,10 +191,10 @@ public class Jugador {
      * cumple las condiciones para que sean activados
      */
     public void update(Carta carta, Jugador jugadorEnemigo, Jugador jugador) {
-        for (Secreto secreto : secretos) {
+        ArrayList<Secreto> secretosCopia = this.secretos;
+        for (Secreto secreto : secretosCopia) {
             secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo, jugador);
         }
-
     }
 
     /*

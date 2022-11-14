@@ -26,6 +26,7 @@ public class PrevenirYCurar implements Secreto {
         jugadorAliado.aumentarVida(cantidadDedaño * 2);
         jugadorAliado.robarCarta();
 
+        this.quitarSecreto(jugadorAliado);
     }
 
     @Override
