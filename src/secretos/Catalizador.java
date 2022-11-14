@@ -6,7 +6,6 @@ import src.Jugador;
 import src.Secreto;
 
 public class Catalizador implements Secreto {
-
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         jugadorAliado.agregarSecreto(this);
@@ -22,8 +21,13 @@ public class Catalizador implements Secreto {
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
         Efecto efectoActual = carta.getEfecto();
+        Jugador jugadorQueRecibeElEfecto = jugadorEnemigo;
+        if (efectoActual.getSeLeAplicaAlAliado()) {
+            jugadorQueRecibeElEfecto = jugadorAliado;
+        }
         if (efectoActual.getDuracion() > 0) {
-            efectoActual.setDuracion(efectoActual.getDuracion() * 2);
+            Efecto efectoAplicado = jugadorQueRecibeElEfecto.getEfecto(efectoActual.getNombre());
+            efectoAplicado.setDuracion(efectoAplicado.getDuracion() + efectoActual.getDuracionOriginal());
         }
 
         this.quitarSecreto(jugadorAliado);
@@ -33,5 +37,4 @@ public class Catalizador implements Secreto {
     public String getNombre() {
         return "Catalizador";
     }
-
 }

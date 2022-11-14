@@ -34,12 +34,17 @@ public class SecretosTest {
         jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
         jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
         assertEquals(19, jugador2.getManaActual());
+        assertEquals(true, jugador1.getSecretos().isEmpty());
     }
 
     @Test
     public void testearCatalizador() {
         BuilderCartas bCartas = new BuilderCartas();
         Mazo mazo = new Mazo();
+
+        bCartas.resetearCarta("Frasco de Toxinas", "Inflige 3 Veneno", 0);
+        bCartas.setEfecto(new Veneno(3));
+        mazo.agregarCarta(bCartas.crearCarta());
 
         bCartas.resetearCarta("Catalizador", "Secreto: Tu proximo efecto se duplica en duracion", 0);
         bCartas.setSecreto(new Catalizador());
@@ -54,11 +59,12 @@ public class SecretosTest {
         Tablero tablero = new Tablero(jugador1, jugador2);
         jugador1.robarCarta();
         jugador1.robarCarta();
-        jugador1.getMano().jugarCarta(1, jugador1, jugador2, tablero);
+        jugador1.robarCarta();
         jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
-        assertEquals(6, jugador2.getEfectos().get(0).getDuracion());
-        assertEquals(true, jugador2.getEfectos().isEmpty());
-
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
+        assertEquals(9, jugador2.getEfectos().get(0).getDuracion());
+        assertEquals(true, jugador1.getSecretos().isEmpty());
     }
 
     @Test
@@ -82,6 +88,7 @@ public class SecretosTest {
         jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
         assertEquals(6, jugador2.getVida());
         assertEquals(10, jugador1.getVida());
+        assertEquals(true, jugador1.getSecretos().isEmpty());
     }
 
     @Test
@@ -108,6 +115,7 @@ public class SecretosTest {
         assertEquals(10, jugador2.getVida());
         assertEquals(12, jugador1.getVida());
         assertEquals(1, jugador1.getCantidadCartasEnMano());
+        assertEquals(true, jugador1.getSecretos().isEmpty());
     }
 
     @Test
@@ -146,6 +154,6 @@ public class SecretosTest {
         jugador2.robarCarta();
         jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
         assertEquals(0, jugador1.getEfectos().size());
-
+        assertEquals(true, jugador1.getSecretos().isEmpty());
     }
 }

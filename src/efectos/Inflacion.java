@@ -9,10 +9,16 @@ import src.Jugador;
  */
 public class Inflacion implements Efecto {
     private int duracion;
+    private int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
 
     public Inflacion(int duracion) {
         this.duracion = duracion;
+        this.duracionOriginal = duracion;
+    }
+
+    public int getDuracionOriginal() {
+        return duracionOriginal;
     }
 
     public void setDuracion(int duracion) {

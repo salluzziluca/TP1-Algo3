@@ -9,13 +9,19 @@ import src.Jugador;
  */
 public class Veneno implements Efecto {
     private int duracion;
+    private int duracionOriginal;
 
     public Veneno(int duracion) {
         this.duracion = duracion;
+        this.duracionOriginal = duracion;
     }
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public int getDuracionOriginal() {
+        return duracionOriginal;
     }
 
     @Override

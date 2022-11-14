@@ -9,11 +9,17 @@ import src.Jugador;
  */
 public class Berserk implements Efecto {
     public int duracion;
+    private int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
     private boolean seLeAplicaAlAliado;
 
+    public int getDuracionOriginal() {
+        return duracionOriginal;
+    }
+
     public Berserk(int duracion) {
         this.duracion = duracion;
+        this.duracionOriginal = duracion;
         seLeAplicaAlAliado = true;
     }
 

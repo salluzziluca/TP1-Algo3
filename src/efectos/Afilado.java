@@ -9,17 +9,24 @@ import src.Carta;
 */
 public class Afilado implements Efecto {
     private int duracion;
+    private int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
     private boolean seLeAplicaAlAliado;
 
     public Afilado(int duracion) {
         this.duracion = duracion;
+        this.duracionOriginal = duracion;
         seLeAplicaAlAliado = true;
 
     }
 
+    public int getDuracionOriginal() {
+        return duracionOriginal;
+    }
+
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+
     }
 
     /*

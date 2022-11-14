@@ -9,13 +9,19 @@ import src.Jugador;
  */
 public class Vulnerable implements Efecto {
     private int duracion;
+    private int duracionOriginal;
 
     public Vulnerable(int duracion) {
         this.duracion = duracion;
+        this.duracionOriginal = duracion;
     }
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public int getDuracionOriginal() {
+        return duracionOriginal;
     }
 
     @Override

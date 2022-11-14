@@ -1,9 +1,6 @@
 package src;
 
 public interface Efecto {
-    public int duracion = 0;
-    public boolean seLeAplicaAlAliado = false;
-    public boolean seDebeAplicarElEfecto = false;
 
     /*
      * Reduce la duracion y si llega a 0 se quita del array de efectos del jugador
@@ -22,10 +19,6 @@ public interface Efecto {
 
         if (this.getSeLeAplicaAlAliado()) {
             jugadorQueRecibiraElEfecto = jugadorAliado;
-        }
-        if (jugadorAliado.buscarEfecto("Catalizador")) {
-            modificarDuracion(this.getDuracion());
-            jugadorAliado.quitarEfecto("Catalizador");
         }
         if (jugadorQueRecibiraElEfecto.buscarEfecto(this.getNombre())) {
             jugadorQueRecibiraElEfecto.modificarDuracionAEfecto(getNombre(), getDuracion());
@@ -67,6 +60,8 @@ public interface Efecto {
     public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto);
 
     public int getDuracion();
+
+    public int getDuracionOriginal();
 
     public boolean getSeLeAplicaAlAliado();
 }

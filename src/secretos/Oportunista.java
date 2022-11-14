@@ -23,6 +23,7 @@ public class Oportunista implements Secreto {
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
         jugadorAliado.robarCarta(3);
+
         this.quitarSecreto(jugadorAliado);
     }
 

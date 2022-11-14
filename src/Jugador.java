@@ -35,6 +35,10 @@ public class Jugador {
         return efectos;
     }
 
+    public ArrayList<Secreto> getSecretos() {
+        return secretos;
+    }
+
     public int getManaMaximo() {
         return manaMaximo;
     }
@@ -44,7 +48,7 @@ public class Jugador {
     }
 
     public int getCantidadCartasEnMano() {
-        return this.mano.getCantMano();
+        return mano.getCantMano();
     }
 
     public void robarCarta() {
@@ -191,10 +195,12 @@ public class Jugador {
      * cumple las condiciones para que sean activados
      */
     public void update(Carta carta, Jugador jugadorEnemigo, Jugador jugador) {
-        ArrayList<Secreto> secretosCopia = this.secretos;
-        for (Secreto secreto : secretosCopia) {
+
+        for (int i = 0; i < this.secretos.size(); i++) {
+            Secreto secreto = this.secretos.get(i);
             secreto.comprobarSiSeCumple(carta, this, jugadorEnemigo, jugador);
         }
+
     }
 
     /*

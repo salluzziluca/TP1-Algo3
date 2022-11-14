@@ -25,6 +25,7 @@ public class TrampaVeneno implements Secreto {
         Veneno veneno = new Veneno(carta.getDaño().getCantidad());
         veneno.setearEfecto(jugadorAliado, jugadorEnemigo);
 
+        this.quitarSecreto(jugadorAliado);
     }
 
     @Override
