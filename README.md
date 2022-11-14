@@ -1,14 +1,14 @@
 # TP1-Algo3
 1er TP de la materia Algoritmos y Programacion III de la Facultad de Ingeniería de la Universidad de Buenos Aires
 
-## Integrante
+## Integrantes
 Agustín Conti y Luca Salluzzi 
 
 ## Descripción del Juego
 >Un juego de cartas por turnos en las que las cartas no interactuan entre ellas sino que te dan mejoras o atacan directamente al jugador contrario. Tambien tenemos pensado desarollar "cartas trampa" que ante un evento en particular, se activen.
 
 ## Patrones a utilizar
-### Builder
+### Strategy 
 Este patrón lo utilizaremos para la creación e instanciación de cartas, ya que todas son parecidas en su core pero tienen caracterisicas que las diferencian y les dan individualidad.
 
 ### Observer
