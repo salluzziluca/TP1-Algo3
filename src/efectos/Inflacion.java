@@ -10,6 +10,7 @@ import src.Jugador;
 public class Inflacion implements Efecto {
 
     private int duracion;
+    private boolean seDebeAplicarElEfecto;
 
     public Inflacion(int duracion) {
         this.duracion = duracion;
@@ -26,15 +27,8 @@ public class Inflacion implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (jugadorAliado.buscarEfecto("Catalizador")) {
-            this.duracion *= 2;
-            jugadorAliado.quitarEfecto("Catalizador");
-        }
-        if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
-            jugadorEnemigo.modificarDuracionAEfecto(getNombre(), duracion);
-
-        } else {
-            jugadorEnemigo.agregarEfecto(this);
+        setearEfectoDefault(jugadorAliado, jugadorEnemigo);
+        if (seDebeAplicarElEfecto) {
             jugadorEnemigo.aumentarValorCartas();
         }
     }
@@ -64,4 +58,18 @@ public class Inflacion implements Efecto {
         this.duracion += duracion;
     }
 
+    @Override
+    public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto) {
+        this.seDebeAplicarElEfecto = seDebeAplicarElEfecto;
+    }
+
+    @Override
+    public int getDuracion() {
+        return this.duracion;
+    }
+
+    @Override
+    public boolean getSeLeAplicaAlAliado() {
+        return false;
+    }
 }

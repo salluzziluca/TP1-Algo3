@@ -43,4 +43,18 @@ public class Catalizador implements Efecto {
     public void modificarDuracion(int duracion) {
     }
 
+    @Override
+    public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto) {
+
+    }
+
+    @Override
+    public int getDuracion() {
+        return 0;
+    }
+
+    @Override
+    public boolean getSeLeAplicaAlAliado() {
+        return false;
+    }
 }

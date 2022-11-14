@@ -9,9 +9,12 @@ import src.Jugador;
  */
 public class Berserk implements Efecto {
     public int duracion;
+    private boolean seDebeAplicarElEfecto;
+    private boolean seLeAplicaAlAliado;
 
     public Berserk(int duracion) {
         this.duracion = duracion;
+        seLeAplicaAlAliado = true;
     }
 
     @Override
@@ -25,17 +28,11 @@ public class Berserk implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (jugadorAliado.buscarEfecto("Catalizador")) {
-            this.duracion *= 2;
-            jugadorAliado.quitarEfecto("Catalizador");
-        }
-        if (jugadorAliado.buscarEfecto(this.getNombre())) {
-            jugadorAliado.modificarDuracionAEfecto(getNombre(), duracion);
-        } else {
-
-            jugadorAliado.agregarEfecto(this);
+        setearEfectoDefault(jugadorAliado, jugadorEnemigo);
+        if (seDebeAplicarElEfecto) {
             jugadorAliado.aumentarManaMaximo(1);
         }
+
     }
 
     @Override
@@ -64,4 +61,18 @@ public class Berserk implements Efecto {
         this.duracion += duracion;
     }
 
+    @Override
+    public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto) {
+        this.seDebeAplicarElEfecto = seDebeAplicarElEfecto;
+    }
+
+    @Override
+    public int getDuracion() {
+        return this.duracion;
+    }
+
+    @Override
+    public boolean getSeLeAplicaAlAliado() {
+        return this.seLeAplicaAlAliado;
+    }
 }

@@ -9,9 +9,13 @@ import src.Carta;
 */
 public class Afilado implements Efecto {
     private int duracion;
+    private boolean seDebeAplicarElEfecto;
+    private boolean seLeAplicaAlAliado;
 
     public Afilado(int duracion) {
         this.duracion = duracion;
+        seLeAplicaAlAliado = true;
+
     }
 
     /*
@@ -30,15 +34,9 @@ public class Afilado implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (jugadorAliado.buscarEfecto("Catalizador")) {
-            this.duracion *= 2;
-            jugadorAliado.quitarEfecto("Catalizador");
-        }
 
-        if (jugadorAliado.buscarEfecto(this.getNombre())) {
-            jugadorAliado.modificarDuracionAEfecto(getNombre(), duracion);
-        } else {
-            jugadorAliado.agregarEfecto(this);
+        setearEfectoDefault(jugadorAliado, jugadorEnemigo);
+        if (seDebeAplicarElEfecto) {
             jugadorAliado.modificarAtaque(1);
         }
 
@@ -68,6 +66,21 @@ public class Afilado implements Efecto {
     @Override
     public void modificarDuracion(int duracion) {
         this.duracion += duracion;
+    }
+
+    @Override
+    public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto) {
+        this.seDebeAplicarElEfecto = seDebeAplicarElEfecto;
+    }
+
+    @Override
+    public int getDuracion() {
+        return this.duracion;
+    }
+
+    @Override
+    public boolean getSeLeAplicaAlAliado() {
+        return this.seLeAplicaAlAliado;
     }
 
 }

@@ -30,16 +30,7 @@ public class Vulnerable implements Efecto {
 
     @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
-        if (jugadorAliado.buscarEfecto("Catalizador")) {
-            this.duracion *= 2;
-            jugadorAliado.quitarEfecto("Catalizador");
-        }
-        if (jugadorEnemigo.buscarEfecto(this.getNombre())) {
-            jugadorEnemigo.modificarDuracionAEfecto(getNombre(), duracion);
-
-        } else {
-            jugadorEnemigo.agregarEfecto(this);
-        }
+        setearEfectoDefault(jugadorAliado, jugadorEnemigo);
     }
 
     @Override
@@ -60,6 +51,20 @@ public class Vulnerable implements Efecto {
     @Override
     public void modificarDuracion(int duracion) {
         this.duracion += duracion;
+    }
+
+    @Override
+    public void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto) {
+    }
+
+    @Override
+    public int getDuracion() {
+        return this.duracion;
+    }
+
+    @Override
+    public boolean getSeLeAplicaAlAliado() {
+        return false;
     }
 
 }
