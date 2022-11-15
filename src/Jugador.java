@@ -225,7 +225,7 @@ public class Jugador {
         manaActual = manaMaximo;
         this.recorrerEfectos();
         this.robarCarta();
-        while (!pasarTurno && this.manaActual > 0) {
+        while (!pasarTurno && this.mano.getCantMano() > 0) {
             int posicionCarta = this.pedirPosicionCarta();
             this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
         }
