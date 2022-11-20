@@ -3,9 +3,12 @@ import src.model.Jugador;
 import src.model.Mano;
 import src.model.Mazo;
 import src.model.Tablero;
+import src.view.Interfaz;
 
 public class Main {
     public static void main(String[] args) {
+        Interfaz interfaz = new Interfaz();
+        interfaz.helloWorld();
         BuilderMazos builder = new BuilderMazos();
         Mazo mazoGuerrero = builder.crearMazoGuerrero();
         Mazo MazoAlquimista = builder.crearMazoAlquimista();
