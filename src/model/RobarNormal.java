@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 /*
  * Roba cantidad de cartas igual a el int que se le pasa en el constructor

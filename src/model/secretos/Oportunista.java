@@ -1,8 +1,8 @@
-package src.secretos;
+package src.model.secretos;
 
-import src.Carta;
-import src.Jugador;
-import src.Secreto;
+import src.model.Carta;
+import src.model.Jugador;
+import src.model.Secreto;
 
 /*
  * La proxima vez que juegues una carta de daño, robas 3 cartas.

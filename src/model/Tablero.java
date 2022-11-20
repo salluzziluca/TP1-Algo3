@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 public class Tablero {
     private Jugador jugador1;

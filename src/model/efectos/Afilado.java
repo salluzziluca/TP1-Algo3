@@ -1,8 +1,8 @@
-package src.efectos;
+package src.model.efectos;
 
-import src.Efecto;
-import src.Jugador;
-import src.Carta;
+import src.model.Carta;
+import src.model.Efecto;
+import src.model.Jugador;
 
 /*
 * Al jugarse esta carta, las cartas de Daño del jugador que la juega tienen +1 de daño.

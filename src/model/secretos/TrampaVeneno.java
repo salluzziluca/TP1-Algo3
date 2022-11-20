@@ -1,6 +1,5 @@
 package src.model.secretos;
 
-import src.*;
 import src.model.efectos.Veneno;
 import src.model.Carta;
 import src.model.Jugador;

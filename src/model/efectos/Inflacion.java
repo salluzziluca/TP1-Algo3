@@ -1,8 +1,8 @@
-package src.efectos;
+package src.model.efectos;
 
-import src.Carta;
-import src.Efecto;
-import src.Jugador;
+import src.model.Carta;
+import src.model.Efecto;
+import src.model.Jugador;
 
 /*
  * Al instanciarse este efecto en el array de efectos de un jugador, Aumenta 1 el costo de todas las cartas en mano

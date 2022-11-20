@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 public class CuraNormal implements Cura {
     private int cantidad;

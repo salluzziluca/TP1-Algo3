@@ -1,6 +1,9 @@
-package src.secretos;
+package src.model.secretos;
 
-import src.*;
+import src.model.Carta;
+import src.model.Daño;
+import src.model.Jugador;
+import src.model.Secreto;
 
 /*
  * Al instanciarse este secreto en el array de secretos de un jugador, La proxima vez que su oponente juegue una carta de daño, en vez de dañarlo lo cura y roba 1 carta

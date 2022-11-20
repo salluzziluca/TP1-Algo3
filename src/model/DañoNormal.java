@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 /*
  * Aplica daño al jugador enemigo igual a la cantidad que se le asigna en el constructor

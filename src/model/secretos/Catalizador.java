@@ -1,9 +1,9 @@
-package src.secretos;
+package src.model.secretos;
 
-import src.Carta;
-import src.Efecto;
-import src.Jugador;
-import src.Secreto;
+import src.model.Carta;
+import src.model.Efecto;
+import src.model.Jugador;
+import src.model.Secreto;
 
 public class Catalizador implements Secreto {
     @Override
