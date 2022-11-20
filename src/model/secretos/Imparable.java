@@ -1,12 +1,13 @@
-package src.secretos;
+package src.model.secretos;
 
-import src.*;
-import src.efectos.Veneno;
+import src.model.Carta;
+import src.model.Jugador;
+import src.model.Secreto;
 
 /*
- * Al instanciarse este secreto en el array de secretos de un jugador, La proxima vez que su oponente juegue una carta de Daño, le aplica Veneno igual al daño de la carta.
+ * Al instanciarse este secreto en el array de secretos de un jugador, la proxima vez que tu oponente juegue una carta que te infligiera un efecto se limpia el tipo de efecto que te intentan aplicar.
  */
-public class TrampaVeneno implements Secreto {
+public class Imparable implements Secreto {
 
     @Override
     public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
@@ -15,21 +16,21 @@ public class TrampaVeneno implements Secreto {
 
     @Override
     public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
-        if (carta.getDaño() != null && jugador == jugadorEnemigo) {
+        if (carta.getEfecto() != null && jugador == jugadorEnemigo) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
         }
     }
 
     @Override
     public void alSerRevelado(Jugador jugadorAliado, Jugador jugadorEnemigo, Carta carta) {
-        Veneno veneno = new Veneno(carta.getDaño().getCantidad());
-        veneno.setearEfecto(jugadorAliado, jugadorEnemigo);
+        jugadorAliado.quitarEfecto(carta.getEfecto());
 
         this.quitarSecreto(jugadorAliado);
     }
 
     @Override
     public String getNombre() {
-        return "TrampaVeneno";
+        return "Imparable";
     }
+
 }

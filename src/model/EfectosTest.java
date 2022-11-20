@@ -1,9 +1,9 @@
-package src;
+package src.model;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import src.efectos.*;
+import src.model.efectos.*;
 
 public class EfectosTest {
     @Test

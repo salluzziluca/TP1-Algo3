@@ -1,4 +1,8 @@
-import src.*;
+import src.model.BuilderMazos;
+import src.model.Jugador;
+import src.model.Mano;
+import src.model.Mazo;
+import src.model.Tablero;
 
 public class Main {
     public static void main(String[] args) {
