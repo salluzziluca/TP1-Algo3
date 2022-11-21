@@ -2,6 +2,7 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
+import model.*;
 import model.efectos.*;
 
 public class EfectosTest {

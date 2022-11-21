@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import model.secretos.*;
 import model.efectos.*;
+import model.*;
 
 public class SecretosTest {
         @Test

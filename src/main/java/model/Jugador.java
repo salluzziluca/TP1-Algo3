@@ -100,7 +100,7 @@ public class Jugador {
         this.efectos.get(buscarIndexEfecto(nombreEfecto)).modificarDuracion(duracion);
     }
 
-    void recorrerEfectos() {
+    public void recorrerEfectos() {
         for (Efecto Efecto : this.efectos) {
             Efecto.aplicarEfecto(this);
         }
@@ -206,7 +206,7 @@ public class Jugador {
     /*
      * Reduce la duracion de todos los efectos del jugador
      */
-    void terminarTurno() {
+    public void terminarTurno() {
         for (int i = 0; i < this.efectos.size(); i++) {
             Efecto efecto = this.efectos.get(i);
             efecto.reducirDuracion(this);

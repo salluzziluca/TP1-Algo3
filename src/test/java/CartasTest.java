@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import model.*;
 
 public class CartasTest {
     @Test
