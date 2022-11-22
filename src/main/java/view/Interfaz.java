@@ -5,6 +5,13 @@ import javafx.stage.Stage;
 
 public class Interfaz extends Application {
     public void start(Stage primaryStage) throws Exception {
-        // TODO implement me!
+
+        primaryStage.setTitle("Hello World");
+        primaryStage.show();
+
+    }
+
+    public static void start() {
+        launch();
     }
 }

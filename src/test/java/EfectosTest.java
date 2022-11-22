@@ -1,9 +1,9 @@
-
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import model.*;
 import model.efectos.*;
+
+import static org.junit.Assert.*;
 
 public class EfectosTest {
     @Test
@@ -88,8 +88,8 @@ public class EfectosTest {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(true, jugador1.getEfectos().isEmpty());
-        assertEquals(true, jugador2.getEfectos().isEmpty());
+        assertTrue(jugador1.getEfectos().isEmpty());
+        assertTrue(jugador2.getEfectos().isEmpty());
 
     }
 
@@ -197,14 +197,14 @@ public class EfectosTest {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(false, jugador1.getEfectos().isEmpty());
-        assertEquals(false, jugador2.getEfectos().isEmpty());
+        assertFalse(jugador1.getEfectos().isEmpty());
+        assertFalse(jugador2.getEfectos().isEmpty());
         for (int i = 0; i < 4; i++) {
             jugador1.terminarTurno();
             jugador2.terminarTurno();
         }
-        assertEquals(true, jugador1.getEfectos().isEmpty());
-        assertEquals(true, jugador2.getEfectos().isEmpty());
+        assertTrue(jugador1.getEfectos().isEmpty());
+        assertTrue(jugador2.getEfectos().isEmpty());
     }
 
 }
