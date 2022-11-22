@@ -5,48 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/BuilderCartas.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/BuilderMazos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Carta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Cura.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/CuraNormal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Daño.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/DañoNormal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Efecto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Jugador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Mano.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Mazo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Robar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/RobarNormal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Secreto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Tablero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/efectos/Afilado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/efectos/Berserk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/efectos/Inflacion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/efectos/Veneno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/efectos/Vulnerable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/Catalizador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/Desviar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/Enormigus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/Imparable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/Oportunista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/PrevenirYCurar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/secretos/TrampaVeneno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/Interfaz.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/CartasTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/EfectosTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/SecretosTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Interfaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EfectosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EfectosTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/BuilderCartas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/BuilderMazos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Carta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Cura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/CuraNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Daño.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/DañoNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Efecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Jugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Mano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Mazo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Robar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RobarNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Secreto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Tablero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Afilado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Berserk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Inflacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Veneno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Vulnerable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Catalizador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Desviar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Enormigus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Imparable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Oportunista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/PrevenirYCurar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/TrampaVeneno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Interfaz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CartasTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/EfectosTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/SecretosTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +56,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/test/java/EfectosTest.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HuCU0eIR7Po6ZQqSayFZQFGayM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -85,6 +75,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kvothe/repos/TP1-Algo3&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -101,7 +92,7 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in TP1-Algo3">
+  <component name="RunManager" selected="JUnit.All in AYUDA">
     <configuration name="Interfaz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.Interfaz" />
       <module name="AYUDA PO FAVO" />
@@ -111,6 +102,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in AYUDA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AYUDA" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,15 +131,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AYUDA PO FAVO" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CartasTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CartasTest.testRobarCarta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP1-Algo3" />
       <option name="PACKAGE_NAME" value="" />
@@ -153,18 +143,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Interfaz" />
+      <item itemvalue="JUnit.All in AYUDA" />
       <item itemvalue="JUnit.All in TP1-Algo3" />
       <item itemvalue="JUnit.CartasTest (1)" />
       <item itemvalue="JUnit.CartasTest.testRobarCarta" />
-      <item itemvalue="JUnit.CartasTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in AYUDA" />
         <item itemvalue="JUnit.All in TP1-Algo3" />
         <item itemvalue="JUnit.CartasTest.testRobarCarta" />
         <item itemvalue="JUnit.CartasTest (1)" />
         <item itemvalue="Application.Interfaz" />
-        <item itemvalue="JUnit.CartasTest" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +172,7 @@
       <workItem from="1669126365677" duration="50000" />
       <workItem from="1669126423297" duration="397000" />
       <workItem from="1669126829606" duration="1341000" />
+      <workItem from="1669129356901" duration="446000" />
     </task>
     <servers />
   </component>

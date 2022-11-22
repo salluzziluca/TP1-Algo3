@@ -1,11 +1,9 @@
-import src.model.BuilderMazos;
-import src.model.Jugador;
-import src.model.Mano;
-import src.model.Mazo;
-import src.model.Tablero;
+package controller;
 
-public class Main {
-    public static void main(String[] args) {
+import model.*;
+
+public class Controller {
+    public void inicializarMazos(){
         BuilderMazos builder = new BuilderMazos();
         Mazo mazoGuerrero = builder.crearMazoGuerrero();
         Mazo MazoAlquimista = builder.crearMazoAlquimista();
@@ -16,4 +14,6 @@ public class Main {
 
         tablero.jugar();// TODO por ahora no se puede jugar ni en la consola
     }
+
+
 }
