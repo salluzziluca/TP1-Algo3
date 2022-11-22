@@ -1,5 +1,6 @@
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -34,7 +35,7 @@ public class SecretosTest {
                 jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
                 jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
                 assertEquals(19, jugador2.getManaActual());
-                assertEquals(true, jugador1.getSecretos().isEmpty());
+            assertTrue(jugador1.getSecretos().isEmpty());
         }
 
         @Test
@@ -64,7 +65,7 @@ public class SecretosTest {
                 jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
                 jugador1.getMano().jugarCarta(0, jugador1, jugador2, tablero);
                 assertEquals(9, jugador2.getEfectos().get(0).getDuracion());
-                assertEquals(true, jugador1.getSecretos().isEmpty());
+            assertTrue(jugador1.getSecretos().isEmpty());
         }
 
         @Test
@@ -88,7 +89,7 @@ public class SecretosTest {
                 jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
                 assertEquals(6, jugador2.getVida());
                 assertEquals(10, jugador1.getVida());
-                assertEquals(true, jugador1.getSecretos().isEmpty());
+            assertTrue(jugador1.getSecretos().isEmpty());
         }
 
         @Test
@@ -115,7 +116,7 @@ public class SecretosTest {
                 assertEquals(10, jugador2.getVida());
                 assertEquals(12, jugador1.getVida());
                 assertEquals(1, jugador1.getCantidadCartasEnMano());
-                assertEquals(true, jugador1.getSecretos().isEmpty());
+            assertTrue(jugador1.getSecretos().isEmpty());
         }
 
         @Test
@@ -143,8 +144,6 @@ public class SecretosTest {
                 jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
                 assertEquals(0, jugador1.getEfectos().size());
 
-                jugador1 = null;
-                jugador2 = null;
                 jugador1 = new Jugador("Jugador 1", 10, 10, new Mano(), mazo1);
                 jugador2 = new Jugador("Jugador 2", 10, 30, new Mano(), mazo2);
 
@@ -154,6 +153,6 @@ public class SecretosTest {
                 jugador2.robarCarta();
                 jugador2.getMano().jugarCarta(0, jugador2, jugador1, tablero1);
                 assertEquals(0, jugador1.getEfectos().size());
-                assertEquals(true, jugador1.getSecretos().isEmpty());
+            assertTrue(jugador1.getSecretos().isEmpty());
         }
 }

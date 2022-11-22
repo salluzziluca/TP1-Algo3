@@ -9,9 +9,9 @@ import model.Jugador;
 */
 public class Afilado implements Efecto {
     private int duracion;
-    private int duracionOriginal;
+    private final int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
-    private boolean seLeAplicaAlAliado;
+    private final boolean seLeAplicaAlAliado;
 
     public Afilado(int duracion) {
         this.duracion = duracion;
@@ -55,13 +55,11 @@ public class Afilado implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        return;
     }
 
     @Override
     public void aplicarEfectoACarta(Carta carta) {
         carta.modificarAtaque(1);
-        return;
     }
 
     @Override

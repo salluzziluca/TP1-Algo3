@@ -2,13 +2,18 @@ package model;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("ForLoopReplaceableByForEach")
 public class Jugador {
     private int vida;
     private int manaMaximo;
     private int manaActual;
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private Mano mano;
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private Mazo mazo;
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private ArrayList<Efecto> efectos;
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private ArrayList<Secreto> secretos;
     private boolean pasarTurno;
 
@@ -18,8 +23,8 @@ public class Jugador {
         this.manaActual = manaMaximo;
         this.mano = mano;
         this.mazo = mazo;
-        this.efectos = new ArrayList<Efecto>();
-        this.secretos = new ArrayList<Secreto>();
+        this.efectos = new ArrayList<>();
+        this.secretos = new ArrayList<>();
         this.pasarTurno = false;
     }
 
@@ -80,8 +85,7 @@ public class Jugador {
     }
 
     private int pedirPosicionCarta() {
-        int posicionCarta = Integer.parseInt(System.console().readLine()); // TODO interfaz
-        return posicionCarta;
+        return Integer.parseInt(System.console().readLine());
     }
 
     public void agregarEfecto(Efecto efecto) {

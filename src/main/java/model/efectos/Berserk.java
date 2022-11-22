@@ -9,9 +9,9 @@ import model.Jugador;
  */
 public class Berserk implements Efecto {
     public int duracion;
-    private int duracionOriginal;
+    private final int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
-    private boolean seLeAplicaAlAliado;
+    private final boolean seLeAplicaAlAliado;
 
     public int getDuracionOriginal() {
         return duracionOriginal;
@@ -47,12 +47,10 @@ public class Berserk implements Efecto {
 
     @Override
     public void aplicarEfectoACarta(Carta carta) {
-        return;
     }
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        return;
     }
 
     @Override

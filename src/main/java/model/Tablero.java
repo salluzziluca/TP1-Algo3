@@ -1,8 +1,8 @@
 package model;
 
 public class Tablero {
-    private Jugador jugador1;
-    private Jugador jugador2;
+    private final Jugador jugador1;
+    private final Jugador jugador2;
     private Carta cartaEnJuego;
     private int turno; // TODO Por ahora no lo usamos
 

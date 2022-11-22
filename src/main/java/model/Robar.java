@@ -1,5 +1,5 @@
 package model;
 
 public interface Robar {
-    public void robarCarta(Jugador jugadorAliado);
+    void robarCarta(Jugador jugadorAliado);
 }

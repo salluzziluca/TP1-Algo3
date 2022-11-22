@@ -2,15 +2,17 @@ package model;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class Mazo {
     private ArrayList<Carta> cartas;
 
+    @SuppressWarnings("unused")
     public ArrayList<Carta> getCartas() {
         return cartas;
     }
 
     public Mazo() {
-        cartas = new ArrayList<Carta>();
+        cartas = new ArrayList<>();
     }
 
     public void agregarCarta(Carta carta) {
@@ -22,8 +24,7 @@ public class Mazo {
      */
     public Carta darCarta() {
         int ultimaPosicion = cartas.size() - 1;
-        Carta carta = cartas.remove(ultimaPosicion);
-        return carta;
+        return cartas.remove(ultimaPosicion);
 
     }
 
@@ -31,7 +32,7 @@ public class Mazo {
      * Mezcla las cartas del mazo aleatoreamente
      */
     public void mezclar() {
-        ArrayList<Carta> cartasBarajadas = new ArrayList<Carta>();
+        ArrayList<Carta> cartasBarajadas = new ArrayList<>();
         int cantidadCartas = cartas.size();
         for (int i = 0; i < cantidadCartas; i++) {
             int posicionAleatoria = (int) (Math.random() * cartas.size());

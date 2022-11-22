@@ -1,10 +1,11 @@
 package model;
 
 public class Carta {
-    private String nombre;
-    private String descripcion;
+    private final String nombre;
+    @SuppressWarnings("FieldCanBeLocal")
+    private final String descripcion;
     private int costo;
-    private int costoOriginal;
+    private final int costoOriginal;
     private Daño daño;
     private Cura cura;
     private Efecto efecto;

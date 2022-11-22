@@ -8,7 +8,6 @@ public class BuilderCartas {
     }
 
     public BuilderCartas() {
-        return;
     }
 
     public void resetearCarta(String nombre, String descripcion, int costo) {
@@ -17,10 +16,6 @@ public class BuilderCartas {
 
     public void setDaño(DañoNormal daño) {
         carta.setDaño(daño);
-    }
-
-    public void setCura(CuraNormal cura) {
-        carta.setCura(cura);
     }
 
     public void setEfecto(Efecto efecto) {

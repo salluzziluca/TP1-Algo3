@@ -1,6 +1,7 @@
 package model;
 
 public class CuraNormal implements Cura {
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private int cantidad;
 
     public CuraNormal(int cantidad) {

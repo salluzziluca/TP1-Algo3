@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Mano {
+    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private ArrayList<Carta> manoActual;
 
     public int getCantMano() {
@@ -10,7 +11,7 @@ public class Mano {
     }
 
     public Mano() {
-        this.manoActual = new ArrayList<Carta>();
+        this.manoActual = new ArrayList<>();
     }
 
     /*

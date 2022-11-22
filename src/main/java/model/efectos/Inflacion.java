@@ -9,7 +9,7 @@ import model.Jugador;
  */
 public class Inflacion implements Efecto {
     private int duracion;
-    private int duracionOriginal;
+    private final int duracionOriginal;
     private boolean seDebeAplicarElEfecto;
 
     public Inflacion(int duracion) {
@@ -44,7 +44,6 @@ public class Inflacion implements Efecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        return;
     }
 
     @Override

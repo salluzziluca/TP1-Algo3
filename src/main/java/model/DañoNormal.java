@@ -5,7 +5,7 @@ package model;
  */
 public class DañoNormal implements Daño {
     private int cantidad;
-    private int cantidadOriginal;
+    private final int cantidadOriginal;
 
     public DañoNormal(int cantidad) {
         this.cantidad = cantidad;

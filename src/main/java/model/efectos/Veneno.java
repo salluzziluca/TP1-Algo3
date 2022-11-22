@@ -9,7 +9,7 @@ import model.Jugador;
  */
 public class Veneno implements Efecto {
     private int duracion;
-    private int duracionOriginal;
+    private final int duracionOriginal;
 
     public Veneno(int duracion) {
         this.duracion = duracion;
@@ -39,7 +39,6 @@ public class Veneno implements Efecto {
 
     @Override
     public void aplicarEfectoACarta(Carta carta) {
-        return;
     }
 
     @Override

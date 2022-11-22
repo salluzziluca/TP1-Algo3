@@ -24,7 +24,7 @@ public class InterfazInicio extends Application {
 
         textField.setMaxWidth(200);
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Hola");
         mazoGuerrero.setText("Mazo Guerrero");
         mazoGuerrero.setText("Mazo Alquimista");
         menuDeMazos.getItems().addAll(mazoGuerrero, mazoAlquimista);
