@@ -4,42 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="Eliminar la carpeta org">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/BuilderCartas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/BuilderMazos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Carta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/CuraNormal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Daño.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/DañoNormal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Efecto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Jugador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Mano.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Mazo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Robar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RobarNormal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Secreto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Tablero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Afilado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Berserk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Inflacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Veneno.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/efectos/Vulnerable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Catalizador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Desviar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Enormigus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Imparable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/Oportunista.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/PrevenirYCurar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/secretos/TrampaVeneno.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Interfaz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CartasTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/EfectosTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/SecretosTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,16 +59,10 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in AYUDA">
-    <configuration name="Interfaz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.Interfaz" />
-      <module name="AYUDA PO FAVO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="AYUDA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,7 +103,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Interfaz" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.All in AYUDA" />
       <item itemvalue="JUnit.All in TP1-Algo3" />
       <item itemvalue="JUnit.CartasTest (1)" />
@@ -150,11 +111,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in AYUDA" />
         <item itemvalue="JUnit.All in TP1-Algo3" />
         <item itemvalue="JUnit.CartasTest.testRobarCarta" />
         <item itemvalue="JUnit.CartasTest (1)" />
-        <item itemvalue="Application.Interfaz" />
       </list>
     </recent_temporary>
   </component>
@@ -172,8 +133,23 @@
       <workItem from="1669126365677" duration="50000" />
       <workItem from="1669126423297" duration="397000" />
       <workItem from="1669126829606" duration="1341000" />
-      <workItem from="1669129356901" duration="446000" />
+      <workItem from="1669129356901" duration="787000" />
     </task>
+    <task id="LOCAL-00001" summary="?????">
+      <created>1669129828695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669129828695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Eliminar la carpeta org">
+      <created>1669129924753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669129924753</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,5 +165,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="?????" />
+    <MESSAGE value="Eliminar la carpeta org" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminar la carpeta org" />
   </component>
 </project>
