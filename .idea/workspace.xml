@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="feat: Lograr que se reproduzcan dos escenas de login">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/InterfazTablero.java" afterDir="false" />
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="refactor: modularizar el creado de escenasiniciales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/EscenaInicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/InterfazInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/InterfazInicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +164,7 @@
       <workItem from="1669129356901" duration="6053000" />
       <workItem from="1669135879477" duration="195000" />
       <workItem from="1669136082105" duration="4071000" />
-      <workItem from="1669213658860" duration="6659000" />
+      <workItem from="1669213658860" duration="7419000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
@@ -211,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669218533290</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor: modularizar el creado de escenasiniciales">
+      <created>1669221203752</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669221203752</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +250,8 @@
     <MESSAGE value="feat: agregar un javafx basico" />
     <MESSAGE value="feat: desarrollar una interfaz de inicio básica" />
     <MESSAGE value="feat: Lograr que se reproduzcan dos escenas de login" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Lograr que se reproduzcan dos escenas de login" />
+    <MESSAGE value="refactor: modularizar el creado de escenasiniciales" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: modularizar el creado de escenasiniciales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -255,6 +260,21 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/InterfazInicio.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

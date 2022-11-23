@@ -29,6 +29,7 @@ public class BuilderEscenaInicio{
         Label label = new Label();
         Button botonSalir = new Button();
         Button botonContinuar = new Button();
+
         label.setText("Jugador 1/2 ingrese su nombre y elija un mazo");
         botonSalir.setText("Salir");
         botonContinuar.setText("Continuar");

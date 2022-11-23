@@ -35,7 +35,7 @@ public class Controller {
     }
 
     public void InicializarJuego(){
-        InterfazInicio interfazInicio= new InterfazInicio();
+        InterfazInicio interfazInicio= new InterfazInicio(this);
         interfazInicio.start();
         interfazInicio.start();
 
