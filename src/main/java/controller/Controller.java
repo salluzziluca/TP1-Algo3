@@ -4,29 +4,45 @@ import model.*;
 import view.InterfazInicio;
 
 public class Controller {
+    final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
-    final int MANA_INICIAL = 0;
+    Jugador jugador1;
+    Jugador jugador2;
     BuilderMazos builder = new BuilderMazos();
+
+
 
     /*
      * Recibe el string con el nombre y la elección de mazo hecha por el jugador.
      */
-    public Jugador RecibirNombreYMazo(String nombre, String mazo) {
+    public void RecibirNombreYMazo(String nombre, String mazo) {
         Mazo mazoJugador = null;
+
         if(mazo.equals("Mazo Guerrero")){
             mazoJugador = builder.crearMazoGuerrero();
         }
         else if(mazo.equals("Mazo Alquimista")){
             mazoJugador = builder.crearMazoAlquimista();
         }
+        Jugador jugadorActual = new Jugador(nombre, VIDA_INICIAL,MANA_INICIAL, new Mano(), mazoJugador);
 
-        return new Jugador(nombre, VIDA_INICIAL, MANA_INICIAL, new Mano(), mazoJugador);
+        if(jugador1 == null) jugador1 = jugadorActual;
+        else if(jugador2 == null) jugador2 = jugadorActual;
+        else {
+            //arrancar el juego
+
+        }
     }
 
     public void InicializarJuego(){
         InterfazInicio interfazInicio= new InterfazInicio();
         interfazInicio.start();
         interfazInicio.start();
+
+    }
+
+    public void jugarse(){
+        //crear una escena
     }
     public void inicializarMazos(){
         BuilderMazos builder = new BuilderMazos();
