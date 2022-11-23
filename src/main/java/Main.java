@@ -1,8 +1,9 @@
-import view.InterfazInicio;
+import controller.*;
 
 public class Main {
     public static void main(String[] args) {
-        InterfazInicio.start();
+        Controller controller = new Controller();
+        controller.InicializarJuego();
     }
 
 
