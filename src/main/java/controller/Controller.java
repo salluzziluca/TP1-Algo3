@@ -2,6 +2,7 @@ package controller;
 
 import model.*;
 import view.InterfazInicio;
+import view.InterfazTablero;
 
 public class Controller {
     final int MANA_INICIAL = 3;
@@ -27,19 +28,16 @@ public class Controller {
         Jugador jugadorActual = new Jugador(nombre, VIDA_INICIAL,MANA_INICIAL, new Mano(), mazoJugador);
 
         if(jugador1 == null) jugador1 = jugadorActual;
-        else if(jugador2 == null) jugador2 = jugadorActual;
-        else {
-            //arrancar el juego
+        else if(jugador2 == null){ jugador2 = jugadorActual;
+            InterfazTablero interfazTablero = new InterfazTablero(this);
+            interfazTablero.start();
 
+/*            Tablero tablero = new Tablero(jugador1, jugador2);
+            tablero.jugar();*/
         }
     }
 
-    public void InicializarJuego(){
-        InterfazInicio interfazInicio= new InterfazInicio(this);
-        interfazInicio.start();
-        interfazInicio.start();
 
-    }
 
     public void jugarse(){
         //crear una escena
