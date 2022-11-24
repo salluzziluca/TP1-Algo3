@@ -225,6 +225,7 @@ public class Jugador {
      * terminarTurno
      */
     public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
+        //TODO: Es aca, dentro del turno, donde deberia actualizarse la view del tablero, ya sea una vez al inicio de cada turno o varias veces dentro del mismo
         pasarTurno = false;
         manaActual = manaMaximo;
         this.recorrerEfectos();

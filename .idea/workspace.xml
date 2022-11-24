@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="refactor: modificar InterfazInicio para que se utilize el mismo controlador todo el tiempo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="feat: Empezar a implementar la InterfazTablero">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/InterfazTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/InterfazTablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669221983843</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Empezar a implementar la InterfazTablero">
+      <created>1669230419456</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669230419456</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +263,8 @@
     <MESSAGE value="feat: Lograr que se reproduzcan dos escenas de login" />
     <MESSAGE value="refactor: modularizar el creado de escenasiniciales" />
     <MESSAGE value="refactor: modificar InterfazInicio para que se utilize el mismo controlador todo el tiempo" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: modificar InterfazInicio para que se utilize el mismo controlador todo el tiempo" />
+    <MESSAGE value="feat: Empezar a implementar la InterfazTablero" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Empezar a implementar la InterfazTablero" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
