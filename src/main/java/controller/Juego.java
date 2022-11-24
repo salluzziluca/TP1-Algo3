@@ -70,12 +70,6 @@ public class Juego {
         Scene escenaInicio1 = builderEscenaInicio.crearEscena();
         escenarioPrincipal.setScene(escenaInicio1);
         escenarioPrincipal.show();
-        if (jugadores.size() == 2) {
-            builderEscenaTablero = new BuilderEscenaTablero();
-            Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
-            escenarioPrincipal.setScene(escenaTablero);
-            escenarioPrincipal.show();
-        }
 
     }
     public void inicializarMazos(){

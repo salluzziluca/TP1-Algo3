@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="resolver cosas  odio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javav">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/InterfazInicio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/InterfazTablero.java" beforeDir="false" />
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres">
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669314968822</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres">
+      <created>1669324606459</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669324606459</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +286,8 @@
     <MESSAGE value="refactor: modificar InterfazInicio para que se utilize el mismo controlador todo el tiempo" />
     <MESSAGE value="feat: Empezar a implementar la InterfazTablero" />
     <MESSAGE value="resolver cosas  odio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javav" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolver cosas  odio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javav" />
+    <MESSAGE value="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
