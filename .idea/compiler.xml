@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TP1-Algo3" />
+        <module name="Tp1-Algo3" />
         <module name="AYUDA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AYUDA" target="19" />
       <module name="TP1-Algo3" target="19" />
     </bytecodeTargetLevel>
   </component>
