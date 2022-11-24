@@ -6,8 +6,6 @@ import javafx.stage.Stage;
 import controller.*;
 
 
-import javax.naming.ldap.Control;
-
 public class InterfazTablero extends Application {
     Controller controller;
 

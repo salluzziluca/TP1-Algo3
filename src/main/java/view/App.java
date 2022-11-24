@@ -1,7 +1,8 @@
+package view;
+
 import controller.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import view.InterfazInicio;
 
 
 
@@ -18,5 +19,4 @@ public class App extends Application {
         interfazInicio.start(primaryStage);
 
     }
-    //BUG: Actualmente no corre por Error: JavaFX runtime components are missing, and are required to run this application
 }
