@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("ForLoopReplaceableByForEach")
 public class Jugador {
+    private String nombre;
     private int vida;
     private int manaMaximo;
     private int manaActual;
@@ -18,6 +19,7 @@ public class Jugador {
     private boolean pasarTurno;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
+        this.nombre = nombre;
         this.vida = vida;
         this.manaMaximo = mana;
         this.manaActual = manaMaximo;
@@ -235,5 +237,9 @@ public class Jugador {
             this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
         }
         this.terminarTurno();
+    }
+
+    public String getNombre() {
+        return this.nombre;
     }
 }

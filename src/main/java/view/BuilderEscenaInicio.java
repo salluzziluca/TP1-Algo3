@@ -7,17 +7,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import controller.Controller;
+import controller.Juego;
 
 public class BuilderEscenaInicio{
-    private final Stage primaryStage;
-    private final Controller controller;
-
-    public BuilderEscenaInicio(Stage primaryStage, Controller controller){
-        this.primaryStage = primaryStage;
-        this.controller = controller;
-    }
-    public Scene crearEscena(Scene escenaSiguiente) {
+    Juego juego;
+    public Scene crearEscena() {
         VBox vcaja = new VBox();
         TextField textField = new TextField();
         Menu menuDeMazos = new Menu();
@@ -39,14 +33,10 @@ public class BuilderEscenaInicio{
 
             String nombreJugador = textField.getText();
             Object mazoElegido = choiceBox.getSelectionModel().getSelectedItem();
-            controller.RecibirNombreYMazo(nombreJugador, mazoElegido.toString());
-            primaryStage.setScene(escenaSiguiente);
-            primaryStage.show();
+            juego.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
         });
 
         textField.setMaxWidth(200);
-
-        primaryStage.setTitle("Hola");
         mazoGuerrero.setText("Mazo Guerrero");
         mazoGuerrero.setText("Mazo Alquimista");
         menuDeMazos.getItems().addAll(mazoGuerrero, mazoAlquimista);
@@ -64,4 +54,10 @@ public class BuilderEscenaInicio{
         return new Scene(vcaja, 500, 300);
     }
 
+    private void notificar() {
+    }
+
+    public void setJuego(Juego juego) {
+        this.juego = juego;
+    }
 }
