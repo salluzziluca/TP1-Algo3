@@ -56,6 +56,10 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         if (jugadores.size() == 2) {
             tablero = new Tablero(jugadores.get(0), jugadores.get(1));
             builderEscenaTablero.subscribe(this, tablero, this);
+            for (int i = 0; i < CANT_MANO_INICIAL; i++) {
+                jugadores.get(posicionJugadorActual).robarCarta();
+                jugadores.get(posicionJugadorOponente).robarCarta();
+            }
             Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
 
 
@@ -110,23 +114,6 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         posicionJugadorActual = posicionJugadorOponente;
         posicionJugadorOponente = aux;
     }
-    public void inicializarMazos(){
-        BuilderMazos builder = new BuilderMazos();
-        Mazo mazoGuerrero = builder.crearMazoGuerrero();
-        Mazo MazoAlquimista = builder.crearMazoAlquimista();
-
-        Jugador jugador1 = new Jugador("Jugador 1", VIDA_INICIAL, MANA_INICIAL, new Mano(), mazoGuerrero);
-        Jugador jugador2 = new Jugador("Jugador 2", VIDA_INICIAL, MANA_INICIAL, new Mano(), MazoAlquimista);
-        Tablero tablero = new Tablero(jugador1, jugador2);
-
-        tablero.jugar();// TODO por ahora no se puede jugar ni en la consola
-    }
-
-
-    public Tablero getTablero() {
-        return tablero;
-    }
-
     public void recargarEscena(){
         Scene escenaTablero =  builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
         escenarioPrincipal.setScene(escenaTablero);
