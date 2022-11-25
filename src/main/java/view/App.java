@@ -1,6 +1,6 @@
 package view;
 
-import controller.*;
+import controller.Juego;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.BuilderMazos;

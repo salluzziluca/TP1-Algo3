@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="feat: avanzar en la implementacion de los turnos de juego">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ObserverRecargarEscena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Carta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mazo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
     </list>
     <list id="7228fe44-254f-4977-b4be-f2b322708ff6" name="Changes by Agustin 2021" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/.gitkeep" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,19 +56,44 @@
     <file path="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java">
       <ranges>
         <range start1="3" end1="3" start2="3" end2="4" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="5" end1="5" start2="6" end2="7" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="5" end1="8" start2="6" end2="7" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="10" end1="14" start2="9" end2="12" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="15" end1="15" start2="13" end2="14" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="22" end1="23" start2="21" end2="22" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="24" end1="24" start2="23" end2="39" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="25" end1="33" start2="40" end2="42" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="34" end1="40" start2="43" end2="45" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="42" end1="43" start2="47" end2="48" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="45" end1="46" start2="50" end2="51" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="48" end1="52" start2="53" end2="70" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="54" end1="55" start2="72" end2="73" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="57" end1="58" start2="75" end2="75" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="59" end1="59" start2="76" end2="87" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="62" end1="63" start2="90" end2="91" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="64" end1="65" start2="92" end2="92" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="69" end1="73" start2="96" end2="96" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="74" end1="77" start2="97" end2="100" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="78" end1="80" start2="101" end2="106" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="81" end1="84" start2="107" end2="110" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="85" end1="86" start2="111" end2="112" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/view/App.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="21" end1="22" start2="21" end2="22" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/controller/Juego.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="6" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="5" end1="7" start2="9" end2="9" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
         <range start1="9" end1="9" start2="11" end2="12" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="10" end1="10" start2="13" end2="14" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="15" end1="16" start2="19" end2="22" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="17" end1="18" start2="23" end2="24" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="19" end1="19" start2="25" end2="29" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="20" end1="25" start2="30" end2="32" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="27" end1="28" start2="34" end2="34" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="29" end1="35" start2="35" end2="36" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="37" end1="40" start2="38" end2="39" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="42" end1="57" start2="41" end2="74" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="60" end1="62" start2="77" end2="79" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="67" end1="69" start2="84" end2="88" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="57" end1="58" start2="60" end2="60" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="67" end1="72" start2="69" end2="69" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="80" end1="80" start2="77" end2="79" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
+        <range start1="81" end1="81" start2="80" end2="81" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
+        <range start1="82" end1="83" start2="82" end2="102" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
       </ranges>
     </file>
   </component>
@@ -193,6 +223,7 @@
       <workItem from="1669213658860" duration="8681000" />
       <workItem from="1669227596157" duration="153000" />
       <workItem from="1669227758385" duration="1915000" />
+      <workItem from="1669404891507" duration="7492000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
@@ -313,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669399821912</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: avanzar en la implementacion de los turnos de juego">
+      <created>1669404287742</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669404287742</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +397,22 @@
     <MESSAGE value="feat: implementar el pasaje de turnos" />
     <MESSAGE value="feat: avanzar en la implementacion de los turnos de juego" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: avanzar en la implementacion de los turnos de juego" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

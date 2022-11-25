@@ -241,4 +241,8 @@ public class Jugador {
     public String getNombre() {
         return this.nombre;
     }
+
+    public void recargarMana() {
+        this.manaActual = this.manaMaximo;
+    }
 }

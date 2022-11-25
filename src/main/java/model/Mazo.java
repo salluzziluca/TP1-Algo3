@@ -41,4 +41,8 @@ public class Mazo {
         }
         cartas = cartasBarajadas;
     }
+
+    public boolean estaVacio(){
+        return cartas.isEmpty();
+    }
 }

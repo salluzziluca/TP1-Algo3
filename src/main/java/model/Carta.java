@@ -129,4 +129,8 @@ public class Carta {
             this.robar = robar;
         }
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }
