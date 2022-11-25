@@ -28,11 +28,11 @@ public class Mano {
      * tablero, resetea sus valores, la quita de la mano y la devuelve al mazo.
      * Luego, mezcla el mazo.
      */
-    public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo, Tablero tableroActual) {
+    public void jugarCarta(int posicionCarta, Jugador jugadorAliado, Jugador jugadorEnemigo, ObserverSetCartaEnJuego observer) {
         Carta cartaJugada = this.manoActual.get(posicionCarta);
         this.manoActual.remove(posicionCarta);
         cartaJugada.alJugarse(jugadorAliado, jugadorEnemigo);
-        tableroActual.setCartaEnJuego(cartaJugada, jugadorAliado);
+        observer.setCartaEnJuego(cartaJugada, jugadorAliado);
         cartaJugada.resetearValores();
         jugadorAliado.getMazo().agregarCarta(cartaJugada);
         jugadorAliado.getMazo().mezclar();

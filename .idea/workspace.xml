@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="style: eliminar codigo unreachable">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ObserverRecibirNombreYMazo.java" afterDir="false" />
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="refactor: Implementar adecuadamente el ObserverSetCartaEnJuego del model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ObserverSetCartaEnJuego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +85,7 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.All in Tp1-Algo3">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.App" />
       <module name="Tp1-Algo3" />
@@ -141,8 +138,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.All in Tp1-Algo3" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in AYUDA" />
         <item itemvalue="Application.InterfazInicio" />
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669324880702</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactor: Implementar adecuadamente el ObserverRecibirNombreYMazo">
+      <created>1669339042233</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669339042233</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +306,8 @@
     <MESSAGE value="resolver cosas  odio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javav" />
     <MESSAGE value="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres" />
     <MESSAGE value="style: eliminar codigo unreachable" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: eliminar codigo unreachable" />
+    <MESSAGE value="refactor: Implementar adecuadamente el ObserverRecibirNombreYMazo" />
+    <MESSAGE value="refactor: Implementar adecuadamente el ObserverSetCartaEnJuego del model" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Implementar adecuadamente el ObserverSetCartaEnJuego del model" />
   </component>
 </project>

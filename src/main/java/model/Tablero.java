@@ -1,6 +1,6 @@
 package model;
 
-public class Tablero {
+public class Tablero implements ObserverSetCartaEnJuego {
     private final Jugador jugador1;
     private final Jugador jugador2;
     private Carta cartaEnJuego;
