@@ -3,17 +3,22 @@ package view;
 import controller.ObserverPasarTurno;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import model.Carta;
 import model.Jugador;
+import model.ObserverSetCartaEnJuego;
 
 import java.util.ArrayList;
 
 public class BuilderEscenaTablero {
 
-    ArrayList<ObserverPasarTurno> ObserversPasarTurno = new ArrayList<>();
+    ObserverPasarTurno observerPasarTurno;
+    ObserverSetCartaEnJuego observerSetCartaEnJuego;
+    ObserverRecargarEscena observerRecargarEscena;
 
     public Scene crearEscenaTablero(Jugador Jugador1, Jugador Jugador2) {
         BorderPane borderPane = new BorderPane();
@@ -35,26 +40,42 @@ public class BuilderEscenaTablero {
         botonPasarTurno.setText("Pasar turno");
         botonSalir.setOnAction(e -> System.exit(0));
         botonPasarTurno.setOnAction(e -> {
-            for (ObserverPasarTurno observer : ObserversPasarTurno) {
-                observer.pasarTurno();
-            }
+                observerPasarTurno.pasarTurno();
         });
 
-        for (int i = 0; i < Jugador1.getMano().getCartas().size(); i++) {
-            Button cartaActual = new Button();
-            cartaActual.prefWidthProperty().bind(borderPane.widthProperty());
-            cartaActual.setMinHeight(100);
-            cartaActual.setText(Jugador1.getMano().getCartas().get(i).getNombre());
-            cartas.add(cartaActual);
-/*            cartas.get(i).setOnAction(e -> {
-                for (int j = 0; j < cartas.size(); j++) {
-                    if (e.getSource() == cartas.get(j)) {
-                        Jugador1.getMazo().getCartas().get(j).accionar();
+        ArrayList<Button> cartas = new ArrayList<>();
+        ArrayList<Carta> cartasJugador = jugadorActual.getMano().getCartas();
+        for (int i = 0; i < cartasJugador.size(); i++) {
+                Carta carta = cartasJugador.get(i);
+                Button cartaActual = new Button(carta.getNombre());
+                cartaActual.prefWidthProperty().bind(borderPane.widthProperty());
+                cartaActual.setMinHeight(100);
+
+            int finalI = i;
+            cartaActual.setOnAction(e -> {
+                        if (carta.puedeJugarse(jugadorActual.getManaActual())) {
+                            jugadorActual.getMano().jugarCarta(finalI, jugadorActual, jugadorOponente, observerSetCartaEnJuego);
+                            carta.alJugarse(jugadorActual, jugadorOponente);
+                            observerRecargarEscena.recargarEscena();
+
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("No tenes suficiente mana para jugar esta carta");
+                            alert.setHeaderText("No tenes suficiente mana para jugar esta carta");
+                            alert.setContentText("No tenes suficiente mana para jugar esta carta");
+                            alert.show();
+                        }
                     }
-                }
-            });*/
-            cajaH.getChildren().add(cartas.get(i));
-        }
+                );
+                cartas.add(cartaActual);
+                cartas.add(cartaActual);
+                cajaH.getChildren().add(cartaActual);
+            }
+
+
+
+
+
 
         borderPane.setBottom(cajaH);
         borderPane.setStyle("-fx-background-color: cyan;");
@@ -65,7 +86,9 @@ public class BuilderEscenaTablero {
         return new Scene(borderPane, 500, 300);
     }
 
-    public void subscribe(ObserverPasarTurno observerPasarTurno) {
-        ObserversPasarTurno.add(observerPasarTurno);
+    public void subscribe(ObserverPasarTurno observerPasarTurno, ObserverSetCartaEnJuego observerSetCartaEnJuego, ObserverRecargarEscena observerRecargarEscena) {
+        this.observerPasarTurno = observerPasarTurno;
+        this.observerSetCartaEnJuego = observerSetCartaEnJuego;
+        this.observerRecargarEscena = observerRecargarEscena;
     }
 }

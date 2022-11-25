@@ -25,7 +25,7 @@ public class Carta {
         this.robar = robar;
     }
 
-    private boolean puedeJugarse(int manaActual) {
+    public boolean puedeJugarse(int manaActual) {
         return manaActual >= this.costo;
     }
 

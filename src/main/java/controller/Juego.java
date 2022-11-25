@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno {
+public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, ObserverRecargarEscena {
     Stage escenarioPrincipal;
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
@@ -52,14 +52,12 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno {
 
         if (jugadores.size() == 2) {
             tablero = new Tablero(jugadores.get(0), jugadores.get(1));
+            builderEscenaTablero.subscribe(this, tablero, this);
             Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
+
 
             escenarioPrincipal.setScene(escenaTablero);
             escenarioPrincipal.show();
-            /*builderEscenaTablero.setTablero(tablero);
-            builderEscenaTablero.setJuego(this);
-            builderEscenaTablero.setJugadores(jugadores.get(0), jugadores.get(1));
-            tablero.jugar();*/
         }else {
             Scene escenaInicio2 = builderEscenaInicio.crearEscena();
             escenarioPrincipal.setScene(escenaInicio2);
@@ -73,21 +71,9 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno {
     }
 
     public void empezarJuego( ){
-        Jugador jugador1 = new Jugador("Jugador 1", VIDA_INICIAL,MANA_INICIAL, new Mano(), builderMazos.crearMazoGuerrero());
-        Jugador jugador2 = new Jugador("Jugador 2", VIDA_INICIAL,MANA_INICIAL, new Mano(), builderMazos.crearMazoAlquimista());
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-        jugador1.robarCarta();
-        Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugador1, jugador2);
-        escenarioPrincipal.setScene(escenaTablero);
-        escenarioPrincipal.show();
-
-        jugador1.robarCarta();
-        escenaTablero = builderEscenaTablero.crearEscenaTablero(jugador1, jugador2);
         Scene escenaInicio1 = builderEscenaInicio.crearEscena();
-        escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.setScene(escenaInicio1);
         escenarioPrincipal.show();
-
     }
 
     public void pasarTurno() {
@@ -119,4 +105,13 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno {
     }
 
 
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void recargarEscena(){
+        Scene escenaTablero =  builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
+        escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.show();
+    }
 }
