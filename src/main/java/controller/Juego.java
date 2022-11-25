@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Juego {
+public class Juego implements ObserverRecibirNombreYMazo {
     Stage escenarioPrincipal;
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;

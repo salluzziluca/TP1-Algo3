@@ -3,4 +3,5 @@ module view{
     requires javafx.graphics;
 
 exports view;
+    exports controller;
 }

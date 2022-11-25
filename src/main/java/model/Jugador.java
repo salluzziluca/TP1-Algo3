@@ -73,9 +73,8 @@ public class Jugador {
     }
 
     /*
-     * Aplica el daño recibido, modifica ese valor dependiendo de los efectos que el
-     * jugador
-     * tenga en ese momento aplicados
+     * Aplica el daño recibido, modifica ese valor dependiendo de los efectos que
+     * el jugador tenga en ese momento aplicados.
      */
     public void recibirDaño(int cantidad) {
 
@@ -122,7 +121,7 @@ public class Jugador {
     }
 
     /*
-     * Comprueba si el efecto pasado por parametro esta en la lista de efectos del
+     * Comprueba si el efecto pasado por parametro está en la lista de efectos del
      * jugador
      */
     public boolean buscarEfecto(String nombreEfecto) {
@@ -135,7 +134,7 @@ public class Jugador {
     }
 
     /*
-     * Si el efecto pasado por parametro esta en la lista de efectos del
+     * Si el efecto pasado por parametro está en la lista de efectos del
      * jugador lo retorna
      */
     public Efecto getEfecto(String nombreEfecto) {

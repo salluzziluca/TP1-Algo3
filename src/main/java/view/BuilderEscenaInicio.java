@@ -6,11 +6,14 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import controller.Juego;
+import controller.ObserverRecibirNombreYMazo;
+
+import java.util.ArrayList;
 
 public class BuilderEscenaInicio{
-    Juego juego;
+
+    ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();
     public Scene crearEscena() {
         VBox vcaja = new VBox();
         TextField textField = new TextField();
@@ -33,7 +36,10 @@ public class BuilderEscenaInicio{
 
             String nombreJugador = textField.getText();
             Object mazoElegido = choiceBox.getSelectionModel().getSelectedItem();
-            juego.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
+            for (ObserverRecibirNombreYMazo observer : ObserversRecibirNombreYMazo) {
+                observer.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
+            }
+
         });
 
         textField.setMaxWidth(200);
@@ -54,10 +60,8 @@ public class BuilderEscenaInicio{
         return new Scene(vcaja, 500, 300);
     }
 
-    private void notificar() {
+    public void subscribe(ObserverRecibirNombreYMazo observer){
+        ObserversRecibirNombreYMazo.add(observer);
     }
 
-    public void setJuego(Juego juego) {
-        this.juego = juego;
-    }
 }

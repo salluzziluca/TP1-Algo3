@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres">
+    <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="style: eliminar codigo unreachable">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ObserverRecibirNombreYMazo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
       <list>
         <option value="Class" />
         <option value="package-info" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -94,7 +101,7 @@
       <module name="AYUDA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669324606459</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="style: eliminar codigo unreachable">
+      <created>1669324880702</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669324880702</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,17 +301,7 @@
     <MESSAGE value="feat: Empezar a implementar la InterfazTablero" />
     <MESSAGE value="resolver cosas  odio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javaodio javav" />
     <MESSAGE value="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: al registrarse dos jugadores, se crea escena de tablero con sus nombres" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/Juego.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="style: eliminar codigo unreachable" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: eliminar codigo unreachable" />
   </component>
 </project>
