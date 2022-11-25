@@ -1,17 +1,18 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Mano {
     @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private ArrayList<Carta> manoActual;
 
-    public int getCantMano() {
-        return manoActual.size();
-    }
-
     public Mano() {
         this.manoActual = new ArrayList<>();
+    }
+
+    public int getCantMano() {
+        return manoActual.size();
     }
 
     /*
@@ -48,5 +49,9 @@ public class Mano {
         for (Carta carta : this.manoActual) {
             carta.aumentarValor();
         }
+    }
+
+    public ArrayList<Carta> getCartas() {
+        return this.manoActual;
     }
 }

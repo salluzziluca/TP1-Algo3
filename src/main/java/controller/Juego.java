@@ -8,10 +8,13 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Juego implements ObserverRecibirNombreYMazo {
+public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno {
     Stage escenarioPrincipal;
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
+
+    int posicionJugadorActual;
+    int posicionJugadorOponente;
 
     ArrayList<Jugador> jugadores = new ArrayList<>();
     BuilderEscenaInicio builderEscenaInicio;
@@ -26,6 +29,8 @@ public class Juego implements ObserverRecibirNombreYMazo {
         this.builderEscenaInicio = builderEscenaInicio;
         this.builderEscenaTablero = builderescenaTablero;
         this.builderMazos = builderMazos;
+        posicionJugadorActual = 0;
+        posicionJugadorOponente = 1;
 
     }
 
@@ -44,6 +49,7 @@ public class Juego implements ObserverRecibirNombreYMazo {
         }
         Jugador jugadorActual = new Jugador(nombre, VIDA_INICIAL,MANA_INICIAL, new Mano(), mazoJugador);
         jugadores.add(jugadorActual);
+
         if (jugadores.size() == 2) {
             tablero = new Tablero(jugadores.get(0), jugadores.get(1));
             Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
@@ -66,11 +72,39 @@ public class Juego implements ObserverRecibirNombreYMazo {
 
     }
 
-    public void jugarse( ){
-        Scene escenaInicio1 = builderEscenaInicio.crearEscena();
-        escenarioPrincipal.setScene(escenaInicio1);
+    public void empezarJuego( ){
+        Jugador jugador1 = new Jugador("Jugador 1", VIDA_INICIAL,MANA_INICIAL, new Mano(), builderMazos.crearMazoGuerrero());
+        Jugador jugador2 = new Jugador("Jugador 2", VIDA_INICIAL,MANA_INICIAL, new Mano(), builderMazos.crearMazoAlquimista());
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
+        jugador1.robarCarta();
+        Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugador1, jugador2);
+        escenarioPrincipal.setScene(escenaTablero);
         escenarioPrincipal.show();
 
+        jugador1.robarCarta();
+        escenaTablero = builderEscenaTablero.crearEscenaTablero(jugador1, jugador2);
+        Scene escenaInicio1 = builderEscenaInicio.crearEscena();
+        escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.show();
+
+    }
+
+    public void pasarTurno() {
+        //pasa turno y actualiza la interfaz
+        jugadores.get(posicionJugadorActual).terminarTurno();
+        swapJugadores();
+        jugadores.get(posicionJugadorActual).robarCarta();
+       Scene escenaTablero =  builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
+        escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.show();
+
+    }
+
+    private void swapJugadores() {
+        int aux = posicionJugadorActual;
+        posicionJugadorActual = posicionJugadorOponente;
+        posicionJugadorOponente = aux;
     }
     public void inicializarMazos(){
         BuilderMazos builder = new BuilderMazos();
