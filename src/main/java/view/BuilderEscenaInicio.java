@@ -33,11 +33,14 @@ public class BuilderEscenaInicio{
         botonSalir.setOnAction(e -> System.exit(0));
 
         botonContinuar.setOnAction(e -> {
-
-            String nombreJugador = textField.getText();
-            Object mazoElegido = choiceBox.getSelectionModel().getSelectedItem();
-            for (ObserverRecibirNombreYMazo observer : ObserversRecibirNombreYMazo) {
-                observer.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
+            if (textField.getText().isEmpty()) {
+                label.setText("POR FAVOR Ingrese un nombre");
+            } else {
+                String nombreJugador = textField.getText();
+                Object mazoElegido = choiceBox.getSelectionModel().getSelectedItem();
+                for (ObserverRecibirNombreYMazo observer : ObserversRecibirNombreYMazo) {
+                    observer.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
+                }
             }
 
         });

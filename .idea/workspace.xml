@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="refactor: Implementar adecuadamente el ObserverSetCartaEnJuego del model">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ObserverSetCartaEnJuego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Tp1-Algo3">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.App" />
       <module name="Tp1-Algo3" />
@@ -138,8 +136,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Tp1-Algo3" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.All in Tp1-Algo3" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in AYUDA" />
         <item itemvalue="Application.InterfazInicio" />
@@ -265,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669339042233</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor: Implementar adecuadamente el ObserverSetCartaEnJuego del model">
+      <created>1669340478641</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669340478641</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
