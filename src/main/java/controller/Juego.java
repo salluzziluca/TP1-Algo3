@@ -15,6 +15,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     Stage escenarioPrincipal;
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
+    final int CANT_MANO_INICIAL = 3;
 
     int posicionJugadorActual;
     int posicionJugadorOponente;
@@ -61,8 +62,6 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
                 jugadores.get(posicionJugadorOponente).robarCarta();
             }
             Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
-
-
             escenarioPrincipal.setScene(escenaTablero);
             escenarioPrincipal.show();
         }else {
@@ -80,6 +79,8 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
     public void pasarTurno() {
         //pasa turno y actualiza la interfaz
+
+
         jugadores.get(posicionJugadorActual).terminarTurno();
         jugadores.get(posicionJugadorActual).recargarMana();
         swapJugadores();

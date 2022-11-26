@@ -19,7 +19,7 @@ public class App extends Application {
         BuilderMazos builderMazos = new BuilderMazos();
         Juego juego = new Juego(primaryStage, builderEscenaInicio, builderEscenaTablero, builderMazos);
         builderEscenaInicio.subscribe(juego);
-        juego.jugarse();
+        juego.empezarJuego();
 
 
     }

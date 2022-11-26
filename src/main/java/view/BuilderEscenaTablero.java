@@ -1,6 +1,7 @@
 package view;
 
 import controller.ObserverPasarTurno;
+import controller.ObserverRecargarEscena;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,30 +19,34 @@ public class BuilderEscenaTablero {
     ObserverSetCartaEnJuego observerSetCartaEnJuego;
     ObserverRecargarEscena observerRecargarEscena;
 
-    public Scene crearEscenaTablero(Jugador Jugador1, Jugador Jugador2) {
+    public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
         BorderPane borderPane = new BorderPane();
+        Label manayVidaActual = new Label(String.format("Turno de %s\nVida: %d \nMana: %d", jugadorActual.getNombre(), jugadorActual.getVida(), jugadorActual.getManaActual()));
+        Label vidaOponente = new Label(String.format("Vida %s: %d", jugadorOponente.getNombre(), jugadorOponente.getVida()));
 
-        Label label = new Label();
-        Label label2 = new Label();
-        Label label3 = new Label();
-        Button botonSalir = new Button();
-        Button botonPasarTurno = new Button();
-        HBox cajaH = new HBox();
-        cajaH.maxHeight(400);
-        ArrayList<Button> cartas = new ArrayList<>();
+        VBox vboxEfectosSecretos = new VBox();
+        Button botonPasarTurno = new Button("Pasar turno");
+        vboxEfectosSecretos.getChildren().add(botonPasarTurno);
+        for (Efecto efecto : jugadorActual.getEfectos()) {
+            Label efectosySecretosActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
+            vboxEfectosSecretos.getChildren().add(efectosySecretosActual);
+        }
+        for (Secreto secreto : jugadorActual.getSecretos()) {
+            Label efectosySecretosActual = new Label(String.format("%s", secreto.getNombre()));
+            vboxEfectosSecretos.getChildren().add(efectosySecretosActual);
+        }
 
-        cajaH.alignmentProperty().set(Pos.CENTER);
-        label.setText("Juegen capos");
-        label2.setText(Jugador1.getNombre());
-        label3.setText(Jugador2.getNombre());
-        botonSalir.setText("Salir");
-        botonPasarTurno.setText("Pasar turno");
+
+
+        HBox cajaHcartas = new HBox();
+        cajaHcartas.maxHeight(400);
+
+
+        Button botonSalir = new Button("Salir");
         botonSalir.setOnAction(e -> System.exit(0));
-        botonPasarTurno.setOnAction(e -> {
-            observerPasarTurno.pasarTurno();
-        });
+        botonPasarTurno.setOnAction(e -> observerPasarTurno.pasarTurno());
 
-        ArrayList<Button> cartas = new ArrayList<>();
+
         ArrayList<Carta> cartasJugador = jugadorActual.getMano().getCartas();
         for (int i = 0; i < cartasJugador.size(); i++) {
             Carta carta = cartasJugador.get(i);
@@ -67,12 +72,22 @@ public class BuilderEscenaTablero {
                         if (carta.puedeJugarse(jugadorActual.getManaActual())) {
                             jugadorActual.getMano().jugarCarta(finalI, jugadorActual, jugadorOponente, observerSetCartaEnJuego);
                             observerRecargarEscena.recargarEscena();
+                            if (!jugadorOponente.estaVivo())  {
+                                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+                                alerta.setContentText(String.format("El jugador %s ha perdido",jugadorOponente.getNombre()));
+                                Optional<ButtonType> boton = alerta.showAndWait();
+                                if (boton.get() == ButtonType.OK) {
+                                    System.exit(0);
+                                } else {
+                                    System.exit(0);
+                                }
+                                alerta.show();
+                            }
 
                         } else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("No tenes suficiente mana para jugar esta carta");
+                            alert.setTitle("No se puede jugar la carta");
                             alert.setHeaderText("No tenes suficiente mana para jugar esta carta");
-                            alert.setContentText("No tenes suficiente mana para jugar esta carta");
                             alert.show();
                         }
                     }
@@ -82,12 +97,15 @@ public class BuilderEscenaTablero {
             cajaHcartas.setAlignment(Pos.BOTTOM_CENTER);
         }
 
-
-        borderPane.setBottom(cajaH);
+        BorderPane.setAlignment(cajaHcartas, Pos.CENTER);
+        BorderPane.setAlignment(manayVidaActual, Pos.CENTER);
+        BorderPane.setAlignment(vidaOponente, Pos.CENTER);
+        BorderPane.setAlignment(vboxEfectosSecretos, Pos.CENTER);
+        borderPane.setBottom(cajaHcartas);
         borderPane.setStyle("-fx-background-color: cyan;");
-        borderPane.setTop(label);
-        borderPane.setLeft(label2);
-        borderPane.setRight(botonPasarTurno);
+        borderPane.setTop(vidaOponente);
+        borderPane.setLeft(manayVidaActual);
+        borderPane.setRight(vboxEfectosSecretos);
 
         return new Scene(borderPane, 1000, 700);
     }

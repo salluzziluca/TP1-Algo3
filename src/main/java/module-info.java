@@ -4,4 +4,5 @@ module view{
 
 exports view;
     exports controller;
+    exports model;
 }

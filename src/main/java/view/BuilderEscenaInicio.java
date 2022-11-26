@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import controller.Juego;
 import controller.ObserverRecibirNombreYMazo;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ public class BuilderEscenaInicio{
     ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();
     public Scene crearEscena() {
         VBox vcaja = new VBox();
-        TextField textField = new TextField();
+        TextField textField = new TextField("Juan Doe");
         Menu menuDeMazos = new Menu();
         MenuItem mazoGuerrero = new MenuItem();
         MenuItem mazoAlquimista = new MenuItem();
@@ -47,12 +46,13 @@ public class BuilderEscenaInicio{
 
         textField.setMaxWidth(200);
         mazoGuerrero.setText("Mazo Guerrero");
-        mazoGuerrero.setText("Mazo Alquimista");
+        mazoAlquimista.setText("Mazo Alquimista");
         menuDeMazos.getItems().addAll(mazoGuerrero, mazoAlquimista);
         menuBar.getMenus().add(menuDeMazos);
 
         choiceBox.getItems().add("Mazo Guerrero");
         choiceBox.getItems().add("Mazo Alquimista");
+        choiceBox.setValue("Mazo Alquimista");
 
         hbox.getChildren().addAll(botonSalir, botonContinuar);
         hbox.setAlignment(Pos.BOTTOM_CENTER);
