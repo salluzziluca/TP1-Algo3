@@ -1,8 +1,8 @@
-module view{
+module view {
     requires transitive javafx.controls;
     requires javafx.graphics;
 
-exports view;
+    exports view;
     exports controller;
     exports model;
 }

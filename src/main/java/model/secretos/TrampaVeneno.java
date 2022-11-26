@@ -1,9 +1,9 @@
 package model.secretos;
 
-import model.efectos.Veneno;
 import model.Carta;
 import model.Jugador;
 import model.Secreto;
+import model.efectos.Veneno;
 
 /*
  * Al instanciarse este secreto en el array de secretos de un jugador, La proxima vez que su oponente juegue una carta de Daño, le aplica Veneno igual al daño de la carta.

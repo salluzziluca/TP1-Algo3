@@ -8,16 +8,12 @@ import model.Jugador;
  * Al instanciarse este efecto en el array de efectos de un jugador, este recibirá, al inicio del un daño equivalente a la duracion del efecto
  */
 public class Veneno implements Efecto {
-    private int duracion;
     private final int duracionOriginal;
+    private int duracion;
 
     public Veneno(int duracion) {
         this.duracion = duracion;
         this.duracionOriginal = duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     public int getDuracionOriginal() {
@@ -64,6 +60,10 @@ public class Veneno implements Efecto {
     @Override
     public int getDuracion() {
         return this.duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     @Override

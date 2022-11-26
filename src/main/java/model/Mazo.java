@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Mazo {
     private ArrayList<Carta> cartas;
 
+    public Mazo() {
+        cartas = new ArrayList<>();
+    }
+
     @SuppressWarnings("unused")
     public ArrayList<Carta> getCartas() {
         return cartas;
-    }
-
-    public Mazo() {
-        cartas = new ArrayList<>();
     }
 
     public void agregarCarta(Carta carta) {
@@ -42,7 +42,7 @@ public class Mazo {
         cartas = cartasBarajadas;
     }
 
-    public boolean estaVacio(){
+    public boolean estaVacio() {
         return cartas.isEmpty();
     }
 }

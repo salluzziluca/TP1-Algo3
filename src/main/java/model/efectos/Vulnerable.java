@@ -8,16 +8,12 @@ import model.Jugador;
  * Al instanciarse este efecto en el array de efectos de un jugador, este recibe el doble de daño de cartas de daño
  */
 public class Vulnerable implements Efecto {
-    private int duracion;
     private final int duracionOriginal;
+    private int duracion;
 
     public Vulnerable(int duracion) {
         this.duracion = duracion;
         this.duracionOriginal = duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     public int getDuracionOriginal() {
@@ -63,6 +59,10 @@ public class Vulnerable implements Efecto {
     @Override
     public int getDuracion() {
         return this.duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     @Override

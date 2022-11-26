@@ -1,4 +1,3 @@
-
 |Notacion|Significado|
 |--------|--------|
 |    *nombre_carta* (x)    |    La carta cuesta x mana    |
@@ -17,16 +16,16 @@ Los efectos reducen su duracion al final del turno
 |   **Afilado**  |    Las cartas de Daño tienen +1 de daño   |
 |   **Berserk** |   +1 de mana máximo     |
 |    **Veneno**   |   Al inicio del turno se recibe daño equivalente a la duracion del efecto    |
- |**Catalizador**|El proximo efecto que inflijas a tu oponente o a vos mismo se duplica|
- |   **Inflacion** |   Aumenta x el costo de todas las cartas en mano     |
+|**Catalizador**|El proximo efecto que inflijas a tu oponente o a vos mismo se duplica|
+|   **Inflacion** |   Aumenta x el costo de todas las cartas en mano     |
 
 # Mazos
-1) ## Guerrero
-	>#### Ataques:
-	>-  *Réplica* (1): Daño 1; Robar 1
-	>-  *Golpe* (2): Daño 4
-	>-  *Triturar* (3): Daño 3; Inflige 2 **Vulnerable**
 
+1) ## Guerrero
+   > #### Ataques:
+   >- *Réplica* (1): Daño 1; Robar 1
+   >- *Golpe* (2): Daño 4
+   >- *Triturar* (3): Daño 3; Inflige 2 **Vulnerable**
 
 	>#### Bufos:
 	>- *Afilar* (2): Mejora 2 **Afilado**
@@ -39,16 +38,19 @@ Los efectos reducen su duracion al final del turno
 	>- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado
 
 2) ## Alquimista
-	>#### Ataques:
-	>-  *Combo* (0): Daño 1
-	>-  *Dardo Tóxico* (1): Daño 1; Inflige 1 **Veneno**
-	>-  *Frasco de Toxinas* (2): Inflige 3 **Veneno**
+   > #### Ataques:
+   >- *Combo* (0): Daño 1
+   >- *Dardo Tóxico* (1): Daño 1; Inflige 1 **Veneno**
+   >- *Frasco de Toxinas* (2): Inflige 3 **Veneno**
 
-	>#### Bufos:
-	>- *Poción de Agilidad* (1): Roba 2 cartas
-	>- *Catalizador* (2): Mejora **Catalizador**
+   > #### Bufos:
+   >- *Poción de Agilidad* (1): Roba 2 cartas
+   >- *Catalizador* (2): Mejora **Catalizador**
 
-	>#### Secretos:
-	>- *Enormigus* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion igual al coste de la carta jugada
-	>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta
-	>- Trampa Venenosa (2): **Secreto**: La proxima vez que tu oponente juegue una carta de Daño, le aplicas Veneno igual al daño de la carta
+   > #### Secretos:
+   >- *Enormigus* (1): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije **Inflacion** con duracion
+      igual al coste de la carta jugada
+   >- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te
+      cura y robas 1 carta
+   >- Trampa Venenosa (2): **Secreto**: La proxima vez que tu oponente juegue una carta de Daño, le aplicas Veneno igual
+      al daño de la carta

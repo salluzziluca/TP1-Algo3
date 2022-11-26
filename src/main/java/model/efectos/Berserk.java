@@ -8,14 +8,10 @@ import model.Jugador;
  * Al instanciarse este efecto en el array de efectos de un jugador, este recibe +1 de maná maximo.
  */
 public class Berserk implements Efecto {
-    public int duracion;
     private final int duracionOriginal;
-    private boolean seDebeAplicarElEfecto;
     private final boolean seLeAplicaAlAliado;
-
-    public int getDuracionOriginal() {
-        return duracionOriginal;
-    }
+    public int duracion;
+    private boolean seDebeAplicarElEfecto;
 
     public Berserk(int duracion) {
         this.duracion = duracion;
@@ -23,8 +19,8 @@ public class Berserk implements Efecto {
         seLeAplicaAlAliado = true;
     }
 
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
+    public int getDuracionOriginal() {
+        return duracionOriginal;
     }
 
     @Override
@@ -71,6 +67,10 @@ public class Berserk implements Efecto {
     @Override
     public int getDuracion() {
         return this.duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     @Override

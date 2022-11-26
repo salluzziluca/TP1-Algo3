@@ -4,8 +4,8 @@ public class Carta {
     private final String nombre;
     @SuppressWarnings("FieldCanBeLocal")
     private final String descripcion;
-    private int costo;
     private final int costoOriginal;
+    private int costo;
     private Daño daño;
     private Cura cura;
     private Efecto efecto;
@@ -13,7 +13,7 @@ public class Carta {
     private Robar robar;
 
     public Carta(String nombre, String descripcion, int costo, Daño daño, Cura cura, Efecto efecto,
-            Secreto secreto, Robar robar) {
+                 Secreto secreto, Robar robar) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;

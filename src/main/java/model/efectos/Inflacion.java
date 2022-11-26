@@ -8,8 +8,8 @@ import model.Jugador;
  * Al instanciarse este efecto en el array de efectos de un jugador, Aumenta 1 el costo de todas las cartas en mano
  */
 public class Inflacion implements Efecto {
-    private int duracion;
     private final int duracionOriginal;
+    private int duracion;
     private boolean seDebeAplicarElEfecto;
 
     public Inflacion(int duracion) {
@@ -19,10 +19,6 @@ public class Inflacion implements Efecto {
 
     public int getDuracionOriginal() {
         return duracionOriginal;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     @Override
@@ -69,6 +65,10 @@ public class Inflacion implements Efecto {
     @Override
     public int getDuracion() {
         return this.duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     @Override

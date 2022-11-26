@@ -1,7 +1,6 @@
-import org.junit.Test;
-
 import model.*;
 import model.efectos.*;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 

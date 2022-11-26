@@ -1,9 +1,9 @@
 package model.secretos;
 
-import model.efectos.Inflacion;
 import model.Carta;
 import model.Jugador;
 import model.Secreto;
+import model.efectos.Inflacion;
 
 /*
  * Al instanciarse este secreto en el array de secretos de un jugador, la proxima vez que su oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada.

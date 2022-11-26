@@ -4,8 +4,8 @@ package model;
  * Aplica daño al jugador enemigo igual a la cantidad que se le asigna en el constructor
  */
 public class DañoNormal implements Daño {
-    private int cantidad;
     private final int cantidadOriginal;
+    private int cantidad;
 
     public DañoNormal(int cantidad) {
         this.cantidad = cantidad;

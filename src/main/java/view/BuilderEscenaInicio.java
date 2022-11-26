@@ -1,18 +1,19 @@
 package view;
 
+import controller.ObserverRecibirNombreYMazo;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import controller.ObserverRecibirNombreYMazo;
 
 import java.util.ArrayList;
 
-public class BuilderEscenaInicio{
+public class BuilderEscenaInicio {
 
     ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();
+
     public Scene crearEscena() {
         VBox vcaja = new VBox();
         TextField textField = new TextField("Juan Doe");
@@ -63,7 +64,7 @@ public class BuilderEscenaInicio{
         return new Scene(vcaja, 500, 300);
     }
 
-    public void subscribe(ObserverRecibirNombreYMazo observer){
+    public void subscribe(ObserverRecibirNombreYMazo observer) {
         ObserversRecibirNombreYMazo.add(observer);
     }
 

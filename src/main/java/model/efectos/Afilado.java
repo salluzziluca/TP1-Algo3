@@ -5,13 +5,13 @@ import model.Efecto;
 import model.Jugador;
 
 /*
-* Al jugarse esta carta, las cartas de Daño del jugador que la juega tienen +1 de daño.
-*/
+ * Al jugarse esta carta, las cartas de Daño del jugador que la juega tienen +1 de daño.
+ */
 public class Afilado implements Efecto {
-    private int duracion;
     private final int duracionOriginal;
-    private boolean seDebeAplicarElEfecto;
     private final boolean seLeAplicaAlAliado;
+    private int duracion;
+    private boolean seDebeAplicarElEfecto;
 
     public Afilado(int duracion) {
         this.duracion = duracion;
@@ -22,11 +22,6 @@ public class Afilado implements Efecto {
 
     public int getDuracionOriginal() {
         return duracionOriginal;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
-
     }
 
     /*
@@ -80,6 +75,11 @@ public class Afilado implements Efecto {
     @Override
     public int getDuracion() {
         return this.duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+
     }
 
     @Override

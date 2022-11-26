@@ -4,12 +4,16 @@ import controller.ObserverPasarTurno;
 import controller.ObserverRecargarEscena;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import model.*;
+
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -37,7 +41,6 @@ public class BuilderEscenaTablero {
         }
 
 
-
         HBox cajaHcartas = new HBox();
         cajaHcartas.maxHeight(400);
 
@@ -61,7 +64,7 @@ public class BuilderEscenaTablero {
             nombreCarta.setWrapText(true);
             nombreCarta.setTextAlignment(TextAlignment.CENTER);
             Button botonMana = new Button(String.valueOf(carta.getCosto()));
-            vboxCarta.getChildren().addAll(nombreCarta,barrita, descripcionCarta, botonMana);
+            vboxCarta.getChildren().addAll(nombreCarta, barrita, descripcionCarta, botonMana);
             botonMana.prefWidthProperty().bind(vboxCarta.widthProperty());
             botonMana.setAlignment(Pos.BOTTOM_CENTER);
             vboxCarta.setMaxWidth(100);
@@ -72,9 +75,9 @@ public class BuilderEscenaTablero {
                         if (carta.puedeJugarse(jugadorActual.getManaActual())) {
                             jugadorActual.getMano().jugarCarta(finalI, jugadorActual, jugadorOponente, observerSetCartaEnJuego);
                             observerRecargarEscena.recargarEscena();
-                            if (!jugadorOponente.estaVivo())  {
+                            if (!jugadorOponente.estaVivo()) {
                                 Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                                alerta.setContentText(String.format("El jugador %s ha perdido",jugadorOponente.getNombre()));
+                                alerta.setContentText(String.format("El jugador %s ha perdido", jugadorOponente.getNombre()));
                                 Optional<ButtonType> boton = alerta.showAndWait();
                                 if (boton.get() == ButtonType.OK) {
                                     System.exit(0);
@@ -91,7 +94,7 @@ public class BuilderEscenaTablero {
                             alert.show();
                         }
                     }
-                );
+            );
 
             cajaHcartas.getChildren().add(vboxCarta);
             cajaHcartas.setAlignment(Pos.BOTTOM_CENTER);

@@ -7,8 +7,6 @@ public interface Efecto {
      */
     void reducirDuracion(Jugador jugadorAliado);
 
-    void setDuracion(int duracion);
-
     /*
      * Agrega el efecto al array del jugador correspondinte, si se tiene
      * catalizador, se duplica la duracion del efecto y si ya se tiene el efecto en
@@ -60,6 +58,8 @@ public interface Efecto {
     void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto);
 
     int getDuracion();
+
+    void setDuracion(int duracion);
 
     int getDuracionOriginal();
 
