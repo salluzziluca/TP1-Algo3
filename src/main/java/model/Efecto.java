@@ -50,6 +50,8 @@ public interface Efecto {
      */
     String getNombre();
 
+    String getDescripcion();
+
     /*
      * Modifica la duracion al efecto
      */

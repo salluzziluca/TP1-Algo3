@@ -39,6 +39,11 @@ public class Inflacion implements Efecto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "Aumenta 1 el costo de todas las cartas en la mano";
+    }
+
+    @Override
     public void aplicarEfecto(Jugador jugador) {
     }
 

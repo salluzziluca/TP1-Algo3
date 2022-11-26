@@ -42,6 +42,11 @@ public class Berserk implements Efecto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "+1 de mana máximo";
+    }
+
+    @Override
     public void aplicarEfectoACarta(Carta carta) {
     }
 

@@ -6,16 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="fix: mejorar la interfaz y centrar varias cosas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-    </list>
-    <list id="7228fe44-254f-4977-b4be-f2b322708ff6" name="Changes by Agustin 2021" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ideas cartas.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas cartas.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Efecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
     </list>
+    <list id="7228fe44-254f-4977-b4be-f2b322708ff6" name="Changes by Agustin 2021" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,17 +47,6 @@
         <option name="url" value="git@github.com:salluzziluca/TP1-Algo3.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/controller/Juego.java">
-      <ranges>
-        <range start1="17" end1="17" start2="17" end2="18" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="58" end1="58" start2="59" end2="63" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="59" end1="61" start2="64" end2="64" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="78" end1="78" start2="81" end2="83" changelist="7228fe44-254f-4977-b4be-f2b322708ff6" />
-        <range start1="112" end1="129" start2="117" end2="117" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -186,6 +177,9 @@
       <workItem from="1669227596157" duration="153000" />
       <workItem from="1669227758385" duration="1915000" />
       <workItem from="1669404891507" duration="7784000" />
+      <workItem from="1669493061983" duration="311000" />
+      <workItem from="1669496114523" duration="2798000" />
+      <workItem from="1669498947371" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
@@ -368,22 +362,6 @@
     <MESSAGE value="HACER COSAS" />
     <MESSAGE value="fix: mejorar la interfaz y centrar varias cosas" />
     <option name="LAST_COMMIT_MESSAGE" value="fix: mejorar la interfaz y centrar varias cosas" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

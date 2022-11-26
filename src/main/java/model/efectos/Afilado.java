@@ -63,6 +63,11 @@ public class Afilado implements Efecto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "Las cartas de Daño tienen +1 de daño";
+    }
+
+    @Override
     public void modificarDuracion(int duracion) {
         this.duracion += duracion;
     }

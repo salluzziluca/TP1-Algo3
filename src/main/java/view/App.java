@@ -20,7 +20,5 @@ public class App extends Application {
         Juego juego = new Juego(primaryStage, builderEscenaInicio, builderEscenaTablero, builderMazos);
         builderEscenaInicio.subscribe(juego);
         juego.empezarJuego();
-
-
     }
 }

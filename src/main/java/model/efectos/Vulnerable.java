@@ -29,6 +29,11 @@ public class Vulnerable implements Efecto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "Se duplica el daño recibido";
+    }
+
+    @Override
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         setearEfectoDefault(jugadorAliado, jugadorEnemigo);
     }

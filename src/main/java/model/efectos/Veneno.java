@@ -34,6 +34,11 @@ public class Veneno implements Efecto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "Al inicio del turno se recibe daño equivalente a la duracion del efecto";
+    }
+
+    @Override
     public void aplicarEfectoACarta(Carta carta) {
     }
 
