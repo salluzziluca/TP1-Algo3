@@ -34,6 +34,11 @@ public class Catalizador implements Secreto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "El proximo efecto que inflijas a tu oponente o a vos mismo se duplica.";
+    }
+
+    @Override
     public String getNombre() {
         return "Catalizador";
     }

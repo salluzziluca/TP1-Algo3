@@ -32,4 +32,9 @@ public class Oportunista implements Secreto {
         return "Oportunista";
     }
 
+    @Override
+    public String getDescripcion() {
+        return "La proxima vez que juegues una carta de daño, robas 3.";
+    }
+
 }

@@ -36,6 +36,11 @@ public class Enormigus implements Secreto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada.";
+    }
+
+    @Override
     public String getNombre() {
         return "Enormigus";
     }

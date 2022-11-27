@@ -36,4 +36,9 @@ public class PrevenirYCurar implements Secreto {
     public String getNombre() {
         return "Prevenir y Curar";
     }
+
+    @Override
+    public String getDescripcion() {
+        return "La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta.";
+    }
 }

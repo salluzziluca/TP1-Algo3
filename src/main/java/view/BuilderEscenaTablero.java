@@ -2,12 +2,13 @@ package view;
 
 import controller.ObserverPasarTurno;
 import controller.ObserverRecargarEscena;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -15,8 +16,8 @@ import javafx.scene.text.TextAlignment;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
-import java.util.TooManyListenersException;
 
 public class BuilderEscenaTablero {
 
@@ -27,22 +28,66 @@ public class BuilderEscenaTablero {
     public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
         BorderPane borderPane = new BorderPane();
         Label manayVidaActual = new Label(String.format("Turno de %s\nVida: %d \nMana: %d", jugadorActual.getNombre(), jugadorActual.getVida(), jugadorActual.getManaActual()));
+
         Label vidaOponente = new Label(String.format("Vida %s: %d", jugadorOponente.getNombre(), jugadorOponente.getVida()));
 
+        HBox hBoxEfectosSecretosOponente = new HBox();
+
+
+        for (Efecto efecto : jugadorOponente.getEfectos()) {
+            final Label efectoActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
+            efectoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+            efectoActual.setWrapText(true);
+            efectoActual.setPadding(new Insets(10));
+
+            efectoActual.setTooltip(new Tooltip(efecto.getDescripcion()));
+
+            hBoxEfectosSecretosOponente.getChildren().add(efectoActual);
+        }
+        for (Secreto secreto : jugadorOponente.getSecretos()) {
+            Label secretoActual = new Label( "???");
+            secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+            secretoActual.setWrapText(true);
+            secretoActual.setPadding(new Insets(10));
+
+
+            secretoActual.setTooltip(new Tooltip("???"));
+
+            hBoxEfectosSecretosOponente.getChildren().add(secretoActual);
+        }
+
+        VBox vboxOponente = new VBox(vidaOponente,hBoxEfectosSecretosOponente);
+        vboxOponente.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
+        vboxOponente.setAlignment(Pos.TOP_CENTER);
+
         VBox vboxEfectosSecretos = new VBox();
+        vboxEfectosSecretos.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
         Button botonPasarTurno = new Button("Pasar turno");
         vboxEfectosSecretos.getChildren().add(botonPasarTurno);
+
         for (Efecto efecto : jugadorActual.getEfectos()) {
-            Label efectosySecretosActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
-            vboxEfectosSecretos.getChildren().add(efectosySecretosActual);
+            final Label efectoActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
+            efectoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+            efectoActual.setWrapText(true);
+            efectoActual.setPadding(new Insets(10));
+
+            efectoActual.setTooltip(new Tooltip(efecto.getDescripcion()));
+
+            vboxEfectosSecretos.getChildren().add(efectoActual);
         }
         for (Secreto secreto : jugadorActual.getSecretos()) {
-            Label efectosySecretosActual = new Label(String.format("%s", secreto.getNombre()));
-            vboxEfectosSecretos.getChildren().add(efectosySecretosActual);
+            Label secretoActual = new Label( secreto.getNombre());
+            secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+            secretoActual.setWrapText(true);
+            secretoActual.setPadding(new Insets(10));
+
+            secretoActual.setTooltip(new Tooltip(secreto.getDescripcion()));
+
+            vboxEfectosSecretos.getChildren().add(secretoActual);
         }
 
         HBox cajaHcartas = new HBox();
-        cajaHcartas.maxHeight(400);
+        cajaHcartas.maxHeight(300);
 
         Button botonSalir = new Button("Salir");
         botonSalir.setOnAction(e -> System.exit(0));
@@ -54,7 +99,8 @@ public class BuilderEscenaTablero {
 
             BorderPane borderPCarta = new BorderPane();
             borderPCarta.setStyle("-fx-background-color: #7c6666; -fx-border-color: rgb(0,0,0);-fx-border-insets: 5;-fx-border-width: 3; -fx-border-radius: 5;");
-            borderPCarta.setMaxWidth(120);
+            borderPCarta.setPrefWidth(150);
+            borderPCarta.setPrefHeight(300);
 
             Label nombreCarta = new Label(carta.getNombre());
             nombreCarta.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
@@ -63,7 +109,8 @@ public class BuilderEscenaTablero {
 
             Label descripcionCarta = new Label(carta.getDescripcion());
             descripcionCarta.setWrapText(true);
-            descripcionCarta.setTextAlignment(TextAlignment.CENTER);
+            descripcionCarta.setPadding(new Insets(10));
+
 
             Button botonMana = new Button(String.valueOf(carta.getCosto()));
             botonMana.prefWidthProperty().bind(borderPCarta.widthProperty());
@@ -106,9 +153,21 @@ public class BuilderEscenaTablero {
         BorderPane.setAlignment(manayVidaActual, Pos.CENTER);
         BorderPane.setAlignment(vidaOponente, Pos.CENTER);
         BorderPane.setAlignment(vboxEfectosSecretos, Pos.CENTER);
-        borderPane.setStyle("-fx-background-color: cyan;");
+        borderPane.setBackground(
+                new Background(
+                        Collections.singletonList(new BackgroundFill(
+                                Color.WHITE,
+                                new CornerRadii(0),
+                                new Insets(0))),
+                        Collections.singletonList(new BackgroundImage(
+                                new Image("file:src/main/java/view/images/foto.jpg", 1000, 700, false, true),
+                                BackgroundRepeat.NO_REPEAT,
+                                BackgroundRepeat.NO_REPEAT,
+                                BackgroundPosition.DEFAULT,
+                                new BackgroundSize(1.0, 1.0, true, true, false, false)
+                        ))));
         borderPane.setBottom(cajaHcartas);
-        borderPane.setTop(vidaOponente);
+        borderPane.setTop(vboxOponente);
         borderPane.setLeft(manayVidaActual);
         borderPane.setRight(vboxEfectosSecretos);
 

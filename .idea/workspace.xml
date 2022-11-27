@@ -7,14 +7,14 @@
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="fix: mejorar la interfaz y centrar varias cosas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ideas cartas.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas cartas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Secreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Secreto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Desviar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Desviar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Enormigus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Enormigus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Imparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Imparable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Oportunista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Oportunista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/PrevenirYCurar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/PrevenirYCurar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/TrampaVeneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/TrampaVeneno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
     </list>
     <list id="7228fe44-254f-4977-b4be-f2b322708ff6" name="Changes by Agustin 2021" comment="" />
@@ -69,27 +69,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kvothe/repos/TP1-Algo3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48315912&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Agustin 2021/Desktop/Agustin/Java/demo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48315912",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Agustin 2021\Desktop\Agustin\Java\TP1-Algo3\src\main\java\view\images" />
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
   </component>
@@ -179,7 +180,10 @@
       <workItem from="1669404891507" duration="7784000" />
       <workItem from="1669493061983" duration="311000" />
       <workItem from="1669496114523" duration="2798000" />
-      <workItem from="1669498947371" duration="1805000" />
+      <workItem from="1669498947371" duration="2069000" />
+      <workItem from="1669516393095" duration="950000" />
+      <workItem from="1669563594700" duration="901000" />
+      <workItem from="1669564900371" duration="6235000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>

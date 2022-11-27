@@ -29,6 +29,11 @@ public class Imparable implements Secreto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "La proxima vez que tu oponente juegue una carta que te infligiera un efecto no te lo inflije y se remueve ese efecto si ya lo tenias.";
+    }
+
+    @Override
     public String getNombre() {
         return "Imparable";
     }

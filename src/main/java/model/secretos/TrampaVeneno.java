@@ -34,4 +34,9 @@ public class TrampaVeneno implements Secreto {
     public String getNombre() {
         return "TrampaVeneno";
     }
+
+    @Override
+    public String getDescripcion() {
+        return "La proxima vez que tu oponente juegue una carta de daño, le aplicas Veneno igual al daño de la carta.";
+    }
 }

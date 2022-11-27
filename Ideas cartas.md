@@ -16,7 +16,7 @@ Los efectos reducen su duracion al final del turno
 |   **Afilado**  |    Las cartas de Daño tienen +1 de daño   |
 |   **Berserk** |   +1 de mana máximo     |
 |    **Veneno**   |   Al inicio del turno se recibe daño equivalente a la duracion del efecto    |
-|**Catalizador**|El proximo efecto que inflijas a tu oponente o a vos mismo se duplica|
+|**Catalizador**|El proximo efecto que inflijas se duplica en duracion|
 |   **Inflacion** |   Aumenta x el costo de todas las cartas en mano     |
 
 # Mazos
@@ -38,7 +38,7 @@ Los efectos reducen su duracion al final del turno
        pone
    >- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
    >- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño
-      duplicado
+      duplicado.
 
 2) ## Alquimista
    > #### Ataques:

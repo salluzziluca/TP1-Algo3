@@ -24,4 +24,6 @@ public interface Secreto {
      * Devuelve el nombre del secreto
      */
     String getNombre();
+
+    String getDescripcion();
 }

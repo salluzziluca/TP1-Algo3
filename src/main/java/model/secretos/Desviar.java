@@ -34,6 +34,11 @@ public class Desviar implements Secreto {
     }
 
     @Override
+    public String getDescripcion() {
+        return "La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño  duplicado.";
+    }
+
+    @Override
     public String getNombre() {
         return "Desviar";
     }
