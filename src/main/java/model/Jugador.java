@@ -59,7 +59,9 @@ public class Jugador {
     }
 
     public void robarCarta() {
-        this.mano.agregarCarta(mazo, this);
+        if (mazo.getCartas().size() > 0) {
+            this.mano.agregarCarta(mazo, this);
+        }
     }
 
     public void robarCarta(int cantidad) {

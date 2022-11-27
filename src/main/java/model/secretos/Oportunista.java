@@ -15,7 +15,7 @@ public class Oportunista implements Secreto {
 
     @Override
     public void comprobarSiSeCumple(Carta carta, Jugador jugadorAliado, Jugador jugadorEnemigo, Jugador jugador) {
-        if (carta != null && jugador == jugadorAliado) {
+        if (carta.getDaño() != null && jugador == jugadorAliado) {
             alSerRevelado(jugadorAliado, jugadorEnemigo, carta);
         }
     }
