@@ -36,48 +36,61 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
     }
 
+    public static void alertaFinJuego(Jugador jugador) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setContentText(String.format("El jugador %s ha perdido", jugador.getNombre()));
+        Optional<ButtonType> boton = alerta.showAndWait();
+        if (boton.get() == ButtonType.OK) {
+            System.exit(0);
+        } else {
+            System.exit(0);
+        }
+        alerta.show();
+    }
 
     /*
      * Recibe el string con el nombre y la elección de mazo hecha por el jugador.
      */
-    public void recibirNombreYMazo(String nombre, String mazo) {
-        Mazo mazoJugador = null;
+    public void recibirNombreYMazo(String nombre1, String mazo1, String nombre2, String mazo2) {
 
-        if (mazo.equals("Mazo Guerrero")) {
-            mazoJugador = builderMazos.crearMazoGuerrero();
-        } else if (mazo.equals("Mazo Alquimista")) {
-            mazoJugador = builderMazos.crearMazoAlquimista();
-        }
+        crearJugador(nombre1, mazo1);
+        crearJugador(nombre2, mazo2);
+
+        tablero = new Tablero(jugadores.get(0), jugadores.get(1));
+        builderEscenaTablero.subscribe(this, tablero, this);
+
+        jugadores.get(posicionJugadorActual).robarCarta(CANT_MANO_INICIAL);
+        jugadores.get(posicionJugadorOponente).robarCarta(CANT_MANO_INICIAL);
+
+
+        Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
+        escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.show();
+    }
+
+    private void crearJugador(String nombre, String mazo) {
+        Mazo mazoJugador = crearMazo(mazo);
+
         Jugador jugadorActual = new Jugador(nombre, VIDA_INICIAL, MANA_INICIAL, new Mano(), mazoJugador);
         jugadores.add(jugadorActual);
+    }
 
-        if (jugadores.size() == 2) {
-            tablero = new Tablero(jugadores.get(0), jugadores.get(1));
-            builderEscenaTablero.subscribe(this, tablero, this);
-            for (int i = 0; i < CANT_MANO_INICIAL; i++) {
-                jugadores.get(posicionJugadorActual).robarCarta();
-                jugadores.get(posicionJugadorOponente).robarCarta();
-            }
-            Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(0), jugadores.get(1));
-            escenarioPrincipal.setScene(escenaTablero);
-            escenarioPrincipal.show();
-        } else {
-            Scene escenaInicio2 = builderEscenaInicio.crearEscena();
-            escenarioPrincipal.setScene(escenaInicio2);
-            escenarioPrincipal.show();
-
-        }
+    private Mazo crearMazo(String mazo) {
+        return switch (mazo) {
+            case "Mazo Guerrero" -> builderMazos.crearMazoGuerrero();
+            case "Mazo Alquimista" -> builderMazos.crearMazoAlquimista();
+            default -> null;
+        };
     }
 
     public void empezarJuego() {
-        Scene escenaInicio1 = builderEscenaInicio.crearEscena();
-        escenarioPrincipal.setScene(escenaInicio1);
+        escenarioPrincipal.setTitle("Juego cartas nombre pendiente MK1"); // TODO Nombre
+        escenarioPrincipal.setScene(builderEscenaInicio.crearEscena());
         escenarioPrincipal.show();
     }
 
     public void pasarTurno() {
         //pasa turno y actualiza la interfaz
-
 
         jugadores.get(posicionJugadorActual).terminarTurno();
         jugadores.get(posicionJugadorActual).recargarMana();
@@ -86,22 +99,13 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
         for (Jugador jugador : jugadores) {
             if (!jugador.estaVivo()) {
-                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                alerta.setContentText(String.format("El jugador %s ha perdido", jugador.getNombre()));
-                Optional<ButtonType> boton = alerta.showAndWait();
-                if (boton.get() == ButtonType.OK) {
-                    System.exit(0);
-                } else {
-                    System.exit(0);
-                }
-                alerta.show();
+                alertaFinJuego(jugador);
                 System.exit(0);
             }
         }
 
-        if (!jugadores.get(posicionJugadorActual).getMazo().estaVacio()) {
-            jugadores.get(posicionJugadorActual).robarCarta();
-        }
+        jugadores.get(posicionJugadorActual).robarCarta();
+
         Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
         escenarioPrincipal.setScene(escenaTablero);
         escenarioPrincipal.show();
@@ -114,7 +118,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         posicionJugadorOponente = aux;
     }
 
-    public void recargarEscena() {
+    public void recargarEscenaTablero() {
         Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
         escenarioPrincipal.setScene(escenaTablero);
         escenarioPrincipal.show();

@@ -25,7 +25,7 @@ public class Berserk implements Efecto {
 
     @Override
     public void reducirDuracion(Jugador jugadorAliado) {
-        this.duracion--;
+        //this.duracion--;
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
             jugadorAliado.aumentarManaMaximo(-1);

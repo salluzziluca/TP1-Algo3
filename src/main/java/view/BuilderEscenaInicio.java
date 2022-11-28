@@ -3,7 +3,10 @@ package view;
 import controller.ObserverRecibirNombreYMazo;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -12,56 +15,59 @@ import java.util.ArrayList;
 
 public class BuilderEscenaInicio {
 
-    ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();
+    ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();// TODO hace falta que sea ArrayList?
 
     public Scene crearEscena() {
-        VBox vcaja = new VBox();
-        TextField textField = new TextField("Juan Doe");
-        Menu menuDeMazos = new Menu();
-        MenuItem mazoGuerrero = new MenuItem();
-        MenuItem mazoAlquimista = new MenuItem();
-        MenuBar menuBar = new MenuBar();
-        ChoiceBox<Object> choiceBox = new ChoiceBox<>();
-        HBox hbox = new HBox();
-        Label label = new Label();
-        Button botonSalir = new Button();
-        Button botonContinuar = new Button();
 
-        label.setText("Jugador 1/2 ingrese su nombre y elija un mazo");
-        botonSalir.setText("Salir");
-        botonContinuar.setText("Continuar");
+
+        TextField ingresarNombreJugador1 = new TextField("Jugador 1");
+        ingresarNombreJugador1.setMaxWidth(200);
+
+        ChoiceBox<Object> choiceBox1 = new ChoiceBox<>();
+        choiceBox1.getItems().add("Mazo Guerrero");
+        choiceBox1.getItems().add("Mazo Alquimista");
+        choiceBox1.setValue("Mazo Guerrero");
+
+        TextField ingresarNombreJugador2 = new TextField("Jugador 2");
+        ingresarNombreJugador2.setMaxWidth(200);
+
+        ChoiceBox<Object> choiceBox2 = new ChoiceBox<>();
+        choiceBox2.getItems().add("Mazo Guerrero");
+        choiceBox2.getItems().add("Mazo Alquimista");
+        choiceBox2.setValue("Mazo Alquimista");
+
+
+        Label labelArriba = new Label("Jugadores ingresen su nombre y elijan un mazo");
+
+        Button botonSalir = new Button("Salir");
         botonSalir.setOnAction(e -> System.exit(0));
 
+        Button botonContinuar = new Button("Continuar");
         botonContinuar.setOnAction(e -> {
-            if (textField.getText().isEmpty()) {
-                label.setText("POR FAVOR Ingrese un nombre");
+            if (ingresarNombreJugador1.getText().isEmpty() || ingresarNombreJugador2.getText().isEmpty()) {
+                labelArriba.setText("Por favor ingrese un nombre para ambos jugadores");
+            } else if (ingresarNombreJugador1.getText().equals(ingresarNombreJugador2.getText())) {
+                labelArriba.setText("El nombre de los jugadores tiene que ser distinto");
             } else {
-                String nombreJugador = textField.getText();
-                Object mazoElegido = choiceBox.getSelectionModel().getSelectedItem();
+                String nombreJugador1 = ingresarNombreJugador1.getText();
+                String mazoElegido1 = choiceBox1.getSelectionModel().getSelectedItem().toString();
+                String nombreJugador2 = ingresarNombreJugador2.getText();
+                String mazoElegido2 = choiceBox2.getSelectionModel().getSelectedItem().toString();
                 for (ObserverRecibirNombreYMazo observer : ObserversRecibirNombreYMazo) {
-                    observer.recibirNombreYMazo(nombreJugador, mazoElegido.toString());
+                    observer.recibirNombreYMazo(nombreJugador1, mazoElegido1, nombreJugador2, mazoElegido2);
                 }
             }
-
         });
 
-        textField.setMaxWidth(200);
-        mazoGuerrero.setText("Mazo Guerrero");
-        mazoAlquimista.setText("Mazo Alquimista");
-        menuDeMazos.getItems().addAll(mazoGuerrero, mazoAlquimista);
-        menuBar.getMenus().add(menuDeMazos);
+        HBox hBoxBotones = new HBox(botonSalir, botonContinuar);
+        hBoxBotones.setAlignment(Pos.BOTTOM_CENTER);
 
-        choiceBox.getItems().add("Mazo Guerrero");
-        choiceBox.getItems().add("Mazo Alquimista");
-        choiceBox.setValue("Mazo Alquimista");
-
-        hbox.getChildren().addAll(botonSalir, botonContinuar);
-        hbox.setAlignment(Pos.BOTTOM_CENTER);
-        vcaja.setAlignment(Pos.CENTER);
-        vcaja.setStyle("-fx-background-color: cyan;");
-        vcaja.getChildren().addAll(label, textField, choiceBox, hbox);
-        VBox.setVgrow(hbox, Priority.ALWAYS);
-        return new Scene(vcaja, 500, 300);
+        VBox vBoxPrincipal = new VBox();
+        vBoxPrincipal.setAlignment(Pos.CENTER);
+        vBoxPrincipal.setStyle("-fx-background-color: #3fe5d1;");
+        vBoxPrincipal.getChildren().addAll(labelArriba, ingresarNombreJugador1, choiceBox1, ingresarNombreJugador2, choiceBox2, hBoxBotones);
+        VBox.setVgrow(hBoxBotones, Priority.ALWAYS);
+        return new Scene(vBoxPrincipal, 500, 300);
     }
 
     public void subscribe(ObserverRecibirNombreYMazo observer) {

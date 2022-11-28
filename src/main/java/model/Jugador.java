@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("ForLoopReplaceableByForEach")
 public class Jugador {
-    private String nombre;
+    private final String nombre;
     private int vida;
     private int manaMaximo;
     private int manaActual;
@@ -228,7 +228,7 @@ public class Jugador {
      * terminarTurno
      */
     public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
-        //TODO: Es aca, dentro del turno, donde deberia actualizarse la view del tablero, ya sea una vez al inicio de cada turno o varias veces dentro del mismo
+        //TODO: esto es solo para los test del modelo, tal vez se podria borrar
         pasarTurno = false;
         manaActual = manaMaximo;
         this.recorrerEfectos();

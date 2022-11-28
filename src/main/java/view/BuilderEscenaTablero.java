@@ -1,11 +1,15 @@
 package view;
 
+import controller.Juego;
 import controller.ObserverPasarTurno;
 import controller.ObserverRecargarEscena;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -17,7 +21,6 @@ import model.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Optional;
 
 public class BuilderEscenaTablero {
 
@@ -28,6 +31,9 @@ public class BuilderEscenaTablero {
     public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
         BorderPane borderPane = new BorderPane();
 
+        Button botonSalir = new Button("Salir");
+        botonSalir.setOnAction(e -> System.exit(0));
+
         Label jugadorLabel = new Label("Turno de " + jugadorActual.getNombre());
         jugadorLabel.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
         Label vidaLabel = new Label("Vida: " + jugadorActual.getVida());
@@ -35,12 +41,12 @@ public class BuilderEscenaTablero {
         Label manaLabel = new Label(String.format("Mana: %d/%d", jugadorActual.getManaMaximo(), jugadorActual.getManaActual()));
         manaLabel.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
 
-        VBox estadisticasJugadorActual = new VBox(jugadorLabel, vidaLabel, manaLabel);
+        VBox estadisticasJugadorActual = new VBox(botonSalir, jugadorLabel, vidaLabel, manaLabel);
         estadisticasJugadorActual.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
         estadisticasJugadorActual.setAlignment(Pos.CENTER);
 
         Label vidaOponente = new Label(String.format("Vida %s: %d", jugadorOponente.getNombre(), jugadorOponente.getVida()));
-vidaOponente. setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+        vidaOponente.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
 
 
         HBox hBoxEfectosSecretosOponente = new HBox();
@@ -100,8 +106,7 @@ vidaOponente. setFont(Font.font("verdana", FontPosture.REGULAR, 15));
         HBox cajaHcartas = new HBox();
         cajaHcartas.maxHeight(300);
 
-        Button botonSalir = new Button("Salir");
-        botonSalir.setOnAction(e -> System.exit(0));
+
         botonPasarTurno.setOnAction(e -> observerPasarTurno.pasarTurno());
 
         ArrayList<Carta> cartasJugador = jugadorActual.getMano().getCartas();
@@ -134,17 +139,9 @@ vidaOponente. setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             botonMana.setOnAction(e -> {
                         if (carta.puedeJugarse(jugadorActual.getManaActual())) {
                             jugadorActual.getMano().jugarCarta(finalI, jugadorActual, jugadorOponente, observerSetCartaEnJuego);
-                            observerRecargarEscena.recargarEscena();
+                            observerRecargarEscena.recargarEscenaTablero();
                             if (!jugadorOponente.estaVivo()) {
-                                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                                alerta.setContentText(String.format("El jugador %s ha perdido", jugadorOponente.getNombre()));
-                                Optional<ButtonType> boton = alerta.showAndWait();
-                                if (boton.get() == ButtonType.OK) {
-                                    System.exit(0);
-                                } else {
-                                    System.exit(0);
-                                }
-                                alerta.show();
+                                Juego.alertaFinJuego(jugadorOponente);
                             }
 
                         } else {
