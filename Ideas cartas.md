@@ -34,7 +34,7 @@ Los efectos reducen su duracion al final del turno
    > #### Secretos:
 
    > - *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto, se
-       limpia el tipo de efecto que esta jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se
+       limpia el tipo de efecto que está jugando (si te está afectando). Si no lo tenes, lo que te intentan meter no se
        pone
    >- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
    >- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño

@@ -20,23 +20,16 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import model.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class BuilderEscenaTablero {
-
     ObserverPasarTurno observerPasarTurno;
     ObserverSetCartaEnJuego observerSetCartaEnJuego;
     ObserverRecargarEscena observerRecargarEscena;
 
     public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
         BorderPane borderPane = new BorderPane();
-
-        VBox estadisticasJugadorActual = crearEstadisticasJugadorActual(jugadorActual);
-        VBox vboxEfectosSecretos = crearVboxEfectosSecretos(jugadorActual);
-        VBox vboxOponente = crearVBoxOponente(jugadorOponente);
-        HBox cajaHcartas = crearCajaHcartas(jugadorActual, jugadorOponente);
 
         borderPane.setBackground(
                 new Background(
@@ -52,10 +45,10 @@ public class BuilderEscenaTablero {
                                 new BackgroundSize(1.0, 1.0, true, true, false, false)
                         ))));
 
-        borderPane.setBottom(cajaHcartas);
-        borderPane.setTop(vboxOponente);
-        borderPane.setLeft(estadisticasJugadorActual);
-        borderPane.setRight(vboxEfectosSecretos);
+        borderPane.setBottom( crearCajaHcartas(jugadorActual, jugadorOponente));
+        borderPane.setTop(crearVBoxOponente(jugadorOponente));
+        borderPane.setLeft( crearEstadisticasJugadorActual(jugadorActual));
+        borderPane.setRight(crearVboxEfectosSecretos(jugadorActual));
 
         return new Scene(borderPane, 1000, 700);
     }
@@ -80,14 +73,17 @@ public class BuilderEscenaTablero {
 
         Label jugadorLabel = new Label("Turno de " + jugadorActual.getNombre());
         jugadorLabel.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+
         Label vidaLabel = new Label("Vida: " + jugadorActual.getVida());
         vidaLabel.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+
         Label manaLabel = new Label(String.format("Mana: %d/%d", jugadorActual.getManaMaximo(), jugadorActual.getManaActual()));
         manaLabel.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
 
         VBox estadisticasJugadorActual = new VBox(botonSalir, jugadorLabel, vidaLabel, manaLabel);
         estadisticasJugadorActual.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
         estadisticasJugadorActual.setAlignment(Pos.CENTER);
+
         return estadisticasJugadorActual;
     }
 
@@ -102,29 +98,30 @@ public class BuilderEscenaTablero {
         VBox vboxOponente = new VBox(vidaOponente, hBoxEfectosSecretosOponente);
         vboxOponente.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
         vboxOponente.setAlignment(Pos.TOP_CENTER);
+
         return vboxOponente;
     }
 
     private static void añadirEfectosySecretosALayout(Jugador jugador, ObservableList<Node> children, Boolean jugadorEsOponente) {
         for (Efecto efecto : jugador.getEfectos()) {
             final Label efectoActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
+
             efectoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             efectoActual.setWrapText(true);
             efectoActual.setPadding(new Insets(10));
-
             efectoActual.setTooltip(new Tooltip(efecto.getDescripcion()));
 
             children.add(efectoActual);
         }
         for (Secreto secreto : jugador.getSecretos()) {
             Label secretoActual;
+
             if (jugadorEsOponente) secretoActual = new Label("???");
             else secretoActual = new Label(secreto.getNombre());
 
             secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             secretoActual.setWrapText(true);
             secretoActual.setPadding(new Insets(10));
-
             secretoActual.setTooltip(new Tooltip(secreto.getDescripcion()));
 
             children.add(secretoActual);
@@ -155,7 +152,6 @@ public class BuilderEscenaTablero {
             descripcionCarta.setWrapText(true);
             descripcionCarta.setPadding(new Insets(10));
 
-
             Button botonMana = new Button(String.valueOf(carta.getCosto()));
             botonMana.prefWidthProperty().bind(borderPCarta.widthProperty());
 
@@ -167,10 +163,10 @@ public class BuilderEscenaTablero {
             botonMana.setOnAction(e -> {
                         if (carta.puedeJugarse(jugadorActual.getManaActual())) {
                             jugadorActual.getMano().jugarCarta(finalI, jugadorActual, jugadorOponente, observerSetCartaEnJuego);
+
                             observerRecargarEscena.recargarEscenaTablero();
-                            if (!jugadorOponente.estaVivo()) {
-                                Juego.alertaFinJuego(jugadorOponente);
-                            }
+
+                            if (jugadorOponente.estaVivo()) Juego.alertaFinJuego(jugadorOponente);
 
                         } else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);

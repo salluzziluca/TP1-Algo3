@@ -11,7 +11,7 @@ import model.efectos.Inflacion;
 public class Enormigus implements Secreto {
 
     @Override
-    public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    public void setearSecreto(Jugador jugadorAliado) {
         jugadorAliado.agregarSecreto(this);
     }
 

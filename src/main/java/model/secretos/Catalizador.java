@@ -7,7 +7,7 @@ import model.Secreto;
 
 public class Catalizador implements Secreto {
     @Override
-    public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    public void setearSecreto(Jugador jugadorAliado) {
         jugadorAliado.agregarSecreto(this);
     }
 

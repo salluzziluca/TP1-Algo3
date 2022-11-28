@@ -4,21 +4,11 @@ public class Tablero implements ObserverSetCartaEnJuego {
     private final Jugador jugador1;
     private final Jugador jugador2;
     private Carta cartaEnJuego;
-    private int turno; // TODO Por ahora no lo usamos
 
     public Tablero(Jugador jugador1, Jugador jugador2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
         this.cartaEnJuego = null;
-        this.turno = 0;
-    }
-
-    public void jugar() {
-        while (jugador1.estaVivo() && jugador2.estaVivo()) {
-            jugador1.jugarTurno(jugador2, this);
-            jugador2.jugarTurno(jugador1, this);
-            turno++;
-        }
     }
 
     /*

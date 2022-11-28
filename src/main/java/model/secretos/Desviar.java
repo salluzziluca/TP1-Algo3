@@ -10,7 +10,7 @@ import model.Secreto;
  */
 public class Desviar implements Secreto {
     @Override
-    public void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
+    public void setearSecreto(Jugador jugadorAliado) {
         jugadorAliado.agregarSecreto(this);
     }
 

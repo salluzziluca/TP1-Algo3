@@ -16,7 +16,6 @@ public class Jugador {
     private ArrayList<Efecto> efectos;
     @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
     private ArrayList<Secreto> secretos;
-    private boolean pasarTurno;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
         this.nombre = nombre;
@@ -27,7 +26,6 @@ public class Jugador {
         this.mazo = mazo;
         this.efectos = new ArrayList<>();
         this.secretos = new ArrayList<>();
-        this.pasarTurno = false;
     }
 
     public int getVida() {
@@ -71,7 +69,7 @@ public class Jugador {
     }
 
     public boolean estaVivo() {
-        return this.vida > 0;
+        return this.vida <= 0;
     }
 
     /*
@@ -87,20 +85,12 @@ public class Jugador {
 
     }
 
-    private int pedirPosicionCarta() {
-        return Integer.parseInt(System.console().readLine());
-    }
-
     public void agregarEfecto(Efecto efecto) {
         this.efectos.add(efecto);
     }
 
     public void quitarEfecto(Efecto efecto) {
         this.efectos.remove(efecto);
-    }
-
-    public void quitarEfecto(String nombreEfecto) {
-        this.efectos.remove(buscarIndexEfecto(nombreEfecto));
     }
 
     public void modificarDuracionAEfecto(String nombreEfecto, int duracion) {
@@ -218,26 +208,6 @@ public class Jugador {
             Efecto efecto = this.efectos.get(i);
             efecto.reducirDuracion(this);
         }
-    }
-
-    /*
-     * Juega un turno completo del jugador, recorriendo los efectos para aplicarlos,
-     * robando
-     * y jugando cartas y finalmente reduciendo la duracion de todos sus efectos
-     * mediante
-     * terminarTurno
-     */
-    public void jugarTurno(Jugador jugadorEnemigo, Tablero tableroActual) {
-        //TODO: esto es solo para los test del modelo, tal vez se podria borrar
-        pasarTurno = false;
-        manaActual = manaMaximo;
-        this.recorrerEfectos();
-        this.robarCarta();
-        while (!pasarTurno && this.mano.getCantMano() > 0) {
-            int posicionCarta = this.pedirPosicionCarta();
-            this.mano.jugarCarta(posicionCarta, this, jugadorEnemigo, tableroActual);
-        }
-        this.terminarTurno();
     }
 
     public String getNombre() {

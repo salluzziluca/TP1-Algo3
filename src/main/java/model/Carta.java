@@ -2,12 +2,11 @@ package model;
 
 public class Carta {
     private final String nombre;
-    @SuppressWarnings("FieldCanBeLocal")
     private final String descripcion;
     private final int costoOriginal;
     private int costo;
     private Daño daño;
-    private Cura cura;
+    private final Cura cura;
     private Efecto efecto;
     private Secreto secreto;
     private Robar robar;
@@ -43,7 +42,7 @@ public class Carta {
                 this.efecto.setearEfecto(jugadorAliado, jugadorEnemigo);
             }
             if (this.secreto != null) {
-                this.secreto.setearSecreto(jugadorAliado, jugadorEnemigo);
+                this.secreto.setearSecreto(jugadorAliado);
             }
             if (this.cura != null) {
                 this.cura.aplicarCura(jugadorAliado);
@@ -90,16 +89,6 @@ public class Carta {
         }
     }
 
-    public Cura getCura() {
-        return cura;
-    }
-
-    public void setCura(Cura cura) {
-        if (cura != null) {
-            this.cura = cura;
-        }
-    }
-
     public Efecto getEfecto() {
         return efecto;
     }
@@ -110,18 +99,10 @@ public class Carta {
         }
     }
 
-    public Secreto getSecreto() {
-        return secreto;
-    }
-
     public void setSecreto(Secreto secreto) {
         if (secreto != null) {
             this.secreto = secreto;
         }
-    }
-
-    public Robar getRobar() {
-        return robar;
     }
 
     public void setRobar(Robar robar) {

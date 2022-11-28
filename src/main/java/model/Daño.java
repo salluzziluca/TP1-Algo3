@@ -2,7 +2,7 @@ package model;
 
 public interface Daño {
     /*
-     * Daña cantidad de vida igual a el int que se le pasa en el constructor
+     * Daña cantidad de vida igual al int que se le pasa en el constructor
      */
     void aplicarDaño(Jugador jugadorEnemigo);
 

@@ -1,11 +1,10 @@
 package model;
 
 /*
- * Roba cantidad de cartas igual a el int que se le pasa en el constructor
+ * Roba cantidad de cartas igual al int que se le pasa en el constructor
  */
 public class RobarNormal implements Robar {
-    @SuppressWarnings("CanBeFinal")
-    private int cantidadRobar;
+    private final int cantidadRobar;
 
     public RobarNormal(int cantidadRobar) {
         this.cantidadRobar = cantidadRobar;

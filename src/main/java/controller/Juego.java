@@ -15,14 +15,14 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
     final int CANT_MANO_INICIAL = 3;
-    Stage escenarioPrincipal;
+    final Stage escenarioPrincipal;
     int posicionJugadorActual;
     int posicionJugadorOponente;
 
-    ArrayList<Jugador> jugadores = new ArrayList<>();
-    BuilderEscenaInicio builderEscenaInicio;
-    BuilderEscenaTablero builderEscenaTablero;
-    BuilderMazos builderMazos;
+    final ArrayList<Jugador> jugadores = new ArrayList<>();
+    final BuilderEscenaInicio builderEscenaInicio;
+    final BuilderEscenaTablero builderEscenaTablero;
+    final BuilderMazos builderMazos;
     Tablero tablero;
 
 
@@ -40,7 +40,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setContentText(String.format("El jugador %s ha perdido", jugador.getNombre()));
         Optional<ButtonType> boton = alerta.showAndWait();
-        if (boton.get() == ButtonType.OK) {
+        if (boton.isPresent() && boton.get() == ButtonType.OK) {
             System.exit(0);
         } else {
             System.exit(0);
@@ -84,7 +84,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     }
 
     public void empezarJuego() {
-        escenarioPrincipal.setTitle("Juego cartas nombre pendiente MK1"); // TODO Nombre
+        escenarioPrincipal.setTitle("Spizz");
         escenarioPrincipal.setScene(builderEscenaInicio.crearEscena());
         escenarioPrincipal.show();
     }
@@ -98,9 +98,8 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         jugadores.get(posicionJugadorActual).recorrerEfectos();
 
         for (Jugador jugador : jugadores) {
-            if (!jugador.estaVivo()) {
+            if (jugador.estaVivo()) {
                 alertaFinJuego(jugador);
-                System.exit(0);
             }
         }
 

@@ -4,7 +4,7 @@ public interface Secreto {
     /*
      * Agrega el secreto al array de secretos del jugador correspondiente
      */
-    void setearSecreto(Jugador jugadorAliado, Jugador jugadorEnemigo);
+    void setearSecreto(Jugador jugadorAliado);
 
     default void quitarSecreto(Jugador jugador) {
         jugador.quitarSecreto(this);

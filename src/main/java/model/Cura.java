@@ -2,7 +2,7 @@ package model;
 
 public interface Cura {
     /*
-     * Cura cantidad de vida igual a el int que se le pasa en el constructor
+     * Cura cantidad de vida igual al int que se le pasa en el constructor
      */
     void aplicarCura(Jugador JugadorAliado);
 }
