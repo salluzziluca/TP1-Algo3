@@ -68,17 +68,8 @@ public class BuilderEscenaTablero {
         botonPasarTurno.setOnAction(e -> observerPasarTurno.pasarTurno());
         vboxEfectosSecretos.getChildren().add(botonPasarTurno);
 
-        añadirEfectoALayout(jugadorActual, vboxEfectosSecretos.getChildren());
-        for (Secreto secreto : jugadorActual.getSecretos()) {
-            Label secretoActual = new Label(secreto.getNombre());
-            secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
-            secretoActual.setWrapText(true);
-            secretoActual.setPadding(new Insets(10));
+        añadirEfectosySecretosALayout(jugadorActual, vboxEfectosSecretos.getChildren(),false);
 
-            secretoActual.setTooltip(new Tooltip(secreto.getDescripcion()));
-
-            vboxEfectosSecretos.getChildren().add(secretoActual);
-        }
         return vboxEfectosSecretos;
     }
 
@@ -104,21 +95,9 @@ public class BuilderEscenaTablero {
         Label vidaOponente = new Label(String.format("Vida %s: %d", jugadorOponente.getNombre(), jugadorOponente.getVida()));
         vidaOponente.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
 
-
         HBox hBoxEfectosSecretosOponente = new HBox();
 
-        añadirEfectoALayout(jugadorOponente, hBoxEfectosSecretosOponente.getChildren());
-        for (int i = 0; i < jugadorOponente.getSecretos().size(); i++) {
-            Label secretoActual = new Label("???");
-            secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
-            secretoActual.setWrapText(true);
-            secretoActual.setPadding(new Insets(10));
-
-
-            secretoActual.setTooltip(new Tooltip("???"));
-
-            hBoxEfectosSecretosOponente.getChildren().add(secretoActual);
-        }
+        añadirEfectosySecretosALayout(jugadorOponente, hBoxEfectosSecretosOponente.getChildren(),true);
 
         VBox vboxOponente = new VBox(vidaOponente, hBoxEfectosSecretosOponente);
         vboxOponente.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
@@ -126,8 +105,8 @@ public class BuilderEscenaTablero {
         return vboxOponente;
     }
 
-    private static void añadirEfectoALayout(Jugador jugadorOponente, ObservableList<Node> children) {
-        for (Efecto efecto : jugadorOponente.getEfectos()) {
+    private static void añadirEfectosySecretosALayout(Jugador jugador, ObservableList<Node> children, Boolean jugadorEsOponente) {
+        for (Efecto efecto : jugador.getEfectos()) {
             final Label efectoActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
             efectoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             efectoActual.setWrapText(true);
@@ -136,6 +115,19 @@ public class BuilderEscenaTablero {
             efectoActual.setTooltip(new Tooltip(efecto.getDescripcion()));
 
             children.add(efectoActual);
+        }
+        for (Secreto secreto : jugador.getSecretos()) {
+            Label secretoActual;
+            if (jugadorEsOponente) secretoActual = new Label("???");
+            else secretoActual = new Label(secreto.getNombre());
+
+            secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
+            secretoActual.setWrapText(true);
+            secretoActual.setPadding(new Insets(10));
+
+            secretoActual.setTooltip(new Tooltip(secreto.getDescripcion()));
+
+            children.add(secretoActual);
         }
     }
 

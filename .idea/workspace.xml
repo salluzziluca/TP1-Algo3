@@ -88,8 +88,10 @@
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="view.App" />
-      <module name="Tp1-Algo3" />
+      <module name="AYUDA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,6 +171,7 @@
       <workItem from="1669227758385" duration="1915000" />
       <workItem from="1669404891507" duration="7784000" />
       <workItem from="1669665824017" duration="172000" />
+      <workItem from="1669666205173" duration="842000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
