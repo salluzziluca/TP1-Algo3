@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class BuilderEscenaInicio {
 
-    ArrayList<ObserverRecibirNombreYMazo> ObserversRecibirNombreYMazo = new ArrayList<>();// TODO hace falta que sea ArrayList?
+    private ObserverRecibirNombreYMazo observerRecibirNombreYMazo;
 
     public Scene crearEscena() {
 
@@ -53,9 +53,7 @@ public class BuilderEscenaInicio {
                 String mazoElegido1 = choiceBox1.getSelectionModel().getSelectedItem().toString();
                 String nombreJugador2 = ingresarNombreJugador2.getText();
                 String mazoElegido2 = choiceBox2.getSelectionModel().getSelectedItem().toString();
-                for (ObserverRecibirNombreYMazo observer : ObserversRecibirNombreYMazo) {
-                    observer.recibirNombreYMazo(nombreJugador1, mazoElegido1, nombreJugador2, mazoElegido2);
-                }
+                observerRecibirNombreYMazo.recibirNombreYMazo(nombreJugador1, mazoElegido1, nombreJugador2, mazoElegido2);
             }
         });
 
@@ -71,7 +69,7 @@ public class BuilderEscenaInicio {
     }
 
     public void subscribe(ObserverRecibirNombreYMazo observer) {
-        ObserversRecibirNombreYMazo.add(observer);
+        this.observerRecibirNombreYMazo = observer;
     }
 
 }
