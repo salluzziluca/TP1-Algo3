@@ -16,13 +16,12 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     final int VIDA_INICIAL = 15;
     final int CANT_MANO_INICIAL = 3;
     final Stage escenarioPrincipal;
-    int posicionJugadorActual;
-    int posicionJugadorOponente;
-
     final ArrayList<Jugador> jugadores = new ArrayList<>();
     final BuilderEscenaInicio builderEscenaInicio;
     final BuilderEscenaTablero builderEscenaTablero;
     final BuilderMazos builderMazos;
+    int posicionJugadorActual;
+    int posicionJugadorOponente;
     Tablero tablero;
 
 
