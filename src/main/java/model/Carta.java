@@ -4,9 +4,9 @@ public class Carta {
     private final String nombre;
     private final String descripcion;
     private final int costoOriginal;
+    private final Cura cura;
     private int costo;
     private Daño daño;
-    private final Cura cura;
     private Efecto efecto;
     private Secreto secreto;
     private Robar robar;

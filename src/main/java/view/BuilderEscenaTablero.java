@@ -19,7 +19,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
+import javafx.util.Duration;
 import model.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -27,45 +29,6 @@ public class BuilderEscenaTablero {
     ObserverPasarTurno observerPasarTurno;
     ObserverSetCartaEnJuego observerSetCartaEnJuego;
     ObserverRecargarEscena observerRecargarEscena;
-
-    public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
-        BorderPane borderPane = new BorderPane();
-
-        borderPane.setBackground(
-                new Background(
-                        Collections.singletonList(new BackgroundFill(
-                                Color.WHITE,
-                                new CornerRadii(0),
-                                new Insets(0))),
-                        Collections.singletonList(new BackgroundImage(
-                                new Image("file:src/main/java/view/images/foto.jpg", 1000, 700, false, true),
-                                BackgroundRepeat.NO_REPEAT,
-                                BackgroundRepeat.NO_REPEAT,
-                                BackgroundPosition.DEFAULT,
-                                new BackgroundSize(1.0, 1.0, true, true, false, false)
-                        ))));
-
-        borderPane.setBottom( crearCajaHcartas(jugadorActual, jugadorOponente));
-        borderPane.setTop(crearVBoxOponente(jugadorOponente));
-        borderPane.setLeft( crearEstadisticasJugadorActual(jugadorActual));
-        borderPane.setRight(crearVboxEfectosSecretos(jugadorActual));
-
-        return new Scene(borderPane, 1000, 700);
-    }
-
-
-    private VBox crearVboxEfectosSecretos(Jugador jugadorActual) {
-        VBox vboxEfectosSecretos = new VBox();
-        vboxEfectosSecretos.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
-        Button botonPasarTurno = new Button("Pasar turno");
-        botonPasarTurno.setOnAction(e -> observerPasarTurno.pasarTurno());
-        vboxEfectosSecretos.getChildren().add(botonPasarTurno);
-
-        añadirEfectosySecretosALayout(jugadorActual, vboxEfectosSecretos.getChildren(),false);
-
-        return vboxEfectosSecretos;
-    }
-
 
     private static VBox crearEstadisticasJugadorActual(Jugador jugadorActual) {
         Button botonSalir = new Button("Salir");
@@ -93,7 +56,7 @@ public class BuilderEscenaTablero {
 
         HBox hBoxEfectosSecretosOponente = new HBox();
 
-        añadirEfectosySecretosALayout(jugadorOponente, hBoxEfectosSecretosOponente.getChildren(),true);
+        añadirEfectosySecretosALayout(jugadorOponente, hBoxEfectosSecretosOponente.getChildren(), true);
 
         VBox vboxOponente = new VBox(vidaOponente, hBoxEfectosSecretosOponente);
         vboxOponente.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
@@ -104,12 +67,19 @@ public class BuilderEscenaTablero {
 
     private static void añadirEfectosySecretosALayout(Jugador jugador, ObservableList<Node> children, Boolean jugadorEsOponente) {
         for (Efecto efecto : jugador.getEfectos()) {
-            final Label efectoActual = new Label(String.format("%s(%d)", efecto.getNombre(), efecto.getDuracion()));
+            String efectoDuracion;
+            if (efecto.getDuracion() < 0) efectoDuracion = "Permanente";
+            else efectoDuracion = Integer.toString(efecto.getDuracion());
+
+            Label efectoActual = new Label(String.format("%s(%s)", efecto.getNombre(), efectoDuracion));
 
             efectoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             efectoActual.setWrapText(true);
             efectoActual.setPadding(new Insets(10));
-            efectoActual.setTooltip(new Tooltip(efecto.getDescripcion()));
+
+            Tooltip tooltip = new Tooltip(efecto.getDescripcion());
+            tooltip.setShowDelay(Duration.seconds(0.3));
+            efectoActual.setTooltip(tooltip);
 
             children.add(efectoActual);
         }
@@ -122,12 +92,54 @@ public class BuilderEscenaTablero {
             secretoActual.setFont(Font.font("verdana", FontPosture.REGULAR, 15));
             secretoActual.setWrapText(true);
             secretoActual.setPadding(new Insets(10));
-            secretoActual.setTooltip(new Tooltip(secreto.getDescripcion()));
+
+            Tooltip tooltip = new Tooltip(secreto.getDescripcion());
+            tooltip.setShowDelay(Duration.seconds(0.3));
+            secretoActual.setTooltip(tooltip);
 
             children.add(secretoActual);
         }
     }
 
+    public Scene crearEscenaTablero(Jugador jugadorActual, Jugador jugadorOponente) {
+        BorderPane borderPane = new BorderPane();
+
+        borderPane.setBackground(
+                new Background(
+                        Collections.singletonList(new BackgroundFill(
+                                Color.WHITE,
+                                new CornerRadii(0),
+                                new Insets(0))),
+                        Collections.singletonList(new BackgroundImage(
+                                new Image("file:src/main/java/view/images/foto.jpg", 1000, 700, false, true),
+                                BackgroundRepeat.NO_REPEAT,
+                                BackgroundRepeat.NO_REPEAT,
+                                BackgroundPosition.DEFAULT,
+                                new BackgroundSize(1.0, 1.0, true, true, false, false)
+                        ))));
+
+        borderPane.setBottom(crearCajaHcartas(jugadorActual, jugadorOponente));
+        borderPane.setTop(crearVBoxOponente(jugadorOponente));
+        borderPane.setLeft(crearEstadisticasJugadorActual(jugadorActual));
+        borderPane.setRight(crearVboxEfectosSecretos(jugadorActual));
+
+        return new Scene(borderPane, 1000, 700);
+    }
+
+    private VBox crearVboxEfectosSecretos(Jugador jugadorActual) {
+        VBox vboxEfectosSecretos = new VBox();
+        vboxEfectosSecretos.setStyle("-fx-background-color: #ffffff; -fx-border-color: rgb(0,0,0);-fx-border-width: 3;");
+
+        Button botonPasarTurno = new Button("Pasar turno");
+        botonPasarTurno.setMinWidth(100);
+        botonPasarTurno.maxWidthProperty().bind(vboxEfectosSecretos.widthProperty());
+        botonPasarTurno.setOnAction(e -> observerPasarTurno.pasarTurno());
+        vboxEfectosSecretos.getChildren().add(botonPasarTurno);
+
+        añadirEfectosySecretosALayout(jugadorActual, vboxEfectosSecretos.getChildren(), false);
+
+        return vboxEfectosSecretos;
+    }
 
     private HBox crearCajaHcartas(Jugador jugadorActual, Jugador jugadorOponente) {
         HBox cajaHcartas = new HBox();

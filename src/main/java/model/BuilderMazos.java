@@ -26,11 +26,12 @@ public class BuilderMazos {
         // Ataques
         bCartas.resetearCarta("Réplica", "Daño 1; Robar 1", 1);
         bCartas.setDaño(new DañoNormal(1));
+        bCartas.setRobar(new RobarNormal(1));
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
-        bCartas.resetearCarta("Golpe", "Daño 4", 2);
-        bCartas.setDaño(new DañoNormal(4));
+        bCartas.resetearCarta("Golpe", "Daño 3", 1);
+        bCartas.setDaño(new DañoNormal(3));
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
@@ -40,8 +41,8 @@ public class BuilderMazos {
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
         // Bufos
-        bCartas.resetearCarta("Afilar", "Mejora 2 Afilado", 2);
-        bCartas.setEfecto(new Afilado(2));
+        bCartas.resetearCarta("Afilar", "Mejora 3 Afilado", 2);
+        bCartas.setEfecto(new Afilado(3));
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
         bCartas.resetearCarta("Ira", "Mejora permanente Berserk", 3);

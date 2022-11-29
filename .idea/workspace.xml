@@ -6,34 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="commit para que labures desde tu IDE  d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/appearance.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/core-plugins.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/hotkeys.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ideas cartas.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas cartas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BuilderMazos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BuilderMazos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Carta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Daño.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Daño.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RobarNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RobarNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Secreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Secreto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tablero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/PrevenirYCurar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/PrevenirYCurar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
     </list>
-    <list id="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" name="Changes by Agustin 2021" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Catalizador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Desviar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Desviar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Enormigus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Enormigus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Imparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Imparable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/Oportunista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/Oportunista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/secretos/TrampaVeneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/secretos/TrampaVeneno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
-    </list>
+    <list id="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" name="Changes by Agustin 2021" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,37 +42,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/controller/Juego.java">
-      <ranges>
-        <range start1="17" end1="18" start2="17" end2="18" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="21" end1="25" start2="21" end2="25" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="42" end1="43" start2="42" end2="43" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="86" end1="87" start2="86" end2="87" changelist="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" />
-        <range start1="100" end1="101" start2="100" end2="101" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="102" end1="103" start2="102" end2="102" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java">
-      <ranges>
-        <range start1="22" end1="23" start2="22" end2="22" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="27" end1="28" start2="26" end2="26" changelist="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" />
-        <range start1="34" end1="39" start2="32" end2="32" changelist="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" />
-        <range start1="54" end1="58" start2="47" end2="51" changelist="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" />
-        <range start1="82" end1="82" start2="75" end2="76" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="84" end1="84" start2="78" end2="79" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="90" end1="90" start2="85" end2="86" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="104" end1="104" start2="100" end2="101" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="110" end1="110" start2="107" end2="108" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="113" end1="114" start2="111" end2="111" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="120" end1="120" start2="117" end2="118" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="126" end1="127" start2="124" end2="124" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="156" end1="157" start2="153" end2="153" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="169" end1="169" start2="165" end2="166" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-        <range start1="170" end1="173" start2="167" end2="169" changelist="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -106,7 +53,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HuCU0eIR7Po6ZQqSayFZQFGayM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -147,7 +94,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="view.App" />
-      <module name="Tp1-Algo3" />
+      <module name="AYUDA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,6 +175,7 @@
       <workItem from="1669404891507" duration="7784000" />
       <workItem from="1669665824017" duration="949000" />
       <workItem from="1669666205173" duration="842000" />
+      <workItem from="1669739501279" duration="1697000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
