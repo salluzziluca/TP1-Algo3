@@ -55,7 +55,7 @@ public interface Efecto {
     /*
      * Modifica la duracion al efecto
      */
-    void modificarDuracion(int duracion);
+    void modificarDuracion(int duracionAñadida);
 
     void setSeDebeAplicarElEfecto(boolean seDebeAplicarElEfecto);
 

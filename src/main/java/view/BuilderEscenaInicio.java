@@ -1,17 +1,26 @@
 package view;
 
+import controller.ObserverRecargarEscena;
 import controller.ObserverRecibirNombreYMazo;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 
 public class BuilderEscenaInicio {
 
     private ObserverRecibirNombreYMazo observerRecibirNombreYMazo;
 
+    private ObserverRecargarEscena observerRecargarEscena;
+
     public Scene crearEscena() {
 
+        Label labelArriba = new Label("Jugadores ingresen su nombre y elijan un mazo");
 
         TextField ingresarNombreJugador1 = new TextField("Jugador 1");
         ingresarNombreJugador1.setMaxWidth(200);
@@ -30,10 +39,16 @@ public class BuilderEscenaInicio {
         choiceBox2.setValue("Mazo Alquimista");
 
 
-        Label labelArriba = new Label("Jugadores ingresen su nombre y elijan un mazo");
+        VBox vBoxPrincipal = new VBox();
+
+
+        Scene scene = new Scene(vBoxPrincipal, 500, 300);
 
         Button botonSalir = new Button("Salir");
         botonSalir.setOnAction(e -> System.exit(0));
+
+        Button botonInstrucciones = new Button("Instrucciones");
+        botonInstrucciones.setOnAction(e -> observerRecargarEscena.crearEscenaInstrucciones(scene));
 
         Button botonContinuar = new Button("Continuar");
         botonContinuar.setOnAction(e -> {
@@ -50,19 +65,21 @@ public class BuilderEscenaInicio {
             }
         });
 
-        HBox hBoxBotones = new HBox(botonSalir, botonContinuar);
+        HBox hBoxBotones = new HBox(botonSalir, botonInstrucciones, botonContinuar);
         hBoxBotones.setAlignment(Pos.BOTTOM_CENTER);
 
-        VBox vBoxPrincipal = new VBox();
+        VBox.setVgrow(hBoxBotones, Priority.ALWAYS);
         vBoxPrincipal.setAlignment(Pos.CENTER);
         vBoxPrincipal.setStyle("-fx-background-color: #3fe5d1;");
         vBoxPrincipal.getChildren().addAll(labelArriba, ingresarNombreJugador1, choiceBox1, ingresarNombreJugador2, choiceBox2, hBoxBotones);
-        VBox.setVgrow(hBoxBotones, Priority.ALWAYS);
-        return new Scene(vBoxPrincipal, 500, 300);
+
+
+        return scene;
     }
 
-    public void subscribe(ObserverRecibirNombreYMazo observer) {
+    public void subscribe(ObserverRecibirNombreYMazo observer, ObserverRecargarEscena observerRecargarEscena) {
         this.observerRecibirNombreYMazo = observer;
+        this.observerRecargarEscena = observerRecargarEscena;
     }
 
 }

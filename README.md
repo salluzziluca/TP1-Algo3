@@ -23,9 +23,9 @@ tienen caracterisicas que las diferencian y les dan individualidad.
 ### Observer
 
 Para la confección de las cartas trampa pensamos utilizar el patron Observer; ya que estas deberan esperar hasta que
-algun evento en particular ocurra.
+algún evento en particular ocurra.
 
 ### Otros patrones:
 
-adicionalmente, pensamos que el patron Bridge puede ser de gran utilidad a la hora de separar el codigo del propio juego
+Adicionalmente, pensamos que el patron Bridge puede ser de gran utilidad a la hora de separar el codigo del propio juego
 de su interfaz gráfica.
