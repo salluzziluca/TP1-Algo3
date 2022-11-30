@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="commit para que labures desde tu IDE  d">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInstrucciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ideas cartas.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas cartas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ObserverRecargarEscena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ObserverRecargarEscena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BuilderMazos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BuilderMazos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Afilado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Berserk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Inflacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Veneno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/efectos/Vulnerable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaTablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInstrucciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInstrucciones.java" afterDir="false" />
     </list>
     <list id="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" name="Changes by Agustin 2021" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +176,8 @@
       <workItem from="1669665824017" duration="949000" />
       <workItem from="1669666205173" duration="842000" />
       <workItem from="1669739501279" duration="1697000" />
-      <workItem from="1669747435529" duration="8659000" />
+      <workItem from="1669747435529" duration="8702000" />
+      <workItem from="1669766597055" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
