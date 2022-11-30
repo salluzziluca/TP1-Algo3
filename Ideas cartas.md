@@ -5,7 +5,6 @@
 |    Cura x   |    Al jugarse ganas x de vida    |
 |    Inflije x **efecto**   |    Inflige un **efecto** a tu oponente por x turnos   |
 |    Mejora x **efecto**   |    Aplica un **efecto** al jugador que usa la carta por x turnos   |
-|    **Gastar**  |    La carta no regresa al mazo después de ser jugada    |
 |**Secreto**| Cuando se cumple la condicion se activa el efecto de la carta |
 
 Los efectos reducen su duracion al final del turno
@@ -28,15 +27,13 @@ Los efectos reducen su duracion al final del turno
 
    > #### Bufos:
    >- *Afilar* (2): Mejora 3 **Afilado**
-   >- *Ira* (3): Mejora permanente **Berserk**; **Gastar**
+   >- *Ira* (3): Mejora permanente **Berserk**
 
    > #### Secretos:
 
-   > - *Imparable* (1): **Secreto**:Secreto: La proxima vez que tu oponente juegue una carta que te infligiera un efecto
-       no te lo inflije y se remueve ese efecto si ya lo tenias
+   > - *Imparable* (1): **Secreto**: La proxima vez que tu oponente juegue una carta que te infligiera un efecto no te lo inflije y se remueve ese efecto si ya lo tenias
    >- *Oportunista* (1): **Secreto**: La proxima vez que juegues una carta de daño, robas 3
-   >- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño
-      duplicado.
+   >- *Desviar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado.
 
 2) ## Alquimista
    > #### Ataques:
@@ -49,9 +46,6 @@ Los efectos reducen su duracion al final del turno
 
 > #### Secretos:
 > - *Catalizador* (0): **Secreto**: Tu proximo efecto se duplica en duracion
->- *Enormigus* (2): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al
-   coste de la carta jugada
->- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te
-   cura y robas 1 carta
->- Trampa Venenosa (2): **Secreto**: La proxima vez que tu oponente juegue una carta de Daño, le aplicas Veneno igual al
-   daño de la carta
+>- *Enormigus* (2): **Secreto**: La proxima vez que tu oponente juegue una carta Inflije Inflacion con duracion igual al coste de la carta jugada
+>- *Prevenir y curar* (2): **Secreto**: La proxima vez que tu oponente juegue una carta de daño, en vez de dañarte te cura y robas 1 carta
+>- Trampa Venenosa (2): **Secreto**: La proxima vez que tu oponente juegue una carta de Daño, le aplicas Veneno igual al daño de la carta
