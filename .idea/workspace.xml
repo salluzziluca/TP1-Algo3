@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b8c0f6a-ee43-46b0-bd42-8bc15ab79fe8" name="Changes" comment="commit para que labures desde tu IDE  d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ideas cartas.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas cartas.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInstrucciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BuilderEscenaInstrucciones.java" afterDir="false" />
     </list>
     <list id="2dde1ab8-a554-4644-9dcf-6f3269c5e3cc" name="Changes by Agustin 2021" comment="" />
@@ -177,7 +178,7 @@
       <workItem from="1669666205173" duration="842000" />
       <workItem from="1669739501279" duration="1697000" />
       <workItem from="1669747435529" duration="8702000" />
-      <workItem from="1669766597055" duration="2451000" />
+      <workItem from="1669766597055" duration="4792000" />
     </task>
     <task id="LOCAL-00001" summary="?????">
       <created>1669129828695</created>
