@@ -68,7 +68,7 @@ public class BuilderEscenaInstrucciones {
         paresEfectos.add(new Pair<>("Afilado", "Las cartas de Daño tienen +1 de daño"));
         paresEfectos.add(new Pair<>("Berserk", "+1 de mana máximo"));
         paresEfectos.add(new Pair<>("Veneno", "Al inicio del turno se recibe daño equivalente a la duracion del efecto"));
-        paresEfectos.add(new Pair<>("Inflacion", "Aumenta x el costo de todas las cartas en mano"));
+        paresEfectos.add(new Pair<>("Inflacion", "Aumenta 1 el costo de todas las cartas en la mano"));
         return paresEfectos;
     }
 
@@ -85,7 +85,7 @@ public class BuilderEscenaInstrucciones {
 
     private ObservableList<Pair<String, String>> crearCartasGuerrero() {
         ObservableList<Pair<String, String>> paresEfectos = FXCollections.observableArrayList();
-        paresEfectos.add(new Pair<>("2x Réplica (1)", " Daño 1; Robar 1"));
+        paresEfectos.add(new Pair<>("2x Réplica (1)", "Daño 1; Robar 1"));
         paresEfectos.add(new Pair<>("2x Golpe (1)", "Daño 3"));
         paresEfectos.add(new Pair<>("Triturar (2)", "Daño 2; Inflige 2 Vulnerable"));
         paresEfectos.add(new Pair<>("Afilar (2)", "Mejora 3 Afilado"));
