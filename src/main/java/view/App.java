@@ -16,9 +16,11 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         BuilderEscenaInicio builderEscenaInicio = new BuilderEscenaInicio();
         BuilderEscenaTablero builderEscenaTablero = new BuilderEscenaTablero();
+        BuilderEscenaInstrucciones builderEscenaInstrucciones = new BuilderEscenaInstrucciones();
         BuilderMazos builderMazos = new BuilderMazos();
-        Juego juego = new Juego(primaryStage, builderEscenaInicio, builderEscenaTablero, builderMazos);
-        builderEscenaInicio.subscribe(juego);
+        Juego juego = new Juego(primaryStage, builderEscenaInicio, builderEscenaTablero, builderMazos, builderEscenaInstrucciones);
+        builderEscenaInicio.subscribe(juego, juego);
+        builderEscenaInstrucciones.subscribe(juego);
         juego.empezarJuego();
     }
 }

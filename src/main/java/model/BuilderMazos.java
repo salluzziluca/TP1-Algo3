@@ -35,8 +35,8 @@ public class BuilderMazos {
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
-        bCartas.resetearCarta("Triturar", "Daño 3, Inflige 2 Vulnerable", 3);
-        bCartas.setDaño(new DañoNormal(3));
+        bCartas.resetearCarta("Triturar", "Daño 2, Inflige 2 Vulnerable", 2);
+        bCartas.setDaño(new DañoNormal(2));
         bCartas.setEfecto(new Vulnerable(2));
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
@@ -50,12 +50,6 @@ public class BuilderMazos {
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
         // Secretos
-        bCartas.resetearCarta("Desviar",
-                "Secreto: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado",
-                2);
-        bCartas.setSecreto(new Desviar());
-        mazoGuerrero.agregarCarta(bCartas.crearCarta());
-
         bCartas.resetearCarta("Imparable",
                 "Secreto: La proxima vez que tu oponente juegue una carta que te infligiera un efecto no te lo inflije y se remueve ese efecto si ya lo tenias",
                 1);
@@ -66,6 +60,12 @@ public class BuilderMazos {
                 "Secreto: La proxima vez que juegues una carta de daño, robas 3",
                 1);
         bCartas.setSecreto(new Oportunista());
+        mazoGuerrero.agregarCarta(bCartas.crearCarta());
+
+        bCartas.resetearCarta("Desviar",
+                "Secreto: La proxima vez que tu oponente juegue una carta de daño tu oponente recibirá el daño duplicado",
+                2);
+        bCartas.setSecreto(new Desviar());
         mazoGuerrero.agregarCarta(bCartas.crearCarta());
 
         mazoGuerrero.mezclar();
@@ -94,8 +94,8 @@ public class BuilderMazos {
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
 
-        bCartas.resetearCarta("Frasco de Toxinas", "Inflige 3 Veneno", 2);
-        bCartas.setEfecto(new Veneno(3));
+        bCartas.resetearCarta("Frasco de Toxinas", "Inflige 2 Veneno", 2);
+        bCartas.setEfecto(new Veneno(2));
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
         mazoAlquimista.agregarCarta(bCartas.crearCarta());
 

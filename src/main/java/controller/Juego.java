@@ -6,6 +6,7 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import model.*;
 import view.BuilderEscenaInicio;
+import view.BuilderEscenaInstrucciones;
 import view.BuilderEscenaTablero;
 
 import java.util.ArrayList;
@@ -19,25 +20,28 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     final ArrayList<Jugador> jugadores = new ArrayList<>();
     final BuilderEscenaInicio builderEscenaInicio;
     final BuilderEscenaTablero builderEscenaTablero;
+    final BuilderEscenaInstrucciones builderEscenaInstrucciones;
     final BuilderMazos builderMazos;
     int posicionJugadorActual;
     int posicionJugadorOponente;
     Tablero tablero;
 
 
-    public Juego(Stage escenarioPrincipal, BuilderEscenaInicio builderEscenaInicio, BuilderEscenaTablero builderescenaTablero, BuilderMazos builderMazos) {
-        this.escenarioPrincipal = escenarioPrincipal;
-        this.builderEscenaInicio = builderEscenaInicio;
+    public Juego(Stage escenarioPrincipal, BuilderEscenaInicio builderEscenaInicio, BuilderEscenaTablero builderescenaTablero, BuilderMazos builderMazos, BuilderEscenaInstrucciones builderEscenaInstrucciones) {
+        this.builderEscenaInstrucciones = builderEscenaInstrucciones;
         this.builderEscenaTablero = builderescenaTablero;
+        this.builderEscenaInicio = builderEscenaInicio;
+        this.escenarioPrincipal = escenarioPrincipal;
         this.builderMazos = builderMazos;
         posicionJugadorActual = 0;
         posicionJugadorOponente = 1;
+
 
     }
 
     public static void alertaFinJuego(Jugador jugador) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setContentText(String.format("El jugador %s ha perdido", jugador.getNombre()));
+        alerta.setHeaderText(String.format("El jugador %s ha perdido", jugador.getNombre()));
         Optional<ButtonType> boton = alerta.showAndWait();
         if (boton.isPresent() && boton.get() == ButtonType.OK) {
             System.exit(0);
@@ -84,6 +88,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
     public void empezarJuego() {
         escenarioPrincipal.setTitle("Spizz");
+        escenarioPrincipal.setResizable(false);
         escenarioPrincipal.setScene(builderEscenaInicio.crearEscena());
         escenarioPrincipal.show();
     }
@@ -93,20 +98,21 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
         jugadores.get(posicionJugadorActual).terminarTurno();
         jugadores.get(posicionJugadorActual).recargarMana();
+
         swapJugadores();
         jugadores.get(posicionJugadorActual).recorrerEfectos();
-
-        for (Jugador jugador : jugadores) {
-            if (jugador.estaVivo()) {
-                alertaFinJuego(jugador);
-            }
-        }
 
         jugadores.get(posicionJugadorActual).robarCarta();
 
         Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
         escenarioPrincipal.setScene(escenaTablero);
         escenarioPrincipal.show();
+
+        for (Jugador jugador : jugadores) {
+            if (jugador.estaVivo()) {
+                alertaFinJuego(jugador);
+            }
+        }
 
     }
 
@@ -119,6 +125,17 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
     public void recargarEscenaTablero() {
         Scene escenaTablero = builderEscenaTablero.crearEscenaTablero(jugadores.get(posicionJugadorActual), jugadores.get(posicionJugadorOponente));
         escenarioPrincipal.setScene(escenaTablero);
+        escenarioPrincipal.show();
+    }
+
+    public void crearEscenaInstrucciones(Scene escenaPrevia) {
+        Scene escenaInstrucciones = builderEscenaInstrucciones.crearEscenaInstrucciones(escenaPrevia);
+        escenarioPrincipal.setScene(escenaInstrucciones);
+        escenarioPrincipal.show();
+    }
+
+    public void recargarEscenaAnterior(Scene escenaAnterior) {
+        escenarioPrincipal.setScene(escenaAnterior);
         escenarioPrincipal.show();
     }
 }

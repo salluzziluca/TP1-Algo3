@@ -58,8 +58,8 @@ public class Inflacion implements Efecto {
     }
 
     @Override
-    public void modificarDuracion(int duracion) {
-        this.duracion += duracion;
+    public void modificarDuracion(int duracionAñadida) {
+        this.duracion += duracionAñadida;
     }
 
     @Override
