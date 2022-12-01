@@ -44,9 +44,9 @@ public class Mano {
         }
     }
 
-    public void aumentarValorCartas() {
+    public void modificarValorCartas(int sumaCosto) {
         for (Carta carta : this.manoActual) {
-            carta.aumentarValor();
+            carta.modificarValor(sumaCosto);
         }
     }
 

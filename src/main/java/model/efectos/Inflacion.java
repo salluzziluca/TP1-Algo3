@@ -26,6 +26,7 @@ public class Inflacion implements Efecto {
         this.duracion--;
         if (this.duracion == 0) {
             this.quitarEfecto(jugadorAliado);
+            jugadorAliado.modificarValorCartas(-1);
         }
 
     }
@@ -34,7 +35,7 @@ public class Inflacion implements Efecto {
     public void setearEfecto(Jugador jugadorAliado, Jugador jugadorEnemigo) {
         setearEfectoDefault(jugadorAliado, jugadorEnemigo);
         if (seDebeAplicarElEfecto) {
-            jugadorEnemigo.aumentarValorCartas();
+            jugadorEnemigo.modificarValorCartas(1);
         }
     }
 
@@ -49,7 +50,7 @@ public class Inflacion implements Efecto {
 
     @Override
     public void aplicarEfectoACarta(Carta carta) {
-        carta.aumentarValor();
+        carta.modificarValor(1);
     }
 
     @Override
