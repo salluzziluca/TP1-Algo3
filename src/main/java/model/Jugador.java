@@ -68,8 +68,8 @@ public class Jugador {
         }
     }
 
-    public boolean estaVivo() {
-        return this.vida <= 0;
+    public boolean estaMuerto() {
+        return vida <= 0;
     }
 
     /*

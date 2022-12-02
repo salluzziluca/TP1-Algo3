@@ -188,7 +188,7 @@ public class BuilderEscenaTablero {
 
                             observerRecargarEscena.recargarEscenaTablero();
 
-                            if (jugadorOponente.estaVivo()) Juego.alertaFinJuego(jugadorOponente);
+                            if (jugadorOponente.estaMuerto()) Juego.alertaFinJuego(jugadorOponente);
 
                         } else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);

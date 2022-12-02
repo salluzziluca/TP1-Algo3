@@ -109,7 +109,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         escenarioPrincipal.show();
 
         for (Jugador jugador : jugadores) {
-            if (jugador.estaVivo()) {
+            if (jugador.estaMuerto()) {
                 alertaFinJuego(jugador);
             }
         }
