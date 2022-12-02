@@ -1,3 +1,5 @@
+package modelTest;
+
 import model.*;
 import model.efectos.*;
 import org.junit.Test;

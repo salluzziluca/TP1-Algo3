@@ -1,3 +1,5 @@
+package modelTest;
+
 import model.*;
 import model.efectos.Veneno;
 import model.secretos.*;

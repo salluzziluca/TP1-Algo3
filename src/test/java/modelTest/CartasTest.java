@@ -1,3 +1,5 @@
+package modelTest;
+
 import model.*;
 import org.junit.Test;
 
