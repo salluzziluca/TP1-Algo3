@@ -1,8 +1,8 @@
 package view;
 
-import controller.Juego;
 import controller.ObserverPasarTurno;
 import controller.ObserverRecargarEscena;
+import controller.ObserverFinJuego;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,6 +29,7 @@ public class BuilderEscenaTablero {
     ObserverPasarTurno observerPasarTurno;
     ObserverSetCartaEnJuego observerSetCartaEnJuego;
     ObserverRecargarEscena observerRecargarEscena;
+    ObserverFinJuego observerFinJuego;
 
     private static VBox crearVBoxOponente(Jugador jugadorOponente) {
         Label vidaOponente = new Label(String.format("Vida %s: %d", jugadorOponente.getNombre(), jugadorOponente.getVida()));
@@ -188,7 +189,7 @@ public class BuilderEscenaTablero {
 
                             observerRecargarEscena.recargarEscenaTablero();
 
-                            if (jugadorOponente.estaMuerto()) Juego.alertaFinJuego(jugadorOponente);
+                            if (jugadorOponente.estaMuerto()) observerFinJuego.alertaFinJuego(jugadorOponente);
 
                         } else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -205,9 +206,10 @@ public class BuilderEscenaTablero {
         return cajaHcartas;
     }
 
-    public void subscribe(ObserverPasarTurno observerPasarTurno, ObserverSetCartaEnJuego observerSetCartaEnJuego, ObserverRecargarEscena observerRecargarEscena) {
+    public void subscribe(ObserverPasarTurno observerPasarTurno, ObserverSetCartaEnJuego observerSetCartaEnJuego, ObserverRecargarEscena observerRecargarEscena, ObserverFinJuego observerFinJuego) {
         this.observerPasarTurno = observerPasarTurno;
         this.observerSetCartaEnJuego = observerSetCartaEnJuego;
         this.observerRecargarEscena = observerRecargarEscena;
+        this.observerFinJuego = observerFinJuego;
     }
 }

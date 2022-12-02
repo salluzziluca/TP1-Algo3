@@ -12,7 +12,7 @@ import view.BuilderEscenaTablero;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, ObserverRecargarEscena {
+public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, ObserverRecargarEscena, ObserverFinJuego {
     final int MANA_INICIAL = 3;
     final int VIDA_INICIAL = 15;
     final int CANT_MANO_INICIAL = 3;
@@ -40,7 +40,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
 
     }
 
-    public static void alertaFinJuego(Jugador jugador) {
+    public void alertaFinJuego(Jugador jugador) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setHeaderText(String.format("El jugador %s ha perdido", jugador.getNombre()));
         Optional<ButtonType> boton = alerta.showAndWait();
@@ -61,7 +61,7 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         crearJugador(nombre2, mazo2);
 
         tablero = new Tablero(jugadores.get(0), jugadores.get(1));
-        builderEscenaTablero.subscribe(this, tablero, this);
+        builderEscenaTablero.subscribe(this, tablero, this, this);
 
         jugadores.get(posicionJugadorActual).robarCarta(CANT_MANO_INICIAL);
         jugadores.get(posicionJugadorOponente).robarCarta(CANT_MANO_INICIAL);
