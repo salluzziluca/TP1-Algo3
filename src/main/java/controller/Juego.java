@@ -35,7 +35,8 @@ public class Juego implements ObserverRecibirNombreYMazo, ObserverPasarTurno, Ob
         this.builderMazos = builderMazos;
         posicionJugadorActual = 0;
         posicionJugadorOponente = 1;
-
+        builderEscenaInicio.subscribe(this, this);
+        builderEscenaInstrucciones.subscribe(this);
 
     }
 
