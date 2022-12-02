@@ -2,20 +2,18 @@ package model;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("ForLoopReplaceableByForEach")
 public class Jugador {
     private final String nombre;
     private int vida;
     private int manaMaximo;
     private int manaActual;
-    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
-    private Mano mano;
-    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
-    private Mazo mazo;
-    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
-    private ArrayList<Efecto> efectos;
-    @SuppressWarnings({"FieldMayBeFinal", "CanBeFinal"})
-    private ArrayList<Secreto> secretos;
+
+    private final Mano mano;
+
+    private final Mazo mazo;
+    private final ArrayList<Efecto> efectos;
+
+    private final ArrayList<Secreto> secretos;
 
     public Jugador(String nombre, int vida, int mana, Mano mano, Mazo mazo) {
         this.nombre = nombre;

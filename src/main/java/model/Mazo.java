@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("unused")
 public class Mazo {
     private ArrayList<Carta> cartas;
 
@@ -10,7 +9,7 @@ public class Mazo {
         cartas = new ArrayList<>();
     }
 
-    @SuppressWarnings("unused")
+
     public ArrayList<Carta> getCartas() {
         return cartas;
     }
@@ -42,7 +41,4 @@ public class Mazo {
         cartas = cartasBarajadas;
     }
 
-    public boolean estaVacio() {
-        return cartas.isEmpty();
-    }
 }
