@@ -67,8 +67,8 @@ public class Carta {
         }
     }
 
-    public void aumentarValor() {
-        this.costo++;
+    public void modificarValor(int sumaCosto) {
+        this.costo += sumaCosto;
     }
 
     public String getNombre() {

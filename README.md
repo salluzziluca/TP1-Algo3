@@ -26,6 +26,5 @@ Para la confección de las cartas trampa pensamos utilizar el patron Observer; y
 algún evento en particular ocurra.
 
 ### Otros patrones:
+adicionalmente, pensamos que el patron MVC puede ser de gran utilidad a la hora de separar el codigo del propio juego de su interfaz gráfica.
 
-Adicionalmente, pensamos que el patron Bridge puede ser de gran utilidad a la hora de separar el codigo del propio juego
-de su interfaz gráfica.
