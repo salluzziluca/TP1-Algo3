@@ -12,7 +12,7 @@ public class Carta {
     private Robar robar;
 
     public Carta(String nombre, String descripcion, int costo, Daño daño, Cura cura, Efecto efecto,
-                 Secreto secreto) {
+                 Secreto secreto, Robar robar) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
